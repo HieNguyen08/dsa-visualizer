@@ -1,0 +1,171 @@
+.node {
+  width: 20px;
+  height: 20px;
+  outline: 1px solid rgb(220, 220, 220);
+  display: inline-block;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.node:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.node-finish {
+  background-color: #ef4444;
+  background-image: radial-gradient(circle, #fef2f2 30%, #ef4444 70%);
+  border: 2px solid #dc2626;
+  z-index: 5;
+}
+
+.node-start {
+  background-color: #22c55e;
+  background-image: radial-gradient(circle, #f0fdf4 30%, #22c55e 70%);
+  border: 2px solid #16a34a;
+  z-index: 5;
+}
+
+.node-wall {
+  background-color: #1f2937;
+  background-image: linear-gradient(45deg, #374151 25%, transparent 25%),
+    linear-gradient(-45deg, #374151 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #374151 75%),
+    linear-gradient(-45deg, transparent 75%, #374151 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+  border: 1px solid #4b5563;
+  animation: wallPlaced 0.3s ease;
+}
+
+@keyframes wallPlaced {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+  
+.node-visited {
+  animation-name: visitedAnimation;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(59, 130, 246, 0.5);
+    border-radius: 50%;
+    border: 2px solid #3b82f6;
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: rgba(14, 165, 233, 0.7);
+    border: 2px solid #0ea5e9;
+  }
+
+  75% {
+    transform: scale(1.1);
+    background-color: rgba(6, 182, 212, 0.8);
+    border: 1px solid #06b6d4;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(34, 197, 94, 0.6);
+    border: 1px solid #22c55e;
+    border-radius: 0;
+  }
+}
+  .node-wall {
+    background-color: rgb(12, 54, 71);
+  }
+
+.node-shortest-path {
+  animation-name: shortestPathAnimation;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes shortestPathAnimation {
+  0% {
+    transform: scale(0.6);
+    background-color: #fbbf24;
+    border: 3px solid #f59e0b;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+  }
+
+  25% {
+    transform: scale(1.4);
+    background-color: #fcd34d;
+    border: 3px solid #f59e0b;
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #fde047;
+    border: 2px solid #eab308;
+    box-shadow: 0 0 20px rgba(253, 224, 71, 0.8);
+  }
+
+  75% {
+    transform: scale(1.1);
+    background-color: #facc15;
+    border: 2px solid #ca8a04;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: #eab308;
+    background-image: linear-gradient(45deg, #fbbf24 25%, transparent 25%),
+      linear-gradient(-45deg, #fbbf24 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #fbbf24 75%),
+      linear-gradient(-45deg, transparent 75%, #fbbf24 75%);
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    border: 2px solid #a16207;
+    border-radius: 0;
+    box-shadow: 0 0 12px rgba(234, 179, 8, 0.6);
+  }
+}
+
+/* Add some glow effects for better visual appeal */
+.node-start::after {
+  content: "🚀";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  z-index: 10;
+}
+
+.node-finish::after {
+  content: "🎯";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  z-index: 10;
+}
+  

@@ -1,0 +1,208 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  username  String   @unique
+  name      String?
+  password  String
+  role      Role     @default(USER)
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  posts       Post[]
+  comments    Comment[]
+  likes       Like[]
+  feedback    Feedback[]
+  progress    Progress[]
+  submissions CodeSubmission[]
+  
+  @@map("users")
+}
+
+model Post {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  category    PostCategory @default(DISCUSSION)
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  comments    Comment[]
+  likes       Like[]
+  tags        PostTag[]
+  
+  @@map("posts")
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  parentId  String?
+  parent    Comment? @relation("CommentReplies", fields: [parentId], references: [id])
+  replies   Comment[] @relation("CommentReplies")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("comments")
+}
+
+model Like {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  postId String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, postId])
+  @@map("likes")
+}
+
+model PostTag {
+  id     String @id @default(cuid())
+  name   String
+  postId String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  
+  @@map("post_tags")
+}
+
+model Feedback {
+  id        String       @id @default(cuid())
+  title     String
+  content   String
+  type      FeedbackType @default(GENERAL)
+  status    FeedbackStatus @default(PENDING)
+  priority  Priority     @default(MEDIUM)
+  authorId  String
+  author    User         @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  
+  @@map("feedback")
+}
+
+model Progress {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  algorithmType String
+  algorithmName String
+  completed     Boolean  @default(false)
+  score         Int      @default(0)
+  timeSpent     Int      @default(0) // in minutes
+  attempts      Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  @@unique([userId, algorithmType, algorithmName])
+  @@map("progress")
+}
+
+model CodeSubmission {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challengeId   String
+  language      CodeLanguage
+  code          String
+  status        SubmissionStatus @default(PENDING)
+  score         Int      @default(0)
+  executionTime Float?
+  memory        Int?
+  testsPassed   Int      @default(0)
+  totalTests    Int      @default(0)
+  createdAt     DateTime @default(now())
+  
+  @@map("code_submissions")
+}
+
+model Analytics {
+  id          String   @id @default(cuid())
+  userId      String?
+  event       String
+  page        String?
+  metadata    Json?
+  ipAddress   String?
+  userAgent   String?
+  sessionId   String?
+  createdAt   DateTime @default(now())
+  
+  @@map("analytics")
+}
+
+enum Role {
+  GUEST
+  USER
+  TEACHER
+  ADMIN
+}
+
+enum PostCategory {
+  DISCUSSION
+  QUESTION
+  TUTORIAL
+  ANNOUNCEMENT
+  BUG_REPORT
+}
+
+enum FeedbackType {
+  BUG_REPORT
+  FEATURE_REQUEST
+  GENERAL
+  UI_UX
+  PERFORMANCE
+}
+
+enum FeedbackStatus {
+  PENDING
+  IN_PROGRESS
+  RESOLVED
+  REJECTED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum CodeLanguage {
+  JAVASCRIPT
+  TYPESCRIPT
+  PYTHON
+  JAVA
+  CPP
+  C
+  CSHARP
+}
+
+enum SubmissionStatus {
+  PENDING
+  RUNNING
+  ACCEPTED
+  WRONG_ANSWER
+  TIME_LIMIT_EXCEEDED
+  RUNTIME_ERROR
+  COMPILATION_ERROR
+}
