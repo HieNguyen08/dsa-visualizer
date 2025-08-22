@@ -1,0 +1,490 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[vietnamese]{babel}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, shapes.multipart, fit, calc}
+
+\tikzset{
+    class/.style={
+        draw,
+        rectangle,
+        minimum width=3cm,
+        minimum height=1.5cm,
+        text centered,
+        font=\scriptsize,
+        text width=2.8cm,
+        align=left
+    },
+    abstract/.style={
+        class,
+        font=\scriptsize\itshape
+    },
+    interface/.style={
+        class,
+        dashed
+    },
+    inheritance/.style={
+        draw,
+        ->,
+        -triangle 45
+    },
+    association/.style={
+        draw,
+        -
+    },
+    aggregation/.style={
+        draw,
+        -,
+        diamond
+    },
+    composition/.style={
+        draw,
+        -,
+        fill=black,
+        diamond
+    }
+}
+
+\begin{document}
+\begin{tikzpicture}[node distance=3cm, auto]
+
+% Title
+\node[above] at (0,12) {\Large \textbf{Class Diagram - DSA Visualizer Platform}};
+
+% ===== ROW 1: CORE CLASSES =====
+% User Management (Top Left)
+\node[abstract] (user) at (-12,9) {
+    \textbf{User}\\
+    \hrule
+    -id: String\\
+    -email: String\\
+    -role: UserRole\\
+    \hrule
+    +authenticate()\\
+    +updateProfile()
+};
+
+% Algorithm Base (Top Center)
+\node[abstract] (algorithm) at (-4,9) {
+    \textbf{Algorithm}\\
+    \hrule
+    -name: String\\
+    -category: String\\
+    -complexity: String\\
+    \hrule
+    +execute()\\
+    +reset()
+};
+
+% Visualizer Base (Top Right)
+\node[abstract] (visualizer) at (4,9) {
+    \textbf{Visualizer}\\
+    \hrule
+    -canvas: Canvas\\
+    -speed: Integer\\
+    -isPlaying: Boolean\\
+    \hrule
+    +play()\\
+    +pause()\\
+    +render()
+};
+
+% Data Structure Base (Far Right)
+\node[abstract] (datastructure) at (12,9) {
+    \textbf{DataStructure}\\
+    \hrule
+    -size: Integer\\
+    \hrule
+    +isEmpty()\\
+    +clear()
+};
+
+% ===== ROW 2: USER IMPLEMENTATIONS =====
+\node[class] (student) at (-14,6) {
+    \textbf{Student}\\
+    \hrule
+    -studentId: String\\
+    -level: Level\\
+    \hrule
+    +viewProgress()\\
+    +joinDiscussion()
+};
+
+\node[class] (teacher) at (-10,6) {
+    \textbf{Teacher}\\
+    \hrule
+    -teacherId: String\\
+    \hrule
+    +createAssignment()\\
+    +monitorStudent()
+};
+
+% ===== ROW 2: ALGORITHM IMPLEMENTATIONS =====
+\node[class] (sorting) at (-6,6) {
+    \textbf{SortingAlgorithm}\\
+    \hrule
+    -array: Number[]\\
+    -comparisons: Integer\\
+    \hrule
+    +sort()\\
+    +swap()
+};
+
+\node[class] (graph) at (-2,6) {
+    \textbf{GraphAlgorithm}\\
+    \hrule
+    -graph: Graph\\
+    \hrule
+    +findPath()\\
+    +traverse()
+};
+
+% ===== ROW 2: VISUALIZER IMPLEMENTATIONS =====
+\node[class] (sortvis) at (2,6) {
+    \textbf{SortingVisualizer}\\
+    \hrule
+    -bars: Bar[]\\
+    \hrule
+    +renderArray()\\
+    +highlightBars()
+};
+
+\node[class] (graphvis) at (6,6) {
+    \textbf{GraphVisualizer}\\
+    \hrule
+    -vertices: Vertex[]\\
+    \hrule
+    +renderGraph()\\
+    +highlightPath()
+};
+
+% ===== ROW 2: DATA STRUCTURE IMPLEMENTATIONS =====
+\node[class] (stack) at (10,6) {
+    \textbf{Stack}\\
+    \hrule
+    -elements: Array\\
+    -top: Integer\\
+    \hrule
+    +push()\\
+    +pop()
+};
+
+\node[class] (queue) at (14,6) {
+    \textbf{Queue}\\
+    \hrule
+    -front: Integer\\
+    -rear: Integer\\
+    \hrule
+    +enqueue()\\
+    +dequeue()
+};
+
+% ===== ROW 3: SPECIFIC ALGORITHMS =====
+\node[class] (quicksort) at (-8,3) {
+    \textbf{QuickSort}\\
+    \hrule
+    +partition()\\
+    +quickSort()
+};
+
+\node[class] (mergesort) at (-4,3) {
+    \textbf{MergeSort}\\
+    \hrule
+    +merge()\\
+    +mergeSort()
+};
+
+\node[class] (dijkstra) at (0,3) {
+    \textbf{DijkstraAlgorithm}\\
+    \hrule
+    +findShortestPath()\\
+    +relaxEdge()
+};
+
+% ===== ROW 3: UI COMPONENTS =====
+\node[class] (controlpanel) at (4,3) {
+    \textbf{ControlPanel}\\
+    \hrule
+    -playButton: Button\\
+    -speedSlider: Slider\\
+    \hrule
+    +onPlay()\\
+    +onSpeedChange()
+};
+
+\node[class] (inputpanel) at (8,3) {
+    \textbf{InputPanel}\\
+    \hrule
+    -inputField: Field\\
+    \hrule
+    +validateInput()\\
+    +generateRandom()
+};
+
+% ===== ROW 4: SUPPORTING CLASSES =====
+\node[class] (assignment) at (-10,0) {
+    \textbf{Assignment}\\
+    \hrule
+    -title: String\\
+    -dueDate: Date\\
+    \hrule
+    +create()\\
+    +submit()
+};
+
+\node[class] (lesson) at (-6,0) {
+    \textbf{Lesson}\\
+    \hrule
+    -content: String\\
+    -algorithm: Algorithm\\
+    \hrule
+    +viewContent()
+};
+
+\node[class] (progress) at (-2,0) {
+    \textbf{Progress}\\
+    \hrule
+    -completedSteps: Integer\\
+    -score: Integer\\
+    \hrule
+    +updateProgress()\\
+    +calculateScore()
+};
+
+\node[class] (performance) at (2,0) {
+    \textbf{PerformanceTracker}\\
+    \hrule
+    -startTime: Long\\
+    -stepCount: Integer\\
+    \hrule
+    +startTracking()\\
+    +getReport()
+};
+
+% ===== INHERITANCE RELATIONSHIPS =====
+% User inheritance
+\draw[inheritance] (student) -- (user);
+\draw[inheritance] (teacher) -- (user);
+
+% Algorithm inheritance
+\draw[inheritance] (sorting) -- (algorithm);
+\draw[inheritance] (graph) -- (algorithm);
+\draw[inheritance] (quicksort) -- (sorting);
+\draw[inheritance] (mergesort) -- (sorting);
+\draw[inheritance] (dijkstra) -- (graph);
+
+% Visualizer inheritance
+\draw[inheritance] (sortvis) -- (visualizer);
+\draw[inheritance] (graphvis) -- (visualizer);
+
+% Data structure inheritance
+\draw[inheritance] (stack) -- (datastructure);
+\draw[inheritance] (queue) -- (datastructure);
+
+% ===== ASSOCIATION RELATIONSHIPS =====
+% Visualizer associations (simplified)
+\draw[association] (sortvis) -- (sorting);
+\draw[association] (graphvis) -- (dijkstra);
+
+% UI associations
+\draw[association] (controlpanel) -- (visualizer);
+\draw[association] (inputpanel) -- (datastructure);
+
+% Learning associations
+\draw[association] (assignment) -- (student);
+\draw[association] (teacher) -- (assignment);
+\draw[association] (lesson) -- (algorithm);
+\draw[association] (progress) -- (student);
+\draw[association] (performance) -- (algorithm);
+    -adminId: String\\
+    -permissions: List\\
+    \hrule
+    +manageUsers()\\
+    +systemAnalytics()\\
+    +manageContent()\\
+    +configureSystem()
+};
+
+% Algorithm Management Classes
+\node[class] (algorithm) at (-3,7) {
+    \textbf{Algorithm}\\
+    \hrule
+    -id: String\\
+    -name: String\\
+    -category: Category\\
+    -complexity: Complexity\\
+    -description: String\\
+    -code: Map\\
+    \hrule
+    +execute()\\
+    +getSteps()\\
+    +compare()\\
+    +generateCode()
+};
+
+\node[class] (visualization) at (-3,4) {
+    \textbf{Visualization}\\
+    \hrule
+    -id: String\\
+    -algorithmId: String\\
+    -type: VisType\\
+    -data: Array\\
+    -currentStep: Integer\\
+    -isPlaying: Boolean\\
+    \hrule
+    +play()\\
+    +pause()\\
+    +stepForward()\\
+    +stepBackward()\\
+    +reset()
+};
+
+\node[class] (animationStep) at (-3,1) {
+    \textbf{AnimationStep}\\
+    \hrule
+    -stepId: String\\
+    -visualizationId: String\\
+    -sequence: Integer\\
+    -action: String\\
+    -elements: List\\
+    -description: String\\
+    \hrule
+    +execute()\\
+    +getDescription()\\
+    +highlight()
+};
+
+% Learning System Classes
+\node[class] (aiAssistant) at (2,7) {
+    \textbf{AIAssistant}\\
+    \hrule
+    -sessionId: String\\
+    -userId: String\\
+    -context: String\\
+    -language: String\\
+    \hrule
+    +generateExplanation()\\
+    +provideHints()\\
+    +optimizeCode()\\
+    +answerQuestions()
+};
+
+\node[class] (lesson) at (2,4) {
+    \textbf{Lesson}\\
+    \hrule
+    -lessonId: String\\
+    -title: String\\
+    -content: String\\
+    -algorithmIds: List\\
+    -difficulty: Level\\
+    -createdBy: String\\
+    \hrule
+    +getContent()\\
+    +addAlgorithm()\\
+    +updateDifficulty()
+};
+
+\node[class] (exercise) at (2,1) {
+    \textbf{Exercise}\\
+    \hrule
+    -exerciseId: String\\
+    -lessonId: String\\
+    -question: String\\
+    -expectedOutput: String\\
+    -testCases: List\\
+    \hrule
+    +validateSolution()\\
+    +getHint()\\
+    +submitAnswer()
+};
+
+% Community Classes
+\node[class] (discussion) at (7,7) {
+    \textbf{Discussion}\\
+    \hrule
+    -discussionId: String\\
+    -title: String\\
+    -algorithmId: String\\
+    -authorId: String\\
+    -content: String\\
+    -createdAt: Date\\
+    \hrule
+    +addComment()\\
+    +upvote()\\
+    +markSolved()
+};
+
+\node[class] (comment) at (7,4) {
+    \textbf{Comment}\\
+    \hrule
+    -commentId: String\\
+    -discussionId: String\\
+    -authorId: String\\
+    -content: String\\
+    -parentId: String\\
+    \hrule
+    +reply()\\
+    +edit()\\
+    +delete()
+};
+
+\node[class] (progress) at (7,1) {
+    \textbf{Progress}\\
+    \hrule
+    -progressId: String\\
+    -userId: String\\
+    -algorithmId: String\\
+    -completedSteps: Integer\\
+    -totalSteps: Integer\\
+    -score: Integer\\
+    \hrule
+    +updateProgress()\\
+    +calculateScore()\\
+    +getCompletion()
+};
+
+% Performance Classes
+\node[class] (performanceTest) at (7,-2) {
+    \textbf{PerformanceTest}\\
+    \hrule
+    -testId: String\\
+    -algorithmId: String\\
+    -inputSize: Integer\\
+    -executionTime: Long\\
+    -memoryUsage: Long\\
+    \hrule
+    +runTest()\\
+    +compareResults()\\
+    +generateReport()
+};
+
+% Inheritance relationships
+\draw[inheritance] (student) -- (user);
+\draw[inheritance] (teacher) -- (user);
+\draw[inheritance] (admin) -- (user);
+
+% Core Algorithm relationships
+\draw[association] (algorithm) -- (visualization) node[midway,right] {1..*};
+\draw[association] (visualization) -- (animationStep) node[midway,right] {1..*};
+\draw[composition] (lesson) -- (algorithm) node[midway,above] {contains};
+
+% User interactions
+\draw[association] (student) -- (progress) node[midway,above] {tracks};
+\draw[association] (student) -- (aiAssistant) node[midway,above] {uses};
+\draw[association] (student) -- (discussion) node[midway,above] {participates};
+
+% Teacher relationships
+\draw[association] (teacher) -- (lesson) node[midway,above] {creates};
+\draw[association] (teacher) -- (exercise) node[midway,above] {assigns};
+
+% Community relationships
+\draw[association] (discussion) -- (comment) node[midway,right] {1..*};
+\draw[association] (user) -- (comment) node[midway,below] {authors};
+
+% Performance monitoring
+\draw[association] (algorithm) -- (performanceTest) node[midway,below] {tested by};
+\draw[association] (student) -- (performanceTest) node[midway,below] {runs};
+
+\end{tikzpicture}
+\end{document}

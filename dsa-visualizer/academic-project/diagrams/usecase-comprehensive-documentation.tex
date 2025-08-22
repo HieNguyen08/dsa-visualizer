@@ -1,0 +1,911 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+
+% Page setup
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{DSA Visualizer Platform}
+\fancyhead[R]{Use Case Documentation}
+\fancyfoot[C]{\thepage}
+
+% Colors
+\definecolor{primaryblue}{RGB}{24,144,255}
+\definecolor{lightblue}{RGB}{240,249,255}
+\definecolor{successgreen}{RGB}{82,196,26}
+\definecolor{warningorange}{RGB}{250,173,20}
+\definecolor{errorred}{RGB}{255,77,79}
+
+% Title formatting
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{primaryblue}}{\thesubsection}{1em}{}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={DSA Visualizer - Use Case Documentation},
+    pdfauthor={DSA Visualizer Team},
+    pdfsubject={Detailed Use Case Scenarios and Specifications}
+}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Huge\bfseries DSA Visualizer Platform}
+    
+    \vspace{0.5cm}
+    {\Large\textcolor{primaryblue}{Comprehensive Use Case Documentation}}
+    
+    \vspace{1.5cm}
+    {\large Detailed Scenarios and Process Specifications}
+    
+    \vspace{2cm}
+    \includegraphics[width=0.3\textwidth]{algorithm-icon.png}
+    
+    \vfill
+    
+    {\large
+    \textbf{Academic Project Documentation}\\
+    \vspace{0.3cm}
+    Data Structures and Algorithms Visualization\\
+    Interactive Learning Platform\\
+    }
+    
+    \vspace{1cm}
+    {\large Version 1.0 - December 2024}
+    
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+\subsection{Project Overview}
+The DSA Visualizer Platform is an innovative educational system designed to enhance the learning experience of Data Structures and Algorithms through interactive visualization, comprehensive learning modules, and AI-assisted guidance. This document provides detailed use case scenarios and specifications that define the functional requirements and user interactions within the system.
+
+\subsection{Document Purpose}
+This documentation serves as a comprehensive reference for:
+\begin{itemize}
+    \item Detailed use case scenarios for each system module
+    \item Process specifications and workflow definitions
+    \item Exception handling and alternative flows
+    \item Actor interactions and system boundaries
+    \item Quality assurance and testing requirements
+\end{itemize}
+
+\subsection{System Architecture Overview}
+The platform consists of 10 major modules:
+\begin{enumerate}
+    \item User Management System
+    \item Algorithm Management Engine
+    \item Visualization Engine
+    \item Learning Management System
+    \item AI Assistant Integration
+    \item Performance Tracking Module
+    \item Collaboration Platform
+    \item Content Management System
+    \item External API Integration
+    \item Database Management Layer
+\end{enumerate}
+
+\section{Use Case System Overview}
+
+\subsection{System Actors}
+\begin{table}[H]
+\centering
+\caption{System Actors and Roles}
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor{lightblue}
+\textbf{Actor} & \textbf{Description} & \textbf{Type} \\
+\hline
+Guest User & Unregistered visitor exploring the platform & Primary \\
+\hline
+Student & Registered learner accessing educational content & Primary \\
+\hline
+Teacher & Educator creating and managing learning content & Primary \\
+\hline
+System Admin & Administrator managing system operations & Primary \\
+\hline
+External System & Third-party services and APIs & Secondary \\
+\hline
+AI Assistant & Intelligent tutoring and assistance system & Secondary \\
+\hline
+Assessment Engine & Automated evaluation and testing system & Secondary \\
+\hline
+Progress Tracker & Learning analytics and progress monitoring & Secondary \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Main System Use Cases}
+\begin{table}[H]
+\centering
+\caption{Primary System Use Cases}
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor{lightblue}
+\textbf{Use Case ID} & \textbf{Use Case Name} & \textbf{Priority} \\
+\hline
+UC-001 & User Registration and Authentication & High \\
+\hline
+UC-002 & Algorithm Learning Process & High \\
+\hline
+UC-003 & Interactive Visualization & High \\
+\hline
+UC-004 & Assessment and Evaluation & High \\
+\hline
+UC-005 & Progress Tracking and Analytics & Medium \\
+\hline
+UC-006 & Collaborative Learning & Medium \\
+\hline
+UC-007 & Content Management & Medium \\
+\hline
+UC-008 & AI-Assisted Learning & Medium \\
+\hline
+UC-009 & System Administration & Low \\
+\hline
+UC-010 & External API Integration & Low \\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Detailed Use Case Scenarios}
+
+\subsection{Algorithm Learning Process Module}
+
+\subsubsection{Use Case: UC-002-01 - Start Learning Session}
+
+\begin{longtable}{|p{3cm}|p{12cm}|}
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{\textbf{Use Case Specification: Start Learning Session}} \\
+\hline
+\textbf{Use Case ID} & UC-002-01 \\
+\hline
+\textbf{Use Case Name} & Start Learning Session \\
+\hline
+\textbf{Description} & Student initiates a new learning session to study algorithms with personalized settings and preferences \\
+\hline
+\textbf{Primary Actor} & Student \\
+\hline
+\textbf{Supporting Actors} & Progress Tracker, Learning Management System \\
+\hline
+\textbf{Preconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item User is registered and logged in
+    \item System is operational and accessible
+    \item User profile exists with learning preferences
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Main Success Scenario} & 
+\begin{minipage}[t]{\linewidth}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Student logs into the platform
+    \item System displays personalized dashboard
+    \item Student clicks "Start New Learning Session"
+    \item System loads user preferences and learning history
+    \item System presents available learning paths and algorithms
+    \item Student selects learning mode (Guided/Self-paced)
+    \item System configures session parameters
+    \item System creates new learning session record
+    \item Student proceeds to algorithm selection
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Alternative Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Alt 2a: Resume Previous Session}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[2a.1] Student selects "Resume Session" option
+    \item[2a.2] System displays saved session list
+    \item[2a.3] Student chooses session to resume
+    \item[2a.4] System restores session state and progress
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Exception Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Ex 1: System Unavailable}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System displays maintenance message
+    \item[2.] User is redirected to offline resources
+\end{enumerate}
+\textbf{Ex 2: Authentication Failure}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System prompts for re-authentication
+    \item[2.] Failed attempts trigger account security measures
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Postconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item New learning session is created and active
+    \item Session parameters are configured and saved
+    \item User progress tracking is initialized
+    \item System is ready for algorithm selection
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Business Rules} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Maximum 5 concurrent sessions per user
+    \item Session auto-saves every 2 minutes
+    \item Inactive sessions expire after 30 minutes
+    \item Guest users limited to 3 daily sessions
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Quality Requirements} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Session creation response time < 2 seconds
+    \item 99.9\% availability during peak hours
+    \item Data persistence across browser sessions
+    \item Responsive design for mobile devices
+\end{itemize}
+\end{minipage} \\
+\hline
+\end{longtable}
+
+\subsubsection{Use Case: UC-002-02 - Select Algorithm to Learn}
+
+\begin{longtable}{|p{3cm}|p{12cm}|}
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{\textbf{Use Case Specification: Select Algorithm to Learn}} \\
+\hline
+\textbf{Use Case ID} & UC-002-02 \\
+\hline
+\textbf{Use Case Name} & Select Algorithm to Learn \\
+\hline
+\textbf{Description} & Student browses and selects a specific algorithm from the comprehensive algorithm library for focused learning \\
+\hline
+\textbf{Primary Actor} & Student \\
+\hline
+\textbf{Supporting Actors} & Algorithm Management Engine, Recommendation System \\
+\hline
+\textbf{Preconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Learning session is active
+    \item Algorithm library is accessible
+    \item User has appropriate permissions
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Main Success Scenario} & 
+\begin{minipage}[t]{\linewidth}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item System displays algorithm library interface
+    \item Student browses algorithms by category (Sorting, Searching, Graph, etc.)
+    \item System shows algorithm details: complexity, difficulty, prerequisites
+    \item Student filters algorithms by difficulty level or topic
+    \item System provides personalized recommendations
+    \item Student selects desired algorithm
+    \item System loads algorithm overview and learning materials
+    \item System updates learning path and progress tracking
+    \item Student proceeds to theory study phase
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Alternative Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Alt 3a: Search by Algorithm Name}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[3a.1] Student uses search function
+    \item[3a.2] System filters algorithms by search terms
+    \item[3a.3] Student selects from search results
+\end{enumerate}
+\textbf{Alt 5a: Follow Recommended Learning Path}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[5a.1] Student chooses "Follow Recommendations"
+    \item[5a.2] System presents adaptive learning sequence
+    \item[5a.3] Student confirms or modifies the path
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Exception Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Ex 1: Algorithm Unavailable}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System displays "Coming Soon" message
+    \item[2.] Alternative algorithms are suggested
+\end{enumerate}
+\textbf{Ex 2: Insufficient Prerequisites}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System shows prerequisite warning
+    \item[2.] Student can proceed with caution or study prerequisites
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Postconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Algorithm is selected and loaded
+    \item Learning materials are prepared
+    \item Progress tracking is updated
+    \item Theory study phase is ready to begin
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Business Rules} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Premium algorithms require subscription
+    \item Advanced algorithms require prerequisite completion
+    \item Algorithm difficulty scales with user level
+    \item Personalized recommendations update based on performance
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Quality Requirements} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Algorithm loading time < 3 seconds
+    \item Search response time < 1 second
+    \item Library updates without service interruption
+    \item Cross-platform compatibility maintained
+\end{itemize}
+\end{minipage} \\
+\hline
+\end{longtable}
+
+\subsubsection{Use Case: UC-002-03 - Study Algorithm Theory}
+
+\begin{longtable}{|p{3cm}|p{12cm}|}
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{\textbf{Use Case Specification: Study Algorithm Theory}} \\
+\hline
+\textbf{Use Case ID} & UC-002-03 \\
+\hline
+\textbf{Use Case Name} & Study Algorithm Theory \\
+\hline
+\textbf{Description} & Student engages with comprehensive theoretical materials including explanations, examples, and interactive demonstrations \\
+\hline
+\textbf{Primary Actor} & Student \\
+\hline
+\textbf{Supporting Actors} & Content Management System, AI Assistant \\
+\hline
+\textbf{Preconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Algorithm is selected and loaded
+    \item Learning materials are available
+    \item User has study permissions
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Main Success Scenario} & 
+\begin{minipage}[t]{\linewidth}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item System presents algorithm theory overview
+    \item Student reads algorithm description and purpose
+    \item System displays step-by-step algorithm explanation
+    \item Student views time and space complexity analysis
+    \item System provides interactive examples with small datasets
+    \item Student explores algorithm variations and optimizations
+    \item System presents real-world applications and use cases
+    \item Student takes notes and bookmarks important concepts
+    \item Student indicates theory study completion
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Alternative Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Alt 4a: Request AI Explanation}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[4a.1] Student asks AI assistant for clarification
+    \item[4a.2] AI provides personalized explanation
+    \item[4a.3] Student can ask follow-up questions
+\end{enumerate}
+\textbf{Alt 6a: Compare with Other Algorithms}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[6a.1] Student selects comparison feature
+    \item[6a.2] System shows side-by-side algorithm comparison
+    \item[6a.3] Student analyzes differences and trade-offs
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Exception Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Ex 1: Content Loading Error}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System displays error message
+    \item[2.] Cached content is provided if available
+    \item[3.] User can retry or proceed to next section
+\end{enumerate}
+\textbf{Ex 2: AI Assistant Unavailable}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System shows alternative help resources
+    \item[2.] FAQ and documentation links are provided
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Postconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Theory study is marked as completed
+    \item Learning progress is updated
+    \item Notes and bookmarks are saved
+    \item Student is ready for visualization practice
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Business Rules} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Minimum 80\% content engagement required
+    \item Theory completion unlocks practice modes
+    \item Study time is tracked for analytics
+    \item Notes are automatically synchronized
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Quality Requirements} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Content loads within 2 seconds
+    \item Interactive elements respond immediately
+    \item Offline content availability for core materials
+    \item Multi-language support for international users
+\end{itemize}
+\end{minipage} \\
+\hline
+\end{longtable}
+
+\subsection{Visualization Process Module}
+
+\subsubsection{Use Case: UC-003-01 - Practice with Visualization}
+
+\begin{longtable}{|p{3cm}|p{12cm}|}
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{\textbf{Use Case Specification: Practice with Visualization}} \\
+\hline
+\textbf{Use Case ID} & UC-003-01 \\
+\hline
+\textbf{Use Case Name} & Practice with Visualization \\
+\hline
+\textbf{Description} & Student engages with interactive algorithm visualization to understand step-by-step execution and data transformations \\
+\hline
+\textbf{Primary Actor} & Student \\
+\hline
+\textbf{Supporting Actors} & Visualization Engine, Performance Monitor \\
+\hline
+\textbf{Preconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Algorithm theory study is completed
+    \item Visualization engine is operational
+    \item Browser supports required graphics capabilities
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Main Success Scenario} & 
+\begin{minipage}[t]{\linewidth}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item System loads visualization interface
+    \item Student configures input parameters (array size, data range)
+    \item System generates or accepts custom input data
+    \item Student initiates algorithm execution
+    \item Visualization displays step-by-step algorithm progression
+    \item Student controls animation speed and playback
+    \item System highlights current operations and data changes
+    \item Student can pause, step forward/backward through execution
+    \item System displays complexity metrics in real-time
+    \item Student completes visualization practice successfully
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Alternative Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Alt 3a: Custom Input Data}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[3a.1] Student selects "Custom Input" option
+    \item[3a.2] Student enters specific data values
+    \item[3a.3] System validates input format and constraints
+    \item[3a.4] Visualization proceeds with custom data
+\end{enumerate}
+\textbf{Alt 8a: Step-by-Step Mode}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[8a.1] Student enables manual stepping mode
+    \item[8a.2] Each step requires explicit user action
+    \item[8a.3] Detailed explanations shown for each step
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Exception Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Ex 1: Visualization Performance Issues}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System detects performance degradation
+    \item[2.] Automatic quality adjustment is applied
+    \item[3.] User is notified of optimization
+\end{enumerate}
+\textbf{Ex 2: Input Data Validation Failure}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System displays validation error message
+    \item[2.] Suggested corrections are provided
+    \item[3.] User can modify input or use defaults
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Postconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Visualization session is completed
+    \item Practice progress is recorded
+    \item Performance metrics are saved
+    \item Student understanding is assessed
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Business Rules} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Maximum input size based on user tier
+    \item Visualization sessions limited to 15 minutes
+    \item Practice completion unlocks advanced features
+    \item Performance data used for adaptive learning
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Quality Requirements} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Smooth animation at 30+ FPS
+    \item Responsive controls with < 100ms latency
+    \item Scalable visualization for different screen sizes
+    \item Memory efficient for large datasets
+\end{itemize}
+\end{minipage} \\
+\hline
+\end{longtable}
+
+\section{Assessment Process Module}
+
+\subsection{Use Case: UC-004-01 - Take Assessment Quiz}
+
+\begin{longtable}{|p{3cm}|p{12cm}|}
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{\textbf{Use Case Specification: Take Assessment Quiz}} \\
+\hline
+\textbf{Use Case ID} & UC-004-01 \\
+\hline
+\textbf{Use Case Name} & Take Assessment Quiz \\
+\hline
+\textbf{Description} & Student completes a comprehensive assessment quiz to evaluate understanding and knowledge retention of studied algorithms \\
+\hline
+\textbf{Primary Actor} & Student \\
+\hline
+\textbf{Supporting Actors} & Assessment Engine, Progress Tracker \\
+\hline
+\textbf{Preconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Theory study and visualization practice completed
+    \item Assessment module is accessible
+    \item Stable internet connection for timed assessments
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Main Success Scenario} & 
+\begin{minipage}[t]{\linewidth}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item System presents available assessment options
+    \item Student selects quiz type (Quick Check, Comprehensive, Timed)
+    \item System displays quiz instructions and time limits
+    \item Student starts the assessment quiz
+    \item System presents questions sequentially or in overview
+    \item Student answers multiple choice, coding, and analytical questions
+    \item System auto-saves responses periodically
+    \item Student reviews answers before final submission
+    \item System submits quiz and processes results
+    \item Student receives immediate feedback and scoring
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Alternative Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Alt 2a: Practice Mode Assessment}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[2a.1] Student selects "Practice Mode"
+    \item[2a.2] No time limits or grade recording
+    \item[2a.3] Immediate feedback after each question
+    \item[2a.4] Option to retake unlimited times
+\end{enumerate}
+\textbf{Alt 6a: Coding Challenge Response}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[6a.1] Student encounters coding question
+    \item[6a.2] Code editor interface is presented
+    \item[6a.3] Student writes and tests code solution
+    \item[6a.4] System validates code execution and correctness
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Exception Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Ex 1: Time Limit Exceeded}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System automatically submits current responses
+    \item[2.] Partial credit is awarded for completed sections
+    \item[3.] Student receives time management feedback
+\end{enumerate}
+\textbf{Ex 2: Connection Loss During Quiz}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] System detects disconnection
+    \item[2.] Auto-saved responses are preserved
+    \item[3.] Student can resume from last saved state
+\end{enumerate}
+\textbf{Ex 3: System Error During Submission}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] Error message is displayed to student
+    \item[2.] Responses are cached locally
+    \item[3.] Retry mechanism attempts resubmission
+    \item[4.] Manual intervention available if needed
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Postconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Quiz is completed and submitted
+    \item Results are calculated and stored
+    \item Performance metrics are updated
+    \item Feedback and recommendations are generated
+    \item Learning progress is advanced
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Business Rules} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Minimum 70\% score required to pass
+    \item Maximum 3 attempts per assessment
+    \item Retake cooldown period of 24 hours
+    \item Higher scores override previous attempts
+    \item Proctoring required for certification assessments
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Quality Requirements} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Question loading time < 1 second
+    \item Auto-save frequency every 30 seconds
+    \item 99.9\% uptime during assessment periods
+    \item Secure submission with data integrity verification
+    \item Accessibility compliance for disabled users
+\end{itemize}
+\end{minipage} \\
+\hline
+\end{longtable}
+
+\section{Collaboration Process Module}
+
+\subsection{Use Case: UC-006-01 - Join Algorithm Discussion}
+
+\begin{longtable}{|p{3cm}|p{12cm}|}
+\hline
+\rowcolor{lightblue}
+\multicolumn{2}{|c|}{\textbf{Use Case Specification: Join Algorithm Discussion}} \\
+\hline
+\textbf{Use Case ID} & UC-006-01 \\
+\hline
+\textbf{Use Case Name} & Join Algorithm Discussion \\
+\hline
+\textbf{Description} & Student participates in community discussions about specific algorithms, sharing insights and learning from peers \\
+\hline
+\textbf{Primary Actor} & Student \\
+\hline
+\textbf{Supporting Actors} & Community Platform, Moderation System \\
+\hline
+\textbf{Preconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item User account is active and verified
+    \item Community guidelines are acknowledged
+    \item Relevant algorithm content is studied
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Main Success Scenario} & 
+\begin{minipage}[t]{\linewidth}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Student accesses community discussion forum
+    \item System displays algorithm-specific discussion threads
+    \item Student selects relevant discussion topic
+    \item System shows thread history and participants
+    \item Student reads existing posts and responses
+    \item Student composes thoughtful contribution or question
+    \item System posts message to discussion thread
+    \item Other community members respond and engage
+    \item Student continues meaningful dialogue
+    \item Discussion contributes to collective learning
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Alternative Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Alt 2a: Create New Discussion Thread}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[2a.1] Student clicks "Start New Discussion"
+    \item[2a.2] System presents thread creation interface
+    \item[2a.3] Student provides title, description, and tags
+    \item[2a.4] System creates new thread and notifies relevant users
+\end{enumerate}
+\textbf{Alt 6a: Share Code Solution}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[6a.1] Student includes code snippet in post
+    \item[6a.2] System formats code with syntax highlighting
+    \item[6a.3] Code execution and testing options available
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Exception Flows} & 
+\begin{minipage}[t]{\linewidth}
+\textbf{Ex 1: Inappropriate Content Detection}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] Automated moderation flags content
+    \item[2.] Post is held for manual review
+    \item[3.] User receives notification about policy violation
+\end{enumerate}
+\textbf{Ex 2: Spam or Low-Quality Posts}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=0pt]
+    \item[1.] Community reporting system activates
+    \item[2.] Post visibility is reduced pending review
+    \item[3.] User receives feedback on post quality
+\end{enumerate}
+\end{minipage} \\
+\hline
+\textbf{Postconditions} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Discussion participation is recorded
+    \item Community reputation points are awarded
+    \item Knowledge sharing objectives are met
+    \item Peer learning network is strengthened
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Business Rules} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Posts must be relevant to algorithm topics
+    \item Constructive and respectful tone required
+    \item No homework solutions without explanation
+    \item Credit and references must be provided for external content
+    \item Moderator intervention for guideline violations
+\end{itemize}
+\end{minipage} \\
+\hline
+\textbf{Quality Requirements} & 
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Real-time messaging with < 500ms latency
+    \item Threaded discussion organization
+    \item Search functionality across all discussions
+    \item Mobile-responsive discussion interface
+    \item Integration with learning progress tracking
+\end{itemize}
+\end{minipage} \\
+\hline
+\end{longtable}
+
+\section{Quality Assurance and Testing}
+
+\subsection{Testing Scenarios}
+
+\begin{table}[H]
+\centering
+\caption{Critical Testing Scenarios}
+\begin{tabularx}{\textwidth}{|l|X|l|l|}
+\hline
+\rowcolor{lightblue}
+\textbf{Test ID} & \textbf{Test Scenario} & \textbf{Priority} & \textbf{Status} \\
+\hline
+TS-001 & User registration and authentication flow & High & Planned \\
+\hline
+TS-002 & Algorithm visualization performance under load & High & Planned \\
+\hline
+TS-003 & Assessment submission during network interruption & High & Planned \\
+\hline
+TS-004 & Multi-user collaboration features & Medium & Planned \\
+\hline
+TS-005 & AI assistant response accuracy & Medium & Planned \\
+\hline
+TS-006 & Mobile device compatibility & Medium & Planned \\
+\hline
+TS-007 & Data persistence across sessions & Medium & Planned \\
+\hline
+TS-008 & Security and privacy compliance & High & Planned \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Performance Criteria}
+
+\begin{table}[H]
+\centering
+\caption{System Performance Requirements}
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor{lightblue}
+\textbf{Metric} & \textbf{Requirement} & \textbf{Measurement Method} \\
+\hline
+Page Load Time & < 3 seconds for 95\% of requests & Automated monitoring \\
+\hline
+Visualization Response & < 100ms interaction latency & User experience testing \\
+\hline
+Concurrent Users & 1000+ simultaneous users & Load testing \\
+\hline
+System Availability & 99.9\% uptime & Continuous monitoring \\
+\hline
+Data Accuracy & 100\% correctness in calculations & Unit and integration testing \\
+\hline
+Security Compliance & Zero critical vulnerabilities & Security auditing \\
+\hline
+\end{tabularx}
+\end{table}
+
+\section{Conclusion}
+
+This comprehensive use case documentation provides the foundational specifications for the DSA Visualizer Platform development and testing phases. Each use case has been detailed with specific scenarios, alternative flows, exception handling, and quality requirements to ensure robust system implementation.
+
+The modular approach to use case design allows for iterative development and testing, ensuring that each component meets the specified requirements before integration with the complete system. Regular review and updates of these specifications will be necessary as the platform evolves and user feedback is incorporated.
+
+\subsection{Future Enhancements}
+
+Planned extensions to the current use case specifications include:
+\begin{itemize}
+    \item Advanced AI tutoring capabilities
+    \item VR/AR visualization modes
+    \item Industry partnership integrations
+    \item Advanced analytics and learning insights
+    \item Gamification and achievement systems
+\end{itemize}
+
+\subsection{Maintenance and Updates}
+
+This document will be maintained and updated regularly to reflect:
+\begin{itemize}
+    \item System requirement changes
+    \item User feedback incorporation
+    \item Technology stack updates
+    \item Regulatory compliance requirements
+    \item Performance optimization needs
+\end{itemize}
+
+\end{document}

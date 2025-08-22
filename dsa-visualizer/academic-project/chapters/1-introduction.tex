@@ -1,0 +1,178 @@
+\chapter{GIỚI THIỆU HỆ THỐNG}
+\label{ch:introduction}
+
+\section{Giới thiệu đề tài}
+\label{sec:intro-topic}
+
+\subsection{Bối cảnh đề tài}
+\label{subsec:context}
+
+Trong thời đại công nghệ số phát triển mạnh mẽ, việc học tập và giảng dạy các cấu trúc dữ liệu và thuật toán (Data Structures and Algorithms - DSA) đóng vai trò vô cùng quan trọng trong ngành khoa học máy tính và kỹ thuật phần mềm. Tuy nhiên, việc hiểu và tiếp thu các khái niệm trừu tượng này thường gặp nhiều thách thức đối với sinh viên, đặc biệt là khi các phương pháp giảng dạy truyền thống chủ yếu dựa vào lý thuyết và mô tả bằng lời.
+
+Theo khảo sát của nhiều trường đại học trên thế giới, hơn 60\% sinh viên ngành khoa học máy tính gặp khó khăn trong việc hình dung và hiểu rõ cách thức hoạt động của các cấu trúc dữ liệu phức tạp như cây nhị phân, thuật toán sắp xếp hay các thuật toán đồ thị. Điều này dẫn đến tỷ lệ sinh viên bỏ học cao và hiệu quả học tập kém trong các môn học cốt lõi của chương trình đào tạo.
+
+Nhận thức được tầm quan trọng của việc cải thiện phương pháp học tập DSA, nhiều tổ chức giáo dục và công ty công nghệ đã bắt đầu đầu tư vào các công cụ trực quan hóa và mô phỏng. Những công cụ này không chỉ giúp sinh viên dễ dàng theo dõi từng bước thực hiện của thuật toán mà còn tạo ra trải nghiệm học tập tương tác, sinh động và hấp dẫn hơn.
+
+\subsection{Các Stakeholders của hệ thống}
+\label{subsec:stakeholders}
+
+Hệ thống DSA Visualizer được thiết kế để phục vụ nhiều đối tượng người dùng khác nhau, mỗi nhóm có những nhu cầu và mong đợi riêng biệt:
+
+\textbf{Sinh viên và học sinh:} Đây là nhóm người dùng chính của hệ thống, bao gồm sinh viên các trường đại học, cao đẳng theo học các ngành liên quan đến công nghệ thông tin, khoa học máy tính, và kỹ thuật phần mềm. Ngoài ra, hệ thống cũng hướng đến học sinh trung học phổ thông có định hướng theo học các ngành kỹ thuật trong tương lai.
+
+\textbf{Giảng viên và giáo viên:} Những người có trách nhiệm truyền đạt kiến thức về cấu trúc dữ liệu và thuật toán, từ giảng viên đại học đến giáo viên trung học. Họ cần những công cụ hỗ trợ giảng dạy hiệu quả để có thể minh họa và giải thích các khái niệm phức tạp một cách trực quan và dễ hiểu.
+
+\textbf{Người học tự học:} Những cá nhân muốn tự học và nâng cao kiến thức về lập trình và thuật toán, bao gồm các lập trình viên muốn cải thiện kỹ năng, những người chuyển ngành sang công nghệ thông tin, hoặc các chuyên gia muốn cập nhật kiến thức trong lĩnh vực này.
+
+\textbf{Nhà phát triển giáo dục:} Các tổ chức, công ty chuyên về phát triển nội dung giáo dục trực tuyến, những người quan tâm đến việc tích hợp các công cụ trực quan hóa vào chương trình đào tạo của họ để nâng cao chất lượng giáo dục.
+
+\subsection{Nhu cầu của các đối tượng}
+\label{subsec:needs}
+
+\textbf{Sinh viên và học sinh:} Họ cần một trải nghiệm học tập tương tác với giao diện trực quan, dễ sử dụng, cung cấp đầy đủ thông tin về các cấu trúc dữ liệu và thuật toán cùng với khả năng thực hành thông qua các bài tập mô phỏng. Họ mong muốn có thể điều chỉnh tốc độ thực hiện thuật toán, quan sát từng bước một cách chi tiết, và có thể thử nghiệm với dữ liệu đầu vào khác nhau để hiểu rõ hơn về cách thức hoạt động. Ngoài ra, việc có thể lưu trữ và theo dõi tiến độ học tập cũng là nhu cầu quan trọng đối với họ.
+
+\textbf{Giảng viên và giáo viên:} Với vai trò người truyền đạt kiến thức, họ cần một công cụ giảng dạy hiệu quả giúp minh họa các khái niệm trừu tượng, quản lý và theo dõi tiến độ học tập của sinh viên, tạo ra các bài tập và kịch bản mô phỏng phù hợp với từng chương trình học. Họ muốn có khả năng tùy chỉnh nội dung theo yêu cầu giảng dạy cụ thể và có thể dễ dàng tích hợp vào các hệ thống quản lý học tập hiện có.
+
+\textbf{Người học tự học:} Họ cần một nền tảng học tập linh hoạt với khả năng tự định hướng, cung cấp lộ trình học tập rõ ràng từ cơ bản đến nâng cao, có hệ thống đánh giá và phản hồi để theo dõi tiến độ. Việc có thể truy cập mọi lúc, mọi nơi và học theo tốc độ riêng cũng là yêu cầu quan trọng đối với nhóm này.
+
+\textbf{Nhà phát triển giáo dục:} Họ quan tâm đến khả năng tích hợp và mở rộng của hệ thống, cần có API và tài liệu kỹ thuật chi tiết để có thể kết nối với các nền tảng giáo dục khác. Họ cũng cần có khả năng tùy chỉnh giao diện và nội dung theo thương hiệu và yêu cầu cụ thể của tổ chức.
+
+\subsection{Mục tiêu nghiên cứu}
+\label{subsec:objectives}
+
+\textbf{1. Sinh viên và học sinh:} sẽ được hưởng lợi từ một nền tảng học tập tương tác giúp họ dễ dàng hình dung và hiểu rõ các cấu trúc dữ liệu và thuật toán phức tạp mà trước đây chỉ có thể tiếp cận thông qua lý thuyết khô khan. Họ có thể tương tác trực tiếp với các mô phỏng, quan sát từng bước thực hiện của thuật toán, và thử nghiệm với các dữ liệu khác nhau để hiểu sâu hơn về bản chất của vấn đề. Hệ thống cung cấp môi trường học tập an toàn cho phép họ mắc lỗi và học hỏi từ những sai lầm mà không lo ngại về hậu quả, đồng thời giúp họ xây dựng nền tảng kiến thức vững chắc cho sự nghiệp trong lĩnh vực công nghệ.
+
+\textbf{2. Giảng viên và giáo viên:} sẽ nhận được một công cụ giảng dạy mạnh mẽ giúp họ truyền đạt kiến thức một cách hiệu quả hơn. Thay vì chỉ dựa vào bảng đen và thuyết trình, họ có thể sử dụng các mô phỏng trực quan để minh họa các khái niệm phức tạp, làm cho bài giảng trở nên sinh động và hấp dẫn hơn. Hệ thống cũng cung cấp khả năng theo dõi tiến độ học tập của sinh viên, từ đó có thể điều chỉnh phương pháp giảng dạy cho phù hợp. Điều này không chỉ nâng cao chất lượng giảng dạy mà còn giúp giảng viên tiết kiệm thời gian chuẩn bị bài giảng và tăng cường tương tác với sinh viên.
+
+\textbf{3. Người học tự học:} sẽ có cơ hội tiếp cận một nền tảng học tập chất lượng cao mà không cần phụ thuộc vào lịch trình cố định của các khóa học truyền thống. Họ có thể học theo tốc độ riêng, lặp lại các phần khó hiểu nhiều lần, và có thể truy cập vào kho tài nguyên học tập phong phú bao gồm các ví dụ thực tế, bài tập thực hành, và các kịch bản mô phỏng đa dạng. Hệ thống cũng cung cấp lộ trình học tập có cấu trúc, giúp họ định hướng việc học một cách khoa học và hiệu quả.
+
+\textbf{4. Nhà phát triển giáo dục:} sẽ có một nền tảng mở và linh hoạt để phát triển các sản phẩm giáo dục chất lượng cao. Họ có thể tận dụng các thành phần có sẵn của hệ thống để tạo ra các khóa học trực tuyến, ứng dụng di động, hoặc tích hợp vào các hệ thống quản lý học tập hiện có. Khả năng mở rộng và tùy chỉnh của hệ thống cho phép họ phát triển các sản phẩm đáp ứng nhu cầu cụ thể của từng thị trường và đối tượng khách hàng.
+        \item Trainer các trung tâm đào tạo lập trình
+    \end{itemize}
+    
+    \item \textbf{Quản trị viên (System Administrators)}:
+    \begin{itemize}
+        \item Admin hệ thống
+        \item Moderator cộng đồng
+        \item Content manager
+    \end{itemize}
+\end{enumerate}
+
+\section{Task 1.2: Functional and non-functional requirements}
+\label{sec:requirements}
+
+\subsection{Functional}
+\label{subsec:functional-req}
+
+\textbf{1. Đối với Sinh viên và học sinh:}
+
+\begin{itemize}
+\item \textbf{Truy cập và lựa chọn cấu trúc dữ liệu:} Người dùng có thể dễ dàng truy cập vào danh sách các cấu trúc dữ liệu có sẵn bao gồm Stack, Queue, Linked List, Binary Tree, AVL Tree, và Heap. Hệ thống hiển thị mô tả ngắn gọn và các tính năng chính của từng cấu trúc để giúp người dùng lựa chọn phù hợp với mục đích học tập.
+
+\item \textbf{Mô phỏng thuật toán:} Người dùng có thể chọn các thuật toán cụ thể như sorting (bubble sort, merge sort, quick sort), searching (binary search, linear search), và graph algorithms (Dijkstra, BFS, DFS) để quan sát quá trình thực hiện từng bước một. Hệ thống cung cấp chức năng điều khiển tốc độ mô phỏng, tạm dừng, và từng bước để người dùng có thể theo dõi chi tiết.
+
+\item \textbf{Tương tác với dữ liệu:} Cho phép người dùng nhập dữ liệu tùy chỉnh hoặc sử dụng các bộ dữ liệu mẫu có sẵn để thử nghiệm với các thuật toán khác nhau. Hệ thống hỗ trợ nhiều định dạng đầu vào và cung cấp gợi ý về dữ liệu phù hợp cho từng loại thuật toán.
+
+\item \textbf{Theo dõi tiến độ học tập:} Người dùng có thể xem lại lịch sử các thuật toán đã thực hành trong phần "Lịch sử học tập". Thông tin này bao gồm loại thuật toán, thời gian thực hiện, và kết quả đạt được. Hệ thống cung cấp thống kê chi tiết về tiến độ học tập và đề xuất các chủ đề cần ôn tập.
+
+\item \textbf{Bài tập và thử thách:} Cung cấp các bài tập thực hành với nhiều mức độ khó khăn từ cơ bản đến nâng cao. Người dùng có thể giải quyết các thử thách lập trình và nhận phản hồi tức thì về kết quả của mình.
+\end{itemize}
+
+\textbf{2. Đối với Giảng viên và giáo viên:}
+
+\begin{itemize}
+\item \textbf{Quản lý nội dung giảng dạy:} Cho phép tạo, chỉnh sửa, và xóa các bài học tùy chỉnh bao gồm lý thuyết, ví dụ minh họa, và bài tập thực hành. Giảng viên có thể sắp xếp nội dung theo chương trình học cụ thể và tạo ra các lộ trình học tập có cấu trúc.
+
+\item \textbf{Theo dõi sinh viên:} Hệ thống cung cấp dashboard để giảng viên có thể theo dõi tiến độ học tập của từng sinh viên, xem báo cáo chi tiết về thời gian học tập, kết quả bài tập, và các khó khăn gặp phải. Thông tin này giúp giảng viên điều chỉnh phương pháp giảng dạy cho phù hợp.
+
+\item \textbf{Tạo bài kiểm tra và đánh giá:} Cho phép tạo các bài kiểm tra trực tuyến với câu hỏi đa dạng bao gồm trắc nghiệm, tự luận, và các bài tập thực hành. Hệ thống tự động chấm điểm và cung cấp phản hồi chi tiết cho sinh viên.
+
+\item \textbf{Quản lý lớp học:} Giảng viên có thể tạo và quản lý các lớp học ảo, mời sinh viên tham gia, và phân quyền truy cập vào các tài nguyên học tập cụ thể.
+
+\item \textbf{Báo cáo thống kê:} Hiển thị báo cáo chi tiết về hoạt động học tập của lớp, bao gồm thời gian trung bình hoàn thành bài tập, các thuật toán được quan tâm nhiều nhất, và điểm số trung bình của từng chủ đề.
+\end{itemize}
+
+\textbf{3. Đối với người học tự học:}
+
+\begin{itemize}
+\item \textbf{Lộ trình học tập cá nhân hóa:} Hệ thống cung cấp các lộ trình học tập được thiết kế dựa trên trình độ và mục tiêu của người học. Có thể lựa chọn từ lộ trình cơ bản cho người mới bắt đầu đến nâng cao cho những người có kiến thức nền tảng.
+
+\item \textbf{Hệ thống đánh giá năng lực:} Cung cấp các bài kiểm tra đánh giá trình độ để xác định điểm khởi đầu phù hợp và theo dõi sự tiến bộ trong quá trình học tập.
+
+\item \textbf{Cộng đồng học tập:} Tạo không gian để người học có thể thảo luận, chia sẻ kinh nghiệm, và hỗ trợ lẫn nhau trong quá trình học tập.
+
+\item \textbf{Chứng chỉ và huy hiệu:} Hệ thống cấp chứng chỉ hoàn thành và các huy hiệu thành tích để động viên và ghi nhận nỗ lực học tập của người dùng.
+\end{itemize}
+
+\textbf{4. Đối với nhà phát triển giáo dục:}
+
+\begin{itemize}
+\item \textbf{API tích hợp:} Cung cấp API đầy đủ cho phép tích hợp các thành phần của hệ thống vào các ứng dụng giáo dục khác. API hỗ trợ các chức năng chính như truy cập nội dung, theo dõi tiến độ, và quản lý người dùng.
+
+\item \textbf{Tùy chỉnh giao diện:} Cho phép thay đổi giao diện và thương hiệu của hệ thống để phù hợp với yêu cầu của từng tổ chức. Hỗ trợ white-label solution cho các đối tác giáo dục.
+
+\item \textbf{Phân tích và báo cáo:} Cung cấp công cụ phân tích chi tiết về hành vi người dùng, hiệu quả học tập, và các chỉ số quan trọng khác để hỗ trợ việc cải thiện sản phẩm giáo dục.
+
+\item \textbf{SDK và Documentation:} Cung cấp bộ công cụ phát triển và tài liệu kỹ thuật chi tiết để các nhà phát triển có thể dễ dàng tích hợp và mở rộng hệ thống.
+\end{itemize}
+
+\subsection{Non-functional}
+\label{subsec:non-functional-req}
+
+\textbf{1. Hiệu năng:}
+\begin{itemize}
+\item Ứng dụng web cần được tối ưu để đảm bảo thời gian tải trang dưới 3 giây trên kết nối internet trung bình, tạo trải nghiệm mượt mà cho người dùng khi truy cập các module trực quan hóa.
+\item Hệ thống phải có khả năng xử lý ít nhất 500 người dùng đồng thời thực hiện các mô phỏng thuật toán mà không gặp tình trạng quá tải hoặc sụt giảm hiệu năng đáng kể.
+\item Các animation và mô phỏng phải chạy mượt mà với tốc độ ít nhất 30 FPS để đảm bảo trải nghiệm trực quan tốt nhất.
+\end{itemize}
+
+\textbf{2. Tính sẵn sàng:}
+\begin{itemize}
+\item Hệ thống phải đảm bảo tính sẵn sàng hoạt động 99.5\% thời gian, với khả năng tự động khôi phục trong trường hợp gặp sự cố.
+\item Triển khai cơ chế backup tự động và khả năng failover để đảm bảo dịch vụ không bị gián đoạn trong quá trình học tập và giảng dạy.
+\end{itemize}
+
+\textbf{3. Tính bảo mật:}
+\begin{itemize}
+\item Hệ thống cần triển khai các biện pháp bảo mật toàn diện bao gồm mã hóa HTTPS/TLS cho tất cả dữ liệu truyền tải, đảm bảo an toàn thông tin cá nhân và dữ liệu học tập của người dùng.
+\item Thực hiện xác thực và phân quyền người dùng dựa trên vai trò (Role-Based Access Control) để kiểm soát quyền truy cập và bảo vệ nội dung giáo dục.
+\item Tuân thủ các quy định về bảo vệ dữ liệu cá nhân như GDPR và các chuẩn bảo mật quốc tế.
+\end{itemize}
+
+\textbf{4. Khả năng mở rộng:}
+\begin{itemize}
+\item Hệ thống cần được thiết kế theo kiến trúc microservices và sử dụng container để dễ dàng mở rộng theo chiều ngang khi có nhu cầu tăng số lượng người dùng.
+\item Cơ sở dữ liệu phải hỗ trợ sharding và replication để đảm bảo khả năng mở rộng và hiệu năng khi dữ liệu tăng trưởng.
+\end{itemize}
+
+\textbf{5. Trải nghiệm người dùng:}
+\begin{itemize}
+\item Giao diện người dùng cần được thiết kế responsive, tương thích với nhiều thiết bị từ desktop đến mobile và tablet.
+\item Hỗ trợ đa ngôn ngữ và accessibility để đảm bảo tính bao trùm cho người dùng khuyết tật.
+\item Cung cấp hướng dẫn sử dụng chi tiết và hệ thống help desk để hỗ trợ người dùng khi gặp khó khăn.
+\end{itemize}
+
+\textbf{6. Khả năng tương thích:}
+\begin{itemize}
+\item Hỗ trợ đầy đủ các trình duyệt web phổ biến bao gồm Chrome, Firefox, Safari, và Edge phiên bản mới nhất.
+\item Tương thích với các hệ điều hành khác nhau và có thể tích hợp với các hệ thống quản lý học tập (LMS) hiện có.
+\item Đảm bảo khả năng tương thích ngược khi có cập nhật phiên bản mới của hệ thống.
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{NFR-SEC-001}: OAuth 2.0 authentication
+    \item \textbf{NFR-SEC-002}: Role-based access control (RBAC)
+    \item \textbf{NFR-SEC-003}: HTTPS encryption for all communications
+    \item \textbf{NFR-SEC-004}: Input validation và sanitization
+    \item \textbf{NFR-SEC-005}: Regular security audits và penetration testing
+\end{enumerate}
+
+\subsubsection{Usability Requirements}
+
+\begin{enumerate}
+    \item \textbf{NFR-USA-001}: Responsive design (mobile, tablet, desktop)
+    \item \textbf{NFR-USA-002}: WCAG 2.1 AA accessibility compliance
+    \item \textbf{NFR-USA-003}: Multi-language support (Vi, En)
+    \item \textbf{NFR-USA-004}: Intuitive navigation ≤ 3 clicks to any feature
+    \item \textbf{NFR-USA-005}: Consistent UI/UX across all modules
+\end{enumerate}

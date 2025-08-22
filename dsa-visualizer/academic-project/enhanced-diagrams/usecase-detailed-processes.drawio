@@ -1,0 +1,298 @@
+<mxfile host="app.diagrams.net" agent="5.0" version="24.7.17">
+  <diagram name="Use Case Detailed Processes" id="usecase-detailed-processes">
+    <mxGraphModel dx="1862" dy="1120" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="Use Case Detailed Processes - DSA Visualizer Platform" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="30" width="800" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Learning Process Module -->
+        <mxCell id="learning-module" value="Learning Process Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="350" height="420" as="geometry" />
+        </mxCell>
+
+        <mxCell id="select-algorithm" value="Select Algorithm&#xa;to Learn" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="120" y="140" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="study-theory" value="Study Algorithm&#xa;Theory" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="280" y="140" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="practice-visualization" value="Practice with&#xa;Visualization" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="120" y="220" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="solve-exercises" value="Solve Practice&#xa;Exercises" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="280" y="220" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="take-quiz" value="Take Algorithm&#xa;Quiz" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="120" y="300" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="get-ai-help" value="Get AI&#xa;Assistance" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="280" y="300" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="track-progress" value="Track Learning&#xa;Progress" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="120" y="380" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="receive-certificate" value="Receive&#xa;Certificate" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
+          <mxGeometry x="280" y="380" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Visualization Process Module -->
+        <mxCell id="visualization-module" value="Visualization Process Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="480" y="100" width="350" height="420" as="geometry" />
+        </mxCell>
+
+        <mxCell id="configure-input" value="Configure Input&#xa;Data" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="520" y="140" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="initialize-visualization" value="Initialize&#xa;Visualization" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="680" y="140" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step-through-algorithm" value="Step Through&#xa;Algorithm" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="520" y="220" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="control-animation" value="Control Animation&#xa;Speed" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="680" y="220" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="compare-algorithms" value="Compare Different&#xa;Algorithms" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="520" y="300" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="analyze-complexity" value="Analyze Time&#xa;Complexity" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f5ff;strokeColor=#1677ff" vertex="1" parent="1">
+          <mxGeometry x="680" y="300" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="export-visualization" value="Export&#xa;Visualization" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="520" y="380" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="save-session" value="Save Learning&#xa;Session" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f6ffed;strokeColor=#52c41a" vertex="1" parent="1">
+          <mxGeometry x="680" y="380" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Collaboration Process Module -->
+        <mxCell id="collaboration-module" value="Collaboration Process Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#f0f5ff;strokeColor=#1677ff;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="880" y="100" width="350" height="420" as="geometry" />
+        </mxCell>
+
+        <mxCell id="join-discussion" value="Join Algorithm&#xa;Discussion" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f9f0ff;strokeColor=#722ed1" vertex="1" parent="1">
+          <mxGeometry x="920" y="140" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ask-question" value="Ask Question&#xa;in Forum" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f9f0ff;strokeColor=#722ed1" vertex="1" parent="1">
+          <mxGeometry x="1080" y="140" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="share-solution" value="Share Problem&#xa;Solution" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f9f0ff;strokeColor=#722ed1" vertex="1" parent="1">
+          <mxGeometry x="920" y="220" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="peer-review" value="Participate in&#xa;Peer Review" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f9f0ff;strokeColor=#722ed1" vertex="1" parent="1">
+          <mxGeometry x="1080" y="220" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vote-solutions" value="Vote on&#xa;Solutions" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f9f0ff;strokeColor=#722ed1" vertex="1" parent="1">
+          <mxGeometry x="920" y="300" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="create-study-group" value="Create Study&#xa;Group" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f9f0ff;strokeColor=#722ed1" vertex="1" parent="1">
+          <mxGeometry x="1080" y="300" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mentor-students" value="Mentor Other&#xa;Students" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f9f0ff;strokeColor=#722ed1" vertex="1" parent="1">
+          <mxGeometry x="920" y="380" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="contribute-content" value="Contribute&#xa;Content" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f9f0ff;strokeColor=#722ed1" vertex="1" parent="1">
+          <mxGeometry x="1080" y="380" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Assessment Process Module -->
+        <mxCell id="assessment-module" value="Assessment Process Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#e6f7ff;strokeColor=#1890ff;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="280" y="560" width="350" height="420" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attempt-quiz" value="Attempt&#xa;Algorithm Quiz" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff" vertex="1" parent="1">
+          <mxGeometry x="320" y="600" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="submit-assignment" value="Submit&#xa;Assignment" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff" vertex="1" parent="1">
+          <mxGeometry x="480" y="600" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="coding-challenge" value="Complete Coding&#xa;Challenge" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff" vertex="1" parent="1">
+          <mxGeometry x="320" y="680" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="performance-test" value="Take Performance&#xa;Test" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff" vertex="1" parent="1">
+          <mxGeometry x="480" y="680" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="view-results" value="View Assessment&#xa;Results" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff" vertex="1" parent="1">
+          <mxGeometry x="320" y="760" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="request-retake" value="Request&#xa;Retake" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff" vertex="1" parent="1">
+          <mxGeometry x="480" y="760" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="generate-report" value="Generate Progress&#xa;Report" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff" vertex="1" parent="1">
+          <mxGeometry x="320" y="840" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="download-certificate" value="Download&#xa;Certificate" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff" vertex="1" parent="1">
+          <mxGeometry x="480" y="840" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Content Management Process Module -->
+        <mxCell id="content-module" value="Content Management Process Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#f9f0ff;strokeColor=#722ed1;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="560" width="350" height="420" as="geometry" />
+        </mxCell>
+
+        <mxCell id="create-lesson" value="Create New&#xa;Lesson" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="720" y="600" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="design-exercise" value="Design&#xa;Exercise" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="880" y="600" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="upload-materials" value="Upload Learning&#xa;Materials" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="720" y="680" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="review-submissions" value="Review Student&#xa;Submissions" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="880" y="680" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="grade-assessments" value="Grade&#xa;Assessments" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="720" y="760" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="provide-feedback" value="Provide&#xa;Feedback" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="880" y="760" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="update-curriculum" value="Update&#xa;Curriculum" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="720" y="840" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="analyze-performance" value="Analyze Student&#xa;Performance" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="880" y="840" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Actors -->
+        <mxCell id="student-actor" value="Student" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="30" y="280" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="teacher-actor" value="Teacher" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="1280" y="750" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Key Connections -->
+        <!-- Student to Learning Process -->
+        <mxCell id="student-learning-conn" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="student-actor" target="select-algorithm">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint" />
+            <mxPoint x="450" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Student to Visualization Process -->
+        <mxCell id="student-viz-conn" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="student-actor" target="configure-input">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="306" as="sourcePoint" />
+            <mxPoint x="130" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="306" />
+              <mxPoint x="450" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Student to Collaboration -->
+        <mxCell id="student-collab-conn" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="student-actor" target="join-discussion">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="306" as="sourcePoint" />
+            <mxPoint x="920" y="170" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="850" y="306" />
+              <mxPoint x="850" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Student to Assessment -->
+        <mxCell id="student-assess-conn" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="student-actor" target="attempt-quiz">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="306" as="sourcePoint" />
+            <mxPoint x="320" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="250" y="306" />
+              <mxPoint x="250" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Teacher to Content Management -->
+        <mxCell id="teacher-content-conn" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="teacher-actor" target="create-lesson">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1200" y="700" as="sourcePoint" />
+            <mxPoint x="820" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1200" y="776" />
+              <mxPoint x="1200" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Include Dependencies within modules -->
+        <mxCell id="include1" style="endArrow=open;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#ffffff" edge="1" parent="1" source="study-theory" target="get-ai-help">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="170" as="sourcePoint" />
+            <mxPoint x="280" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="400" y="170" />
+              <mxPoint x="400" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="include1-label" value="&lt;&lt;include&gt;&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8" vertex="1" parent="1">
+          <mxGeometry x="405" y="245" width="50" height="15" as="geometry" />
+        </mxCell>
+
+        <mxCell id="extend1" style="endArrow=open;dashed=1;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#ff6666" edge="1" parent="1" source="analyze-complexity" target="step-through-algorithm">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="300" as="sourcePoint" />
+            <mxPoint x="570" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="730" y="290" />
+              <mxPoint x="570" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="extend1-label" value="&lt;&lt;extend&gt;&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8" vertex="1" parent="1">
+          <mxGeometry x="630" y="280" width="50" height="15" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

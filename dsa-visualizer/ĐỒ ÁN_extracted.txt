@@ -1,0 +1,1714 @@
+
+--- Trang 1 ---
+ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH
+TRƯỜNG ĐẠI HỌC BÁCH KHOA
+KHOA KHOA HỌC VÀ KỸ THUẬT MÁY TÍNH
+BÁO CÁO
+ĐỒ ÁN CHUYÊN NGÀNH
+XÂY DỰNG WEBSITE HỖ TRỢ ĐẶT CHỖ VÀ
+GỢI Ý ĐỊA ĐIỂM DU LỊCH PHÙ HỢP
+CHUYÊN NGÀNH: KHOA HỌC MÁY TÍNH
+HỘI ĐỒNG :ĐỒ ÁN CHUYÊN NGÀNH 12 CLC
+GV HƯỚNG DẪN :TS.TRƯƠNG TUẤN ANH
+THƯ KÝ HĐ :NGUYỄN MINH TÂM
+ỦY VIÊN HĐ :MAI ĐỨC TRUNG
+————o0o———–
+SINH VIÊN :BÙI HOÀNG QUANG HUY - 2153372
+:NGUYỄN MINH HIẾU - 2153343
+:ĐẶNG THÀNH ANH - 2153153
+THÀNH PHỐ HỒ CHÍ MINH, 12/2024
+
+--- Trang 2 ---
+Tuyên bố về tính xác thực
+Nhóm chúng tôi xin tuyên bố rằng đã tự mình thực hiện dự án chuyên ngành
+này dưới sự hướng dẫn của Thầy Trương Tuấn Anh tại Khoa Khoa học và Kỹ
+thuật Máy tính, Trường Đại học Bách Khoa - Đại học Quốc gia Thành phố
+Hồ Chí Minh.
+Nhóm chúng tôi đã cẩn thận ghi nhận và tài liệu hóa đầy đủ tất cả các nguồn
+và tài liệu tham khảo bên ngoài được sử dụng trong dự án.
+Nếu có bất kỳ trường hợp nào về đạo văn, tôi sẵn sàng chấp nhận mọi hậu
+quả. Trường Đại học Bách Khoa - Đại học Quốc gia Thành phố Hồ Chí Minh
+sẽ không chịu trách nhiệm về bất kỳ vi phạm bản quyền nào có thể đã xảy ra
+trong quá trình nghiên cứu của tôi.
+Thành Phố Hồ Chí Minh, 12/2024
+Đồng tác giả,
+Bùi Hoàng Quang Huy
+Nguyễn Minh Hiếu
+Đặng Thành Anh
+i
+
+--- Trang 3 ---
+Mục lục
+1 Giới thiệu hệ thống 1
+1.1 Giới thiệu đề tài . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.1.1 Bối cảnh đề tài . . . . . . . . . . . . . . . . . . . . 1
+1.1.2 Các Stakeholders của hệ thống . . . . . . . . . . . . 2
+1.1.3 Nhu cầu của các đối tượng . . . . . . . . . . . . . . 3
+1.1.4 Mục tiêu nghiên cứu . . . . . . . . . . . . . . . . . 4
+1.2 Task 1.2: Functional and non-functional requirements . . . . 6
+1.2.1 Funtional . . . . . . . . . . . . . . . . . . . . . . . 6
+1.2.2 Non-functional . . . . . . . . . . . . . . . . . . . . 8
+2 Phân tích và tìm hiểu thị trường 10
+3 Phân tích hệ thống 11
+3.1 Use-case Diagram . . . . . . . . . . . . . . . . . . . . . . . 11
+3.1.1 Đặt vé máy bay . . . . . . . . . . . . . . . . . . . . 11
+3.1.2 Đặt chỗ khách sạn . . . . . . . . . . . . . . . . . . . 18
+3.1.3 Đặt xe thuê . . . . . . . . . . . . . . . . . . . . . . 26
+3.1.4 Hoạt động vui chơi . . . . . . . . . . . . . . . . . . 31
+3.1.5 Chương trình khuyến mãi . . . . . . . . . . . . . . . 39
+3.1.6 Cẩm nang du lịch . . . . . . . . . . . . . . . . . . . 44
+3.1.7 Thông tin công ty . . . . . . . . . . . . . . . . . . . 47
+3.2 Class Diagram . . . . . . . . . . . . . . . . . . . . . . . . . 50
+3.3 Activity Diagram . . . . . . . . . . . . . . . . . . . . . . . 57
+ii
+
+--- Trang 4 ---
+3.4 Sequence Diagram . . . . . . . . . . . . . . . . . . . . . . 61
+References 65
+iii
+
+--- Trang 5 ---
+List of Tables
+Table 3.1 Mô tả Use Case: Chọn chuyến bay . . . . . . . . . . 12
+Table 3.2 Mô tả Use Case: Đăng ký thông tin chuyến bay . . . . 13
+Table 3.3 Mô tả Use Case: Thanh toán . . . . . . . . . . . . . . 14
+Table 3.4 Mô tả Use Case: Hủy chuyến bay . . . . . . . . . . . 15
+Table 3.5 Mô tả Use Case: Tra cứu chuyến bay . . . . . . . . . 16
+Table 3.6 Mô tả Use Case: Quản lý danh sách hành khách chuyến
+bay . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Table 3.7 Mô tả Use Case: Quản lý danh sách chuyến bay . . . . 18
+Table 3.8 Mô tả Use Case: Đặt phòng . . . . . . . . . . . . . . 19
+Table 3.9 Mô tả Use Case: Hủy đặt phòng . . . . . . . . . . . . 20
+Table 3.10 Mô tả Use Case: Tìm kiếm khách sạn . . . . . . . . . 20
+Table 3.11 Mô tả Use Case: Lọc và sắp xếp khách sạn . . . . . . 21
+Table 3.12 Mô tả Use Case: Xem thông tin chi tiết khách sạn . . 22
+Table 3.13 Mô tả Use Case: Thanh toán đặt phòng . . . . . . . . 23
+Table 3.14 Mô tả Use Case: Theo dõi lịch sử đặt phòng . . . . . 23
+Table 3.15 Mô tả Use Case: Quản lý danh sách khách hàng đặt
+phòng . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+Table 3.16 Mô tả Use Case: Xem lịch sử đặt phòng của khách hàng 25
+Table 3.17 Mô tả Use Case: Xử lý yêu cầu hủy đặt phòng . . . . 26
+Table 3.18 Mô tả Use Case: Chọn xe thuê . . . . . . . . . . . . . 27
+Table 3.19 Mô tả Use Case: Hủy chọn thuê xe . . . . . . . . . . 28
+Table 3.20 Mô tả Use Case: Đăng ký thông tin thuê xe . . . . . . 28
+Table 3.21 Mô tả Use Case: Thanh toán đặt thuê xe . . . . . . . . 29
+iv
+
+--- Trang 6 ---
+Table 3.22 Mô tả Use Case: Xem thông tin xe đã thuê . . . . . . 30
+Table 3.23 Mô tả Use Case: Quản lý danh sách khách hàng thuê xe 31
+Table 3.24 Mô tả Use Case: Đặt chỗ . . . . . . . . . . . . . . . . 31
+Table 3.25 Mô tả Use Case: Hủy đặt chỗ . . . . . . . . . . . . . 32
+Table 3.26 Mô tả Use Case: Tìm kiếm hoạt động vui chơi . . . . 33
+Table 3.27 Mô tả Use Case: Lọc hoạt động vui chơi . . . . . . . 33
+Table 3.28 Mô tả Use Case: Xem thông tin chi tiết hoạt động vui
+chơi . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+Table 3.29 Mô tả Use Case: Hủy chuyến bay . . . . . . . . . . . 36
+Table 3.30 Mô tả Use Case: Quản lý thông tin hoạt động vui chơi 37
+Table 3.31 Mô tả Use Case: Xử lý yêu cầu hủy đặt chỗ . . . . . . 38
+Table 3.32 Mô tả Use Case: Quản lý danh sách khách hàng trong
+tour . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+Table 3.33 Mô tả Use Case: Lọc chương trình khuyến mại . . . . 40
+Table 3.34 Mô tả Use Case: Chọn chương trình khuyến mại . . . 41
+Table 3.35 Mô tả Use Case: Áp dụng mã khuyến mại . . . . . . . 42
+Table 3.36 Mô tả Use Case: Tạo chương trình khuyến mại . . . . 42
+Table 3.37 Mô tả Use Case: Cập nhật chương trình khuyến mại . 43
+Table 3.38 Mô tả Use Case: Xóa chương trình khuyến mại . . . . 44
+Table 3.39 Mô tả Use Case: Tìm kiếm cẩm nang du lịch . . . . . 45
+Table 3.40 Mô tả Use Case: Lọc cẩm nang du lịch . . . . . . . . 46
+Table 3.41 Mô tả Use Case: Xem bài viết chi tiết . . . . . . . . . 47
+Table 3.42 Mô tả Use Case: Quản lý cẩm nang du lịch . . . . . . 47
+Table 3.43 Mô tả Use Case:Xem thông tin công ty . . . . . . . . 49
+Table 3.44 Mô tả Use Case: Chỉnh sửa thông tin chung về công ty 50
+v
+
+--- Trang 7 ---
+Chapter 1
+Giới thiệu hệ thống
+In chapter 1, the overview, objectives and goals of the research’s project are
+illustrated. The outline of the report is also presented.
+1.1 Giới thiệu đề tài
+1.1.1 Bối cảnh đề tài
+Trong bối cảnh nhu cầu du lịch ngày càng tăng, người dùng thường gặp khó khăn
+khi phải tìm kiếm và so sánh thông tin tour từ nhiều nguồn khác nhau, quản lý
+và theo dõi lịch trình đặt chỗ phức tạp, và thiếu các gợi ý cá nhân hóa về địa
+điểm du lịch phù hợp. Đồng thời, việc liên hệ và sử dụng các dịch vụ bổ sung
+như vé máy bay, thuê xe, và làm visa thường mất nhiều thời gian và không thuận
+tiện. Website đặt chỗ và gợi ý du lịch được xây dựng nhằm giải quyết các vấn
+đề này bằng cách cung cấp một nền tảng tích hợp, giúp người dùng dễ dàng tìm
+kiếm, đặt chỗ, và quản lý thông tin du lịch, đồng thời mang đến các gợi ý tour
+phù hợp với nhu cầu cá nhân và hỗ trợ các dịch vụ liên quan một cách nhanh
+chóng và hiệu quả.
+•Tìm kiếm và so sánh thông tin du lịch phân tán: Người dùng phải truy
+cập nhiều trang web và nguồn thông tin khác nhau để tìm hiểu về các tour
+du lịch, bao gồm giá cả, lịch trình, dịch vụ đi kèm và đánh giá từ khách
+hàng trước đó. Sự phân tán thông tin này không chỉ gây mất thời gian mà
+1
+
+--- Trang 8 ---
+còn làm giảm khả năng so sánh và đưa ra quyết định hợp lý.
+•Quản lý và theo dõi lịch trình đặt chỗ phức tạp: Sau khi đặt tour, việc
+theo dõi mã booking, lịch trình, và các thay đổi phát sinh (như thay đổi giờ
+khởi hành, hủy tour) trở nên khó khăn khi không có một hệ thống tập trung
+quản lý thông tin. Điều này có thể dẫn đến việc bỏ lỡ các thông tin quan
+trọng và gây phiền toái cho người dùng.
+•Thiếu gợi ý cá nhân hóa và các dịch vụ bổ sung: Các trang web du lịch
+hiện tại thường cung cấp thông tin theo kiểu danh sách chung, không đáp
+ứng được nhu cầu và sở thích riêng của từng khách hàng. Bên cạnh đó, việc
+tìm kiếm các dịch vụ bổ sung như đặt vé máy bay, thuê xe, và làm visa
+không được tích hợp, dẫn đến việc người dùng phải tốn thêm thời gian và
+công sức để chuẩn bị cho chuyến đi của mình.
+•Hạn chế trong việc hỗ trợ khách hàng trực tuyến: Nhiều khách hàng
+gặp khó khăn trong việc nhận hỗ trợ nhanh chóng khi cần giải đáp thắc
+mắc hoặc gặp sự cố trong quá trình đặt tour. Các kênh hỗ trợ truyền thống
+như điện thoại hoặc email thường chậm và không đáp ứng kịp thời, gây ảnh
+hưởng đến trải nghiệm người dùng.
+Website đặt chỗ và gợi ý địa điểm du lịch sẽ khắc phục những khó khăn trên
+bằng cách cung cấp một nền tảng tích hợp, tập trung toàn bộ thông tin về các
+tour du lịch và các dịch vụ liên quan, giúp người dùng dễ dàng tìm kiếm, so sánh
+và đặt chỗ. Hệ thống quản lý thông tin chặt chẽ, cùng với các gợi ý cá nhân hóa
+và dịch vụ hỗ trợ khách hàng trực tuyến nhanh chóng, sẽ mang đến trải nghiệm
+thuận tiện và hiệu quả hơn cho người dùng, từ đó nâng cao sự hài lòng và thúc
+đẩy nhu cầu du lịch.
+1.1.2 Các Stakeholders của hệ thống
+1.Khách hàng cá nhân (Người dùng): Đây là nhóm người dùng trực tiếp
+sử dụng website để tìm kiếm, đặt chỗ tour du lịch, và sử dụng các dịch vụ
+2
+
+--- Trang 9 ---
+bổ sung. Nhu cầu và trải nghiệm của khách hàng quyết định sự thành công
+của website. Họ cần một giao diện dễ sử dụng, thông tin minh bạch và dịch
+vụ hỗ trợ nhanh chóng. Phản hồi của họ có thể ảnh hưởng lớn đến việc cải
+thiện và phát triển tính năng mới cho trang web.
+2.Công ty du lịch (Doanh nghiệp sở hữu website): Là đơn vị phát triển, vận
+hành và quản lý website, chịu trách nhiệm cung cấp các dịch vụ du lịch, đảm
+bảo chất lượng và hiệu quả kinh doanh. Họ định hướng chiến lược phát triển
+của website, quyết định các tính năng, dịch vụ cần triển khai, và đảm bảo
+trang web hoạt động ổn định, đáp ứng nhu cầu thị trường.
+3.Đối tác cung cấp dịch vụ: Các công ty liên kết như hãng hàng không, đơn
+vị cho thuê xe, và nhà cung cấp dịch vụ visa. Họ cung cấp các dịch vụ bổ
+sung và tạo ra giá trị gia tăng cho khách hàng. Sự hợp tác chặt chẽ và chất
+lượng dịch vụ của đối tác ảnh hưởng trực tiếp đến trải nghiệm tổng thể của
+người dùng trên website. Họ cũng đóng vai trò trong việc mở rộng danh
+mục dịch vụ và tạo sự đa dạng cho website.
+4.Nhân viên công ty du lịch: Những người quản lý nội dung, xử lý đơn
+hàng, hỗ trợ khách hàng và điều phối các hoạt động vận hành của website.
+Họ đóng vai trò quan trọng trong việc đảm bảo thông tin luôn được cập
+nhật chính xác, hỗ trợ khách hàng kịp thời và duy trì hoạt động của trang
+web trơn tru. Hiệu quả làm việc của họ ảnh hưởng trực tiếp đến chất lượng
+dịch vụ và sự hài lòng của khách hàng.
+1.1.3 Nhu cầu của các đối tượng
+•Khách hàng cá nhân: Họ cần một trải nghiệm mượt mà với giao diện dễ
+sử dụng, cung cấp đầy đủ thông tin về tour và các dịch vụ đi kèm, cùng với
+các gợi ý cá nhân hóa dựa trên sở thích và lịch sử đặt chỗ. Họ muốn có khả
+năng quản lý và theo dõi đơn giản thông qua hệ thống tra cứu mã booking
+và lịch trình, đồng thời mong đợi được hỗ trợ kịp thời khi có thắc mắc hoặc
+3
+
+--- Trang 10 ---
+sự cố. Ngoài ra, việc dễ dàng tiếp cận các dịch vụ bổ sung như đặt vé máy
+bay, thuê xe, và làm visa cũng là nhu cầu quan trọng đối với họ.
+•Công ty du lịch: Với vai trò chủ sở hữu website, mong muốn tăng trưởng
+khách hàng và doanh thu bằng cách thu hút và giữ chân người dùng, quản
+lý hiệu quả thông tin tour và đơn hàng, cải thiện trải nghiệm người dùng,
+đồng thời quảng bá thương hiệu và các chương trình khuyến mãi. Họ cần
+một hệ thống đảm bảo an toàn thông tin và tuân thủ các quy định pháp lý.
+•Đối tác cung cấp dịch vụ: Họ như các hãng hàng không, đơn vị cho thuê
+xe, và nhà cung cấp visa, cần một nền tảng giúp họ tiếp cận khách hàng
+tiềm năng, tăng trưởng doanh thu từ các dịch vụ bổ sung, và duy trì quan
+hệ hợp tác bền vững với công ty du lịch. Họ cũng cần hệ thống cung cấp
+thông tin dịch vụ chính xác và nhận được phản hồi để cải thiện chất lượng
+dịch vụ.
+•Nhân viên công ty du lịch: cần một hệ thống làm việc hiệu quả, giúp họ
+quản lý thông tin tour và khách hàng một cách trực quan, dễ sử dụng, hỗ trợ
+khách hàng thuận tiện, và có thể dễ dàng cập nhật thông tin cũng như theo
+dõi tình hình hoạt động qua các báo cáo chi tiết. Việc đáp ứng đúng nhu
+cầu của từng nhóm stakeholder sẽ đảm bảo website phát triển bền vững và
+mang lại trải nghiệm tốt nhất cho tất cả các bên liên quan.
+1.1.4 Mục tiêu nghiên cứu
+1.Khách hàng cá nhân: sẽ được hưởng lợi từ một nền tảng tích hợp giúp họ
+dễ dàng tìm kiếm và so sánh các tour du lịch, lựa chọn các gói dịch vụ phù
+hợp mà không cần mất nhiều thời gian tìm kiếm từ nhiều nguồn khác nhau.
+Họ có thể nhanh chóng tra cứu và quản lý thông tin đặt chỗ, nhận được các
+gợi ý cá nhân hóa, giúp tối ưu hóa trải nghiệm du lịch theo nhu cầu và sở
+thích riêng. Hệ thống hỗ trợ khách hàng trực tuyến và các dịch vụ bổ sung
+như đặt vé máy bay, thuê xe, và làm visa cũng sẽ giúp họ tiết kiệm thời gian
+4
+
+--- Trang 11 ---
+và đảm bảo sự thuận tiện trong toàn bộ quá trình lên kế hoạch và thực hiện
+chuyến đi.
+2.Công ty du lịch: sẽ nhận được nhiều lợi ích từ việc xây dựng và vận hành
+website, bao gồm việc mở rộng thị trường, tiếp cận nhiều khách hàng tiềm
+năng hơn và tăng trưởng doanh thu từ các dịch vụ du lịch và bổ sung. Họ có
+thể cải thiện hiệu quả quản lý và vận hành nhờ vào hệ thống thông tin tập
+trung và tự động hóa, giúp giảm thiểu sai sót và tiết kiệm thời gian trong
+việc xử lý đơn hàng, quản lý tour và chăm sóc khách hàng. Bên cạnh đó,
+website còn giúp nâng cao hình ảnh thương hiệu, dễ dàng triển khai các
+chương trình khuyến mãi, thu thập phản hồi từ khách hàng và cải tiến dịch
+vụ liên tục, từ đó tăng cường sự hài lòng và trung thành của khách hàng.
+3.Đối tác cung cấp dịch vụ: sẽ có cơ hội gia tăng doanh thu và mở rộng
+mạng lưới khách hàng thông qua việc hợp tác với công ty du lịch trên nền
+tảng website. Nhờ tích hợp các dịch vụ như vé máy bay, thuê xe, và làm visa
+trực tiếp trên trang web, các đối tác này có thể tiếp cận được lượng khách
+hàng đa dạng và tiềm năng mà không cần đầu tư quá nhiều vào các kênh
+quảng bá riêng lẻ. Hơn nữa, việc hợp tác này giúp củng cố mối quan hệ lâu
+dài và bền vững giữa các bên, đồng thời mang đến cho khách hàng một trải
+nghiệm du lịch toàn diện và liền mạch hơn, từ đó tạo ra giá trị gia tăng cho
+cả hai phía.
+4.Nhân viên công ty du lịch: sẽ được hỗ trợ bởi một hệ thống quản lý thông
+tin hiệu quả và tiện lợi, giúp giảm bớt khối lượng công việc thủ công và tối
+ưu hóa quy trình làm việc. Họ có thể nhanh chóng truy cập và xử lý thông
+tin về tour, đơn đặt chỗ và phản hồi của khách hàng, từ đó nâng cao hiệu
+suất làm việc và khả năng đáp ứng nhu cầu của khách hàng. Hệ thống báo
+cáo và thống kê chi tiết cũng giúp nhân viên dễ dàng theo dõi tình hình
+hoạt động của website và đưa ra các đề xuất cải thiện, góp phần nâng cao
+chất lượng dịch vụ và sự hài lòng của khách hàng, đồng thời tạo ra một môi
+5
+
+--- Trang 12 ---
+trường làm việc chuyên nghiệp và hiệu quả hơn.
+1.2 Task 1.2: Functional and non-functional require-
+ments
+1.2.1 Funtional
+1. Đối với Khách hàng cá nhân:
+•Tìm kiếm tour du lịch: Người dùng có thể tìm kiếm các tour du lịch
+bằng cách nhập từ khóa như địa điểm hoặc tên tour. Hệ thống sẽ trả về
+danh sách các tour phù hợp để người dùng tham khảo. Hiển thị thông
+tin cơ bản của các tour như tên tour, giá cả, và thời gian khởi hành.
+•Xem chi tiết tour: Người dùng có thể nhấp vào một tour cụ thể để xem
+chi tiết về lịch trình, giá cả, và các dịch vụ đi kèm của tour đó. Cho
+phép xem hình ảnh và các đánh giá cơ bản (có thể được nhập sẵn) về
+tour để phục vụ cho việc tìm hiểu và nghiên cứu.
+•Đặt chỗ tour: Cho phép người dùng nhập thông tin cá nhân cơ bản như
+tên, email và số điện thoại để mô phỏng quá trình đặt chỗ. Không yêu
+cầu tích hợp thanh toán trực tuyến. Hệ thống gửi email xác nhận (giả
+lập) để người dùng biết rằng họ đã hoàn thành việc đặt chỗ.
+•Quản lý thông tin đặt chỗ: Người dùng có thể xem lại thông tin các
+tour đã đặt trong mục "Đặt chỗ của tôi". Thông tin này bao gồm tên
+tour, ngày đặt, và trạng thái đặt chỗ. Cho phép người dùng hủy đặt chỗ
+(chỉ thay đổi trạng thái, không cần chức năng thực tế).
+•Hỗ trợ trực tuyến: Cung cấp mô hình hộp thoại chat giả lập để người
+dùng có thể đặt câu hỏi và nhận các câu trả lời từ hệ thống (dữ liệu có
+sẵn).
+2. Đối với Công ty du lịch (Doanh nghiệp sở hữu website):
+6
+
+--- Trang 13 ---
+•Quản lý tour du lịch: Cho phép thêm, sửa, và xóa các thông tin cơ
+bản về tour như tên tour, mô tả, lịch trình, và giá cả. Hệ thống hiển thị
+danh sách các tour hiện có để quản trị viên có thể chỉnh sửa hoặc xóa
+tour.
+•Quản lý thông tin khách hàng: Hiển thị danh sách các thông tin đặt
+chỗ bao gồm tên khách hàng, tour đã đặt, và trạng thái đặt chỗ. Đây là
+dữ liệu giả lập nhằm phục vụ mục đích thực hành quản lý và theo dõi
+thông tin. Cung cấp chức năng thay đổi trạng thái đơn đặt chỗ (đang
+chờ, đã xác nhận, đã hủy) để mô phỏng quy trình quản lý đơn hàng.
+•Phân Quyền: Có khả năng cài đặt và quản lý các quyền truy cập cho
+nhân viên.
+•Quản lý khuyến mãi: Cho phép tạo và quản lý các chương trình khuyến
+mãi đơn giản như giảm giá theo phần trăm hoặc giảm giá trực tiếp. Hiển
+thị danh sách các khuyến mãi hiện có và trạng thái hiệu lực.
+•Thống kê: Hiển thị số lượng tour đã đặt, số lượng khách hàng đăng ký,
+và trạng thái các đơn đặt chỗ để quản trị viên có cái nhìn tổng quan về
+hoạt động của hệ thống.
+•Quản Lý Tài Liệu: SPSO có thể quản lý kho lưu trữ tài liệu của hệ
+thống và cá nhân
+3. Đối với Đối tác cung cấp dịch vụ:
+•Quản lý dịch vụ bổ sung : Cung cấp các mẫu dữ liệu về dịch vụ như
+thuê xe và làm visa. Cho phép chỉnh sửa thông tin dịch vụ như tên dịch
+vụ, giá cả, và mô tả.
+•Liên kết dịch vụ với tour: Cho phép chọn các dịch vụ bổ sung để liên
+kết với các tour du lịch cụ thể.
+•Dự Phòng và Phục Hồi Dữ Liệu: Có các tính năng để sao lưu dữ liệu
+và phục hồi hệ thống trong trường hợp sự cố.
+7
+
+--- Trang 14 ---
+•Cập Nhật Phần Mềm: Có khả năng cập nhật phần mềm của hệ thống
+và các máy in một cách trung tâm.
+•Báo Cáo Hoạt Động: Tạo và xem các báo cáo về hoạt động bảo trì,
+bao gồm thời gian phản hồi, thời gian khắc phục sự cố, và tình trạng
+các máy in.
+•Thống Kê: Cung cấp các số liệu thống kê về số lượng và loại sự cố,
+tình trạng các máy in, và hiệu suất của đội ngũ bảo trì.
+4. Đối với Nhân viên công ty du lịch:
+•Quản lý thông tin đặt chỗ: Nhân viên có thể xem danh sách các đơn
+đặt chỗ, bao gồm thông tin khách hàng và trạng thái đặt chỗ. Cập nhật
+trạng thái đặt chỗ hoặc hủy đơn đặt chỗ theo yêu cầu
+•Quản lý nội dung tin tức: Cho phép thêm, sửa, xóa các bài viết cơ bản
+về du lịch như tin tức, mẹo vặt, hoặc giới thiệu điểm đến. Hiển thị danh
+sách các bài viết hiện có, cho phép chỉnh sửa và xóa nội dung.
+1.2.2 Non-functional
+1. Hiệu năng:
+•Website cần được tối ưu để đảm bảo thời gian tải trang dưới 5 giây, tạo
+trải nghiệm mượt mà cho người dùng khi truy cập.
+•Hệ thống phải có khả năng xử lý ít nhất 100 lượt truy cập đồng thời mà
+không gặp tình trạng quá tải hoặc sụt giảm hiệu năng.
+2. Tính sẵn sàng:
+•Website phải đảm bảo tính sẵn sàng hoạt động với khả năng tự động
+khởi động lại trong trường hợp gặp sự cố.
+•Không yêu cầu đảm bảo thời gian uptime cao như trong môi trường
+thực tế, nhưng cần có khả năng nhanh chóng khôi phục sau sự cố.
+8
+
+--- Trang 15 ---
+3. Tính bảo mật:
+•Hệ thống cần triển khai các biện pháp bảo mật cơ bản như mã hóa
+SSL/TLS cho dữ liệu truyền tải, đảm bảo an toàn thông tin cá nhân và
+dữ liệu người dùng.
+•Thực hiện xác thực và phân quyền người dùng đơn giản để kiểm soát
+quyền truy cập và tránh các lỗi bảo mật cơ bản.
+4. Khả năng mở rộng:
+•Hệ thống cần được thiết kế theo hướng dễ mở rộng, cho phép bổ sung
+các tính năng mới mà không làm ảnh hưởng đến cấu trúc hiện tại.
+5. Trải nghiệm người dùng:
+•Giao diện người dùng cần được thiết kế đơn giản, dễ sử dụng, giúp các
+thành viên trong nhóm dễ dàng thao tác và kiểm tra các tính năng mà
+họ phát triển.
+9
+
+--- Trang 16 ---
+Chapter 2
+Phân tích và tìm hiểu thị trường
+Nhiều trang web du lịch đã được phát triển nhằm cung cấp các dịch vụ đặt vé
+máy bay, khách sạn, và các hoạt động du lịch khác. Những trang web này không
+chỉ giúp người dùng dễ dàng lên kế hoạch cho chuyến đi mà còn cung cấp các
+tính năng đặc biệt để thu hút và giữ chân khách hàng. Một trong những ví dụ
+điển hình là Traveloka, nền tảng OTA hàng đầu ở Đông Nam Á, cung cấp các
+dịch vụ đa dạng từ vé máy bay, khách sạn, đến các hoạt động du lịch và phương
+tiện di chuyển, giúp người dùng có trải nghiệm trọn gói khi du lịch.
+Ngoài ra, các đối thủ lớn khác trên thị trường như Booking.com, Agoda, và
+Expedia cũng cung cấp những dịch vụ tương tự với các chương trình khuyến
+mãi hấp dẫn nhằm tăng sức cạnh tranh. Các trang web này không ngừng cải tiến
+giao diện và tính năng, tạo ra những trải nghiệm người dùng dễ dàng và thuận
+tiện hơn. Đặc biệt, các dịch vụ bổ sung như PayLater và "best price guarantee"
+đã giúp Traveloka và các trang OTA khác củng cố vị trí trong lòng người dùng,
+đặc biệt là tại các thị trường mới nổi như Đông Nam Á.
+Tuy nhiên, sự cạnh tranh ngày càng khốc liệt đòi hỏi các công ty phải không
+ngừng đổi mới và tối ưu hóa dịch vụ. Các yếu tố như bảo mật thông tin và khả
+năng tương tác với các đối tác du lịch cũng là những thách thức lớn mà các nền
+tảng OTA cần chú ý để tiếp tục phát triển bền vững trên thị trường du lịch trực
+tuyến.
+10
+
+--- Trang 17 ---
+Chapter 3
+Phân tích hệ thống
+3.1 Use-case Diagram
+3.1.1 Đặt vé máy bay
+Figure 3.1: Quy trình đặt vé máy bay
+Tên Use Case Chọn chuyến bay
+Actor Khách hàng
+11
+
+--- Trang 18 ---
+Mô tả ngắn gọn Khách hàng chọn chuyến bay phù hợp với
+nhu cầu của họ
+Trigger Khách hàng muốn tìm kiếm và chọn một
+chuyến bay
+Luồng sự kiện
+chính 1. Khách hàng chọn điểm đi và điểm đến.
+2. Hệ thống hiển thị danh sách các chuyến
+bay có sẵn.
+3. Khách hàng chọn một chuyến bay từ
+danh sách.
+Luồng sự kiện
+thay thếKhách hàng không tìm thấy chuyến bay phù
+hợp.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị chuyến
+bay.
+Post Condition Khách hàng đã chọn được một chuyến bay.
+Table 3.1: Mô tả Use Case: Chọn chuyến bay
+Tên Use Case Đăng ký thông tin chuyến bay
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng đăng ký thông tin cho chuyến
+bay đã chọn
+Trigger Khách hàng muốn đăng ký chuyến bay
+12
+
+--- Trang 19 ---
+Luồng sự kiện
+chính 1. Khách hàng nhập thông tin cá nhân
+(tên, số điện thoại, email).
+2. Khách hàng chọn ghế ngồi và cung cấp
+thông tin hành lý.
+3. Hệ thống lưu trữ thông tin và xác nhận
+đăng ký.
+Luồng sự kiện
+thay thếKhách hàng nhập sai thông tin, hệ thống yêu
+cầu sửa lại.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể lưu trữ thông tin
+chuyến bay.
+Post Condition Thông tin chuyến bay được đăng ký thành
+công.
+Table 3.2: Mô tả Use Case: Đăng ký thông tin chuyến bay
+Tên Use Case Thanh toán
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng tiến hành thanh toán cho
+chuyến bay đã chọn
+Trigger Khách hàng muốn thanh toán cho chuyến
+bay đã đặt
+13
+
+--- Trang 20 ---
+Luồng sự kiện
+chính 1. Khách hàng chọn phương thức thanh
+toán.
+2. Khách hàng nhập thông tin thẻ tín dụng
+hoặc ví điện tử.
+3. Hệ thống xác nhận thanh toán và gửi
+thông báo.
+Luồng sự kiện
+thay thếKhách hàng chọn phương thức thanh toán
+khác.
+Luồng ngoại lệ Giao dịch thất bại hoặc hệ thống thanh toán
+gặp lỗi.
+Post Condition Thanh toán hoàn tất và khách hàng nhận
+được thông tin vé máy bay.
+Table 3.3: Mô tả Use Case: Thanh toán
+Tên Use Case Hủy chuyến bay
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng hủy bỏ chuyến bay đã đăng ký
+Trigger Khách hàng muốn hủy chuyến bay đã đặt
+14
+
+--- Trang 21 ---
+Luồng sự kiện
+chính 1. Khách hàng chọn hủy chuyến bay.
+2. Hệ thống hiển thị các điều kiện hủy
+chuyến và phí (nếu có).
+3. Khách hàng xác nhận hủy chuyến.
+4. Hệ thống cập nhật trạng thái hủy và gửi
+thông báo.
+Luồng sự kiện
+thay thếKhách hàng thay đổi ý định và không hủy
+chuyến.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hủy chuyến bay.
+Post Condition Chuyến bay được hủy thành công và khách
+hàng nhận thông báo.
+Table 3.4: Mô tả Use Case: Hủy chuyến bay
+Tên Use Case Tra cứu chuyến bay
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng tra cứu thông tin các chuyến bay
+đã đăng ký
+Trigger Khách hàng muốn tra cứu chuyến bay đã
+đăng ký
+15
+
+--- Trang 22 ---
+Luồng sự kiện
+chính 1. Khách hàng chọn mục tra cứu chuyến
+bay.
+2. Hệ thống hiển thị thông tin các chuyến
+bay liên quan đến khách hàng.
+3. Khách hàng tra cứu thông tin chi tiết về
+chuyến bay.
+Luồng sự kiện
+thay thếKhách hàng không tìm thấy thông tin
+chuyến bay cần tra cứu.
+Luồng ngoại lệ Hệ thống gặp lỗi không hiển thị được thông
+tin chuyến bay.
+Post Condition Khách hàng nhận được thông tin chi tiết về
+chuyến bay đã đăng ký.
+Table 3.5: Mô tả Use Case: Tra cứu chuyến bay
+Tên Use Case Quản lý danh sách hành khách chuyến bay
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý kiểm tra và cập nhật danh
+sách hành khách
+Trigger Nhân viên quản lý muốn kiểm tra danh sách
+hành khách
+16
+
+--- Trang 23 ---
+Luồng sự kiện
+chính 1. Nhân viên đăng nhập vào hệ thống
+quản lý.
+2. Nhân viên truy cập vào mục quản lý
+hành khách.
+3. Nhân viên kiểm tra thông tin hành
+khách và cập nhật nếu cần.
+Luồng sự kiện
+thay thếKhông có thông tin nào cần cập nhật.
+Luồng ngoại lệ Hệ thống gặp lỗi không truy xuất được danh
+sách hành khách.
+Post Condition Danh sách hành khách được quản lý và cập
+nhật hiệu quả.
+Table 3.6: Mô tả Use Case: Quản lý danh sách hành khách chuyến bay
+Tên Use Case Quản lý danh sách chuyến bay
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý kiểm tra và cập nhật
+thông tin chuyến bay
+Trigger Nhân viên quản lý muốn quản lý thông tin
+chuyến bay
+17
+
+--- Trang 24 ---
+Luồng sự kiện
+chính 1. Nhân viên đăng nhập vào hệ thống
+quản lý.
+2. Nhân viên truy cập vào mục quản lý
+chuyến bay.
+3. Nhân viên kiểm tra thông tin các
+chuyến bay hiện có.
+4. Cập nhật lịch trình và trạng thái chuyến
+bay nếu cần.
+Luồng sự kiện
+thay thếKhông có chuyến bay nào cần cập nhật.
+Luồng ngoại lệ Hệ thống gặp lỗi không truy xuất được
+thông tin chuyến bay.
+Post Condition Danh sách chuyến bay được quản lý và cập
+nhật chính xác.
+Table 3.7: Mô tả Use Case: Quản lý danh sách chuyến bay
+3.1.2 Đặt chỗ khách sạn
+Tên Use Case Đặt phòng
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng đặt phòng khách sạn phù hợp
+với nhu cầu của họ
+Trigger Khách hàng muốn đặt phòng khách sạn
+18
+
+--- Trang 25 ---
+Luồng sự kiện
+chính 1. Khách hàng chọn khách sạn và loại
+phòng.
+2. Hệ thống hiển thị thông tin về phòng và
+giá cả.
+3. Khách hàng xác nhận đặt phòng.
+Luồng sự kiện
+thay thếKhách hàng không tìm thấy phòng phù hợp.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể đặt phòng.
+Post Condition Khách hàng đã đặt thành công phòng khách
+sạn.
+Table 3.8: Mô tả Use Case: Đặt phòng
+Tên Use Case Hủy đặt phòng
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng hủy một đặt phòng đã thực hiện
+trước đó
+Trigger Khách hàng muốn hủy đặt phòng
+Luồng sự kiện
+chính 1. Khách hàng yêu cầu hủy đặt phòng.
+2. Hệ thống kiểm tra điều kiện hủy phòng.
+3. Hệ thống xác nhận việc hủy phòng.
+Luồng sự kiện
+thay thếKhách hàng không thể hủy do điều kiện
+không thỏa mãn.
+19
+
+--- Trang 26 ---
+Luồng ngoại lệ Hệ thống không thể xử lý yêu cầu hủy
+phòng.
+Post Condition Đặt phòng của khách hàng đã được hủy
+thành công.
+Table 3.9: Mô tả Use Case: Hủy đặt phòng
+Tên Use Case Tìm kiếm khách sạn
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng tìm kiếm khách sạn phù hợp với
+nhu cầu của họ
+Trigger Khách hàng muốn tìm kiếm khách sạn
+Luồng sự kiện
+chính 1. Khách hàng nhập thông tin tìm kiếm
+(địa điểm, ngày nhận phòng, trả phòng,
+số lượng khách).
+2. Hệ thống hiển thị danh sách các khách
+sạn phù hợp.
+Luồng sự kiện
+thay thếKhách hàng không tìm thấy khách sạn phù
+hợp.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị danh
+sách khách sạn.
+Post Condition Khách hàng đã tìm thấy khách sạn phù hợp.
+Table 3.10: Mô tả Use Case: Tìm kiếm khách sạn
+Tên Use Case Lọc và sắp xếp khách sạn
+Actor Khách hàng
+20
+
+--- Trang 27 ---
+Mô tả ngắn gọn Khách hàng lọc và sắp xếp danh sách khách
+sạn theo tiêu chí mong muốn
+Trigger Khách hàng muốn lọc hoặc sắp xếp danh
+sách khách sạn
+Luồng sự kiện
+chính 1. Khách hàng chọn tiêu chí lọc (giá, sao,
+tiện ích).
+2. Hệ thống áp dụng bộ lọc và hiển thị
+danh sách khách sạn.
+3. Khách hàng chọn tiêu chí sắp xếp.
+Luồng sự kiện
+thay thếKhách hàng không tìm thấy kết quả phù hợp
+sau khi lọc.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể áp dụng bộ lọc.
+Post Condition Khách hàng đã lọc và sắp xếp danh sách
+khách sạn thành công.
+Table 3.11: Mô tả Use Case: Lọc và sắp xếp khách sạn
+Tên Use Case Xem thông tin chi tiết khách sạn
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng xem thông tin chi tiết của một
+khách sạn
+Trigger Khách hàng muốn xem thông tin chi tiết
+khách sạn
+21
+
+--- Trang 28 ---
+Luồng sự kiện
+chính 1. Khách hàng nhấp vào một khách sạn
+trong danh sách.
+2. Hệ thống hiển thị thông tin chi tiết về
+phòng, giá cả và tiện ích của khách sạn.
+Luồng sự kiện
+thay thếKhông có.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị thông
+tin chi tiết khách sạn.
+Post Condition Khách hàng đã xem chi tiết thông tin khách
+sạn.
+Table 3.12: Mô tả Use Case: Xem thông tin chi tiết khách sạn
+Tên Use Case Thanh toán đặt phòng
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng thanh toán cho đặt phòng khách
+sạn
+Trigger Khách hàng đã chọn đặt phòng và tiến hành
+thanh toán
+Luồng sự kiện
+chính 1. Khách hàng chọn phương thức thanh
+toán.
+2. Hệ thống xử lý thanh toán.
+3. Hệ thống xác nhận thanh toán thành
+công.
+22
+
+--- Trang 29 ---
+Luồng sự kiện
+thay thếKhách hàng không đủ tiền hoặc phương thức
+thanh toán không hợp lệ.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể xử lý thanh toán.
+Post Condition Khách hàng đã thanh toán thành công.
+Table 3.13: Mô tả Use Case: Thanh toán đặt phòng
+Tên Use Case Theo dõi lịch sử đặt phòng
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng xem lại các đặt phòng trước đây
+Trigger Khách hàng muốn xem lịch sử đặt phòng
+Luồng sự kiện
+chính 1. Khách hàng nhấp vào mục "Lịch sử đặt
+phòng".
+2. Hệ thống hiển thị danh sách các đặt
+phòng đã thực hiện.
+Luồng sự kiện
+thay thếKhông có lịch sử đặt phòng để hiển thị.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị lịch sử
+đặt phòng.
+Post Condition Khách hàng đã xem được lịch sử đặt phòng.
+Table 3.14: Mô tả Use Case: Theo dõi lịch sử đặt phòng
+Tên Use Case Quản lý danh sách khách hàng đặt phòng
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý xem và cập nhật danh
+sách khách hàng
+23
+
+--- Trang 30 ---
+Trigger Nhân viên quản lý muốn xem danh sách
+khách hàng đã đặt phòng
+Luồng sự kiện
+chính 1. Nhân viên quản lý truy cập vào danh
+sách khách hàng.
+2. Hệ thống hiển thị danh sách khách
+hàng.
+Luồng sự kiện
+thay thếKhông có khách hàng nào để hiển thị.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị danh
+sách khách hàng.
+Post Condition Nhân viên quản lý đã xem danh sách khách
+hàng.
+Table 3.15: Mô tả Use Case: Quản lý danh sách khách hàng đặt phòng
+Tên Use Case Xem lịch sử đặt phòng của khách hàng
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý xem lịch sử đặt phòng của
+một khách hàng
+Trigger Nhân viên quản lý muốn xem lịch sử đặt
+phòng của khách hàng
+24
+
+--- Trang 31 ---
+Luồng sự kiện
+chính 1. Nhân viên quản lý truy cập vào hồ sơ
+khách hàng.
+2. Hệ thống hiển thị lịch sử đặt phòng của
+khách hàng.
+Luồng sự kiện
+thay thếKhách hàng chưa có lịch sử đặt phòng.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị lịch sử
+đặt phòng.
+Post Condition Nhân viên quản lý đã xem lịch sử đặt phòng
+của khách hàng.
+Table 3.16: Mô tả Use Case: Xem lịch sử đặt phòng của khách hàng
+Tên Use Case Xử lý yêu cầu hủy đặt phòng
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý xử lý các yêu cầu hủy đặt
+phòng từ khách hàng
+Trigger Nhân viên quản lý nhận được yêu cầu hủy
+đặt phòng
+Luồng sự kiện
+chính 1. Nhân viên quản lý nhận yêu cầu hủy từ
+khách hàng.
+2. Hệ thống kiểm tra điều kiện hủy phòng.
+3. Hệ thống xác nhận hủy phòng và cập
+nhật trạng thái.
+25
+
+--- Trang 32 ---
+Luồng sự kiện
+thay thếYêu cầu hủy không hợp lệ hoặc không thỏa
+mãn điều kiện hủy phòng.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể xử lý yêu cầu
+hủy.
+Post Condition Yêu cầu hủy phòng đã được xử lý thành
+công.
+Table 3.17: Mô tả Use Case: Xử lý yêu cầu hủy đặt phòng
+3.1.3 Đặt xe thuê
+Tên Use Case Chọn xe thuê
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng chọn xe phù hợp với nhu cầu
+thuê xe du lịch
+Trigger Khách hàng muốn tìm kiếm và chọn một xe
+thuê
+Luồng sự kiện
+chính 1. Khách hàng chọn loại xe và thời gian
+thuê xe.
+2. Hệ thống hiển thị danh sách các xe có
+sẵn phù hợp với yêu cầu.
+3. Khách hàng chọn một chiếc xe từ danh
+sách.
+4. Khách hàng đăng ký thông tin thuê xe.
+5. Hệ thống tiến hành bước thanh toán.
+26
+
+--- Trang 33 ---
+Luồng sự kiện
+thay thế 1. Khách hàng có thể hủy việc chọn xe
+thuê nếu không còn nhu cầu.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị danh
+sách xe.
+Post Condition Khách hàng đã chọn và đăng ký thuê được
+một chiếc xe du lịch.
+Table 3.18: Mô tả Use Case: Chọn xe thuê
+Tên Use Case Hủy chọn thuê xe
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng có thể hủy việc chọn thuê xe
+sau khi đã chọn xe
+Trigger Khách hàng muốn hủy việc thuê xe đã chọn
+Luồng sự kiện
+chính 1. Khách hàng chọn chức năng hủy chọn
+thuê xe.
+2. Hệ thống yêu cầu xác nhận hủy.
+3. Khách hàng xác nhận hủy và hệ thống
+tiến hành xóa yêu cầu thuê xe.
+Luồng sự kiện
+thay thếKhông có.
+Luồng ngoại lệ Hệ thống không thể thực hiện việc hủy do
+lỗi kỹ thuật.
+Post Condition Việc chọn xe thuê đã bị hủy thành công.
+27
+
+--- Trang 34 ---
+Table 3.19: Mô tả Use Case: Hủy chọn thuê xe
+Tên Use Case Đăng ký thông tin thuê xe
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng đăng ký thông tin để thuê xe
+Trigger Khách hàng đã chọn xe và cần cung cấp
+thông tin để thuê
+Luồng sự kiện
+chính 1. Khách hàng điền các thông tin cá nhân
+và thời gian thuê xe.
+2. Hệ thống kiểm tra thông tin đã nhập và
+xác nhận đăng ký thành công.
+Luồng sự kiện
+thay thếKhách hàng có thể chỉnh sửa thông tin trước
+khi xác nhận.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể xác nhận thông
+tin.
+Post Condition Thông tin thuê xe đã được đăng ký thành
+công.
+Table 3.20: Mô tả Use Case: Đăng ký thông tin thuê xe
+Tên Use Case Thanh toán đặt thuê xe
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng thực hiện thanh toán sau khi
+chọn xe và đăng ký thông tin thuê
+Trigger Khách hàng đã hoàn tất việc chọn xe và cần
+thanh toán
+28
+
+--- Trang 35 ---
+Luồng sự kiện
+chính 1. Hệ thống hiển thị thông tin thanh toán.
+2. Khách hàng chọn phương thức thanh
+toán.
+3. Hệ thống xác nhận và xử lý thanh toán.
+Luồng sự kiện
+thay thếKhách hàng có thể thay đổi phương thức
+thanh toán.
+Luồng ngoại lệ Thanh toán thất bại do lỗi hệ thống hoặc
+phương thức thanh toán không hợp lệ.
+Post Condition Thanh toán hoàn tất thành công.
+Table 3.21: Mô tả Use Case: Thanh toán đặt thuê xe
+Tên Use Case Xem thông tin xe đã thuê
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng có thể xem lại thông tin các xe
+đã thuê trước đó
+Trigger Khách hàng muốn xem thông tin các xe đã
+thuê
+Luồng sự kiện
+chính 1. Khách hàng chọn chức năng xem thông
+tin xe đã thuê.
+2. Hệ thống hiển thị danh sách các xe đã
+thuê và thông tin chi tiết.
+Luồng sự kiện
+thay thếKhông có.
+29
+
+--- Trang 36 ---
+Luồng ngoại lệ Hệ thống không thể hiển thị thông tin do lỗi
+kết nối.
+Post Condition Khách hàng xem được thông tin về các xe đã
+thuê.
+Table 3.22: Mô tả Use Case: Xem thông tin xe đã thuê
+Tên Use Case Quản lý danh sách khách hàng thuê xe
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý thực hiện các thao tác
+quản lý danh sách khách hàng
+Trigger Nhân viên quản lý muốn thêm, sửa hoặc xóa
+thông tin khách hàng
+Luồng sự kiện
+chính 1. Nhân viên quản lý truy cập vào chức
+năng quản lý danh sách khách hàng.
+2. Nhân viên thực hiện thao tác thêm mới,
+chỉnh sửa hoặc xóa thông tin khách
+hàng.
+3. Hệ thống cập nhật danh sách khách
+hàng theo yêu cầu.
+Luồng sự kiện
+thay thếKhông có.
+Luồng ngoại lệ Hệ thống không thể cập nhật thông tin do
+lỗi.
+Post Condition Danh sách khách hàng được cập nhật thành
+công.
+30
+
+--- Trang 37 ---
+Table 3.23: Mô tả Use Case: Quản lý danh sách khách hàng thuê xe
+3.1.4 Hoạt động vui chơi
+Tên Use Case Đặt chỗ
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng đặt chỗ cho hoạt động vui chơi
+Trigger Khách hàng muốn tham gia hoạt động vui
+chơi
+Luồng sự kiện
+chính 1. Khách hàng chọn hoạt động vui chơi và
+loại hình hoạt động.
+2. Hệ thống hiển thị thông tin về hoạt
+động.
+3. Khách hàng xác nhận đặt chỗ.
+Luồng sự kiện
+thay thếKhách hàng không tìm thấy hoạt động phù
+hợp.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể đặt chỗ.
+Post Condition Khách hàng đã đặt thành công chỗ cho hoạt
+động vui chơi.
+Table 3.24: Mô tả Use Case: Đặt chỗ
+Tên Use Case Hủy đặt chỗ
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng hủy chỗ cho một hoạt động vui
+chơi đã đặt trước đó
+31
+
+--- Trang 38 ---
+Trigger Khách hàng muốn hủy đặt chỗ cho hoạt
+động
+Luồng sự kiện
+chính 1. Khách hàng yêu cầu hủy chỗ.
+2. Hệ thống kiểm tra điều kiện hủy chỗ.
+3. Hệ thống xác nhận việc hủy chỗ.
+Luồng sự kiện
+thay thếKhách hàng không thể hủy chỗ do điều kiện
+không thỏa mãn.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể xử lý yêu cầu
+hủy.
+Post Condition Chỗ của khách hàng đã được hủy thành
+công.
+Table 3.25: Mô tả Use Case: Hủy đặt chỗ
+Tên Use Case Tìm kiếm hoạt động vui chơi
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng tìm kiếm các hoạt động vui chơi
+theo sở thích
+Trigger Khách hàng muốn tìm kiếm các hoạt động
+vui chơi
+Luồng sự kiện
+chính 1. Khách hàng nhập thông tin tìm kiếm
+(địa điểm, loại hình hoạt động).
+2. Hệ thống hiển thị danh sách các hoạt
+động vui chơi phù hợp.
+32
+
+--- Trang 39 ---
+Luồng sự kiện
+thay thếKhách hàng không tìm thấy hoạt động vui
+chơi phù hợp.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị danh
+sách hoạt động.
+Post Condition Khách hàng đã tìm thấy hoạt động vui chơi
+phù hợp.
+Table 3.26: Mô tả Use Case: Tìm kiếm hoạt động vui chơi
+Tên Use Case Lọc hoạt động vui chơi
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng lọc danh sách hoạt động vui
+chơi theo tiêu chí
+Trigger Khách hàng muốn lọc danh sách hoạt động
+vui chơi
+Luồng sự kiện
+chính 1. Khách hàng chọn tiêu chí lọc (loại hình
+hoạt động, địa điểm, giá cả).
+2. Hệ thống áp dụng bộ lọc và hiển thị
+danh sách hoạt động phù hợp.
+Luồng sự kiện
+thay thếKhách hàng không tìm thấy kết quả phù hợp
+sau khi lọc.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể áp dụng bộ lọc.
+Post Condition Khách hàng đã lọc và tìm được hoạt động
+vui chơi.
+Table 3.27: Mô tả Use Case: Lọc hoạt động vui chơi
+33
+
+--- Trang 40 ---
+Figure 3.2: Quy trình đặt chỗ khách sạn
+Figure 3.3: Quy trình đặt xe thuê
+34
+
+--- Trang 41 ---
+Figure 3.4: Quy trình đặt vé hoạt động vui chơi
+Tên Use Case Xem thông tin chi tiết hoạt động vui chơi
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng xem thông tin chi tiết về hoạt
+động vui chơi
+Trigger Khách hàng muốn xem thông tin chi tiết về
+hoạt động vui chơi
+Luồng sự kiện
+chính 1. Khách hàng chọn một hoạt động trong
+danh sách.
+2. Hệ thống hiển thị thông tin chi tiết về
+hoạt động (giá, địa điểm, mô tả).
+Luồng sự kiện
+thay thếKhông có
+35
+
+--- Trang 42 ---
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị thông
+tin chi tiết.
+Post Condition Khách hàng đã xem thông tin chi tiết hoạt
+động vui chơi.
+Table 3.28: Mô tả Use Case: Xem thông tin chi tiết hoạt động vui chơi
+Tên Use Case Áp dụng khuyến mãi
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng áp dụng mã khuyến mãi cho
+một hoạt động vui chơi
+Trigger Khách hàng có mã khuyến mãi muốn áp
+dụng
+Luồng sự kiện
+chính 1. Khách hàng nhập mã khuyến mãi.
+2. Hệ thống kiểm tra tính hợp lệ của mã.
+3. Hệ thống xác nhận và áp dụng mã
+khuyến mãi cho hoạt động.
+Luồng sự kiện
+thay thếMã khuyến mãi không hợp lệ hoặc hết hạn.
+Luồng ngoại lệ Hệ thống gặp lỗi khi áp dụng mã khuyến
+mãi.
+Post Condition Mã khuyến mãi đã được áp dụng thành
+công.
+Table 3.29: Mô tả Use Case: Hủy chuyến bay
+Tên Use Case Quản lý thông tin hoạt động vui chơi
+36
+
+--- Trang 43 ---
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý cập nhật, chỉnh sửa thông
+tin hoạt động vui chơi
+Trigger Nhân viên quản lý muốn cập nhật thông tin
+về hoạt động vui chơi
+Luồng sự kiện
+chính 1. Nhân viên quản lý chọn thêm mới,
+chỉnh sửa hoặc xóa thông tin hoạt động.
+2. Hệ thống cập nhật dữ liệu vào cơ sở dữ
+liệu.
+3. Hệ thống hiển thị thông tin đã cập nhật.
+Luồng sự kiện
+thay thếNhân viên quản lý hủy bỏ thay đổi
+Luồng ngoại lệ Hệ thống gặp lỗi không thể cập nhật thông
+tin.
+Post Condition Thông tin hoạt động vui chơi đã được cập
+nhật thành công.
+Table 3.30: Mô tả Use Case: Quản lý thông tin hoạt động vui chơi
+Tên Use Case Xử lý yêu cầu hủy đặt chỗ
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý xử lý yêu cầu hủy đặt chỗ
+của khách hàng
+Trigger Nhân viên quản lý nhận được yêu cầu hủy từ
+khách hàng
+37
+
+--- Trang 44 ---
+Luồng sự kiện
+chính 1. Nhân viên quản lý nhận yêu cầu hủy đặt
+chỗ từ khách hàng.
+2. Hệ thống kiểm tra điều kiện hủy.
+3. Hệ thống xác nhận và hủy chỗ cho
+khách hàng.
+Luồng sự kiện
+thay thếYêu cầu hủy không hợp lệ hoặc không thể
+hủy.
+Luồng ngoại lệ Hệ thống gặp lỗi khi xử lý yêu cầu hủy.
+Post Condition Yêu cầu hủy đã được xử lý thành công.
+Table 3.31: Mô tả Use Case: Xử lý yêu cầu hủy đặt chỗ
+Tên Use Case Quản lý danh sách khách hàng trong tour
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý xem danh sách khách
+hàng và quản lý thông tin khách hàng
+Trigger Nhân viên quản lý muốn xem danh sách
+khách hàng
+Luồng sự kiện
+chính 1. Nhân viên quản lý truy cập vào danh
+sách khách hàng.
+2. Hệ thống hiển thị thông tin về các
+khách hàng đã tham gia hoạt động.
+Luồng sự kiện
+thay thếKhông có khách hàng nào trong danh sách.
+38
+
+--- Trang 45 ---
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị danh
+sách khách hàng.
+Post Condition Nhân viên quản lý đã xem danh sách khách
+hàng.
+Table 3.32: Mô tả Use Case: Quản lý danh sách khách hàng trong tour
+3.1.5 Chương trình khuyến mãi
+Figure 3.5: Chương trình khuyến mãi
+Tên Use Case Lọc chương trình khuyến mại
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng thực hiện lọc các chương trình
+khuyến mại phù hợp với nhu cầu
+Trigger Khách hàng muốn tìm kiếm các chương
+trình khuyến mại phù hợp
+39
+
+--- Trang 46 ---
+Luồng sự kiện
+chính 1. Khách hàng chọn tiêu chí lọc chương
+trình khuyến mại (ví dụ: loại khuyến
+mại, ngày áp dụng).
+2. Hệ thống hiển thị danh sách các chương
+trình khuyến mại phù hợp với tiêu chí.
+Luồng sự kiện
+thay thếKhông có.
+Luồng ngoại lệ Hệ thống không tìm thấy chương trình
+khuyến mại nào phù hợp với tiêu chí.
+Post Condition Danh sách chương trình khuyến mại đã được
+lọc và hiển thị.
+Table 3.33: Mô tả Use Case: Lọc chương trình khuyến mại
+Tên Use Case Chọn chương trình khuyến mại
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng chọn chương trình khuyến mại
+sau khi lọc được danh sách phù hợp
+Trigger Khách hàng muốn áp dụng chương trình
+khuyến mại cho giao dịch
+Luồng sự kiện
+chính 1. Khách hàng chọn một chương trình
+khuyến mại từ danh sách đã lọc.
+2. Hệ thống hiển thị chi tiết về chương
+trình khuyến mại.
+40
+
+--- Trang 47 ---
+Luồng sự kiện
+thay thếKhách hàng có thể chọn lại chương trình
+khuyến mại khác.
+Luồng ngoại lệ Hệ thống không thể hiển thị chi tiết chương
+trình khuyến mại.
+Post Condition Thông tin chi tiết của chương trình khuyến
+mại đã được hiển thị.
+Table 3.34: Mô tả Use Case: Chọn chương trình khuyến mại
+Tên Use Case Áp dụng mã khuyến mại
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng áp dụng mã khuyến mại vào
+đơn hàng hoặc dịch vụ của mình
+Trigger Khách hàng đã chọn chương trình khuyến
+mại và muốn áp dụng mã
+Luồng sự kiện
+chính 1. Khách hàng chọn chức năng áp dụng
+mã khuyến mại.
+2. Hệ thống kiểm tra tính hợp lệ của mã
+khuyến mại.
+3. Hệ thống áp dụng mã và cập nhật tổng
+giá trị giao dịch.
+Luồng sự kiện
+thay thếMã khuyến mại không hợp lệ và khách hàng
+phải chọn mã khác.
+Luồng ngoại lệ Hệ thống gặp lỗi khi kiểm tra hoặc áp dụng
+mã khuyến mại.
+41
+
+--- Trang 48 ---
+Post Condition Mã khuyến mại đã được áp dụng thành công
+vào đơn hàng.
+Table 3.35: Mô tả Use Case: Áp dụng mã khuyến mại
+Tên Use Case Tạo chương trình khuyến mại
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý tạo một chương trình
+khuyến mại mới
+Trigger Nhân viên quản lý muốn thêm mới một
+chương trình khuyến mại vào hệ thống
+Luồng sự kiện
+chính 1. Nhân viên quản lý chọn chức năng tạo
+chương trình khuyến mại.
+2. Nhân viên nhập các thông tin chi tiết
+về chương trình khuyến mại (tên, loại,
+thời gian áp dụng, v.v.).
+3. Hệ thống xác nhận và lưu trữ chương
+trình khuyến mại mới.
+Luồng sự kiện
+thay thếKhông có.
+Luồng ngoại lệ Hệ thống gặp lỗi khi lưu chương trình
+khuyến mại.
+Post Condition Chương trình khuyến mại mới đã được tạo
+thành công.
+Table 3.36: Mô tả Use Case: Tạo chương trình khuyến mại
+42
+
+--- Trang 49 ---
+Tên Use Case Cập nhật chương trình khuyến mại
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý cập nhật thông tin chương
+trình khuyến mại đã có
+Trigger Nhân viên quản lý muốn thay đổi thông tin
+chương trình khuyến mại
+Luồng sự kiện
+chính 1. Nhân viên quản lý chọn chức năng cập
+nhật chương trình khuyến mại.
+2. Hệ thống hiển thị danh sách các chương
+trình khuyến mại hiện có.
+3. Nhân viên quản lý chọn chương trình
+cần cập nhật và chỉnh sửa thông tin.
+4. Hệ thống xác nhận và lưu lại các thay
+đổi.
+Luồng sự kiện
+thay thếKhông có.
+Luồng ngoại lệ Hệ thống gặp lỗi khi lưu thông tin cập nhật.
+Post Condition Chương trình khuyến mại đã được cập nhật
+thành công.
+Table 3.37: Mô tả Use Case: Cập nhật chương trình khuyến mại
+Tên Use Case Xóa chương trình khuyến mại
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý xóa một chương trình
+khuyến mại khỏi hệ thống
+43
+
+--- Trang 50 ---
+Trigger Nhân viên quản lý muốn xóa một chương
+trình khuyến mại không còn sử dụng
+Luồng sự kiện
+chính 1. Nhân viên quản lý chọn chức năng xóa
+chương trình khuyến mại.
+2. Hệ thống hiển thị danh sách các chương
+trình khuyến mại hiện có.
+3. Nhân viên quản lý chọn chương trình
+cần xóa.
+4. Hệ thống yêu cầu xác nhận xóa chương
+trình.
+5. Nhân viên quản lý xác nhận và hệ thống
+xóa chương trình khỏi danh sách.
+Luồng sự kiện
+thay thếNhân viên có thể hủy thao tác xóa trước khi
+xác nhận.
+Luồng ngoại lệ Hệ thống gặp lỗi khi thực hiện xóa chương
+trình.
+Post Condition Chương trình khuyến mại đã được xóa thành
+công khỏi hệ thống.
+Table 3.38: Mô tả Use Case: Xóa chương trình khuyến mại
+3.1.6 Cẩm nang du lịch
+Tên Use Case Tìm kiếm cẩm nang du lịch
+Actor Khách hàng
+44
+
+--- Trang 51 ---
+Mô tả ngắn gọn Khách hàng tìm kiếm các bài viết cẩm nang
+du lịch theo nhu cầu
+Trigger Khách hàng muốn tìm kiếm cẩm nang du
+lịch
+Luồng sự kiện
+chính 1. Khách hàng nhập từ khóa tìm kiếm.
+2. Hệ thống hiển thị danh sách bài viết
+cẩm nang du lịch phù hợp.
+Luồng sự kiện
+thay thếKhông tìm thấy bài viết phù hợp.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị kết quả
+tìm kiếm.
+Post Condition Khách hàng đã tìm thấy bài viết cẩm nang
+du lịch phù hợp.
+Table 3.39: Mô tả Use Case: Tìm kiếm cẩm nang du lịch
+Tên Use Case Lọc cẩm nang du lịch
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng lọc các bài viết cẩm nang du
+lịch theo tiêu chí riêng
+Trigger Khách hàng muốn lọc các bài viết cẩm nang
+du lịch
+45
+
+--- Trang 52 ---
+Luồng sự kiện
+chính 1. Khách hàng chọn tiêu chí lọc (ví dụ: địa
+điểm, loại hình du lịch).
+2. Hệ thống hiển thị các bài viết phù hợp
+với tiêu chí lọc.
+Luồng sự kiện
+thay thếKhông có bài viết nào phù hợp với tiêu chí
+lọc.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể áp dụng bộ lọc.
+Post Condition Khách hàng đã lọc và tìm thấy các bài viết
+cẩm nang du lịch phù hợp.
+Table 3.40: Mô tả Use Case: Lọc cẩm nang du lịch
+Tên Use Case Xem bài viết chi tiết
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng xem chi tiết thông tin trong bài
+viết cẩm nang du lịch
+Trigger Khách hàng muốn xem thông tin chi tiết của
+một bài viết cẩm nang
+Luồng sự kiện
+chính 1. Khách hàng chọn một bài viết trong
+danh sách.
+2. Hệ thống hiển thị thông tin chi tiết về
+bài viết.
+Luồng sự kiện
+thay thếKhông có.
+46
+
+--- Trang 53 ---
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị chi tiết
+bài viết.
+Post Condition Khách hàng đã xem chi tiết thông tin của bài
+viết cẩm nang.
+Table 3.41: Mô tả Use Case: Xem bài viết chi tiết
+Tên Use Case Quản lý cẩm nang du lịch
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý thêm mới, sửa, hoặc xóa
+các bài viết cẩm nang du lịch
+Trigger Nhân viên quản lý muốn cập nhật thông tin
+cẩm nang du lịch
+Luồng sự kiện
+chính 1. Nhân viên quản lý chọn thêm mới,
+chỉnh sửa hoặc xóa bài viết cẩm nang.
+2. Hệ thống cập nhật dữ liệu và hiển thị
+thông tin mới.
+Luồng sự kiện
+thay thếNhân viên quản lý hủy bỏ thay đổi.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể cập nhật thông
+tin.
+Post Condition Thông tin cẩm nang du lịch đã được cập nhật
+thành công.
+Table 3.42: Mô tả Use Case: Quản lý cẩm nang du lịch
+3.1.7 Thông tin công ty
+47
+
+--- Trang 54 ---
+Figure 3.6: Xem cẩm nang du lịch
+Figure 3.7: Xem thông tin công ty
+48
+
+--- Trang 55 ---
+Tên Use Case Xem thông tin công ty
+Actor Khách hàng
+Mô tả ngắn gọn Khách hàng xem thông tin chung về công ty
+Trigger Khách hàng muốn tìm hiểu thông tin về
+công ty
+Luồng sự kiện
+chính 1. Khách hàng chọn mục "Thông tin công
+ty".
+2. Hệ thống hiển thị thông tin chung về
+công ty (ví dụ: địa chỉ, lĩnh vực hoạt
+động, lịch sử).
+Luồng sự kiện
+thay thếKhông có.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể hiển thị thông
+tin công ty.
+Post Condition Khách hàng đã xem thông tin chi tiết về
+công ty.
+Table 3.43: Mô tả Use Case:Xem thông tin công ty
+Tên Use Case Chỉnh sửa thông tin chung về công ty
+Actor Nhân viên quản lý
+Mô tả ngắn gọn Nhân viên quản lý chỉnh sửa thông tin chung
+về công ty
+Trigger Nhân viên quản lý muốn cập nhật thông tin
+công ty
+49
+
+--- Trang 56 ---
+Luồng sự kiện
+chính 1. Nhân viên quản lý chọn mục chỉnh sửa
+thông tin công ty.
+2. Hệ thống hiển thị giao diện chỉnh sửa
+thông tin công ty.
+3. Nhân viên quản lý cập nhật các thông
+tin cần chỉnh sửa và lưu thay đổi.
+Luồng sự kiện
+thay thếNhân viên quản lý hủy bỏ thao tác chỉnh sửa.
+Luồng ngoại lệ Hệ thống gặp lỗi không thể lưu thông tin
+chỉnh sửa.
+Post Condition Thông tin công ty đã được cập nhật thành
+công.
+Table 3.44: Mô tả Use Case: Chỉnh sửa thông tin chung về công ty
+3.2 Class Diagram
+Class Diagram mô tả cấu trúc của một hệ thống website du lịch với nhiều chức
+năng bao gồm đặt vé máy bay, đặt phòng khách sạn, thuê xe, đặt hoạt động vui
+chơi, chương trình khuyến mãi, và các dịch vụ hỗ trợ như thanh toán và gửi
+email.
+Các thành phần chính trong Class Diagram:
+•TrangChu (Trang Chủ) :
+– Biến :tieuDe ,anhBanner
+– Phương thức :hienThi()
+50
+
+--- Trang 57 ---
+–Lớp này đại diện cho trang chủ của hệ thống, nơi hiển thị thông tin
+chính của website và các thành phần trực quan như tiêu đề và hình ảnh
+biểu ngữ (banner).
+•NguoiDung (Người dùng) :
+– Biến :maNguoiDung ,tenDangNhap ,matKhau ,email ,soDienThoai ,
+diaChi
+– Phương thức :dangNhap() ,dangXuat() ,xemThongTinCaNhan()
+–Đây là lớp cơ sở đại diện cho người dùng của hệ thống. Người dùng có
+thể đăng nhập, xem thông tin cá nhân, và thực hiện các chức năng khác
+trên website.
+•KhachHang (Khách hàng) :
+–Kế thừa từ lớp NguoiDung .
+– Biến :lichSuDatCho
+– Phương thức :xemLichSuDatCho() ,datVeMayBay() ,datKhachSan() ,
+thueXe() ,datHoatDong() ,apDungKhuyenMai()
+–Lớp này mở rộng từ lớp NguoiDung , đại diện cho khách hàng thực
+hiện các giao dịch như đặt vé máy bay, đặt phòng khách sạn, thuê xe,
+và tham gia hoạt động vui chơi. Khách hàng cũng có thể áp dụng các
+chương trình khuyến mãi và xem lịch sử đặt chỗ của mình.
+•QuanLy (Quản lý) :
+–Kế thừa từ lớp NguoiDung .
+– Phương thức :quanLyKhuyenMai() ,themKhuyenMai() ,
+suaKhuyenMai() ,xoaKhuyenMai() ,xemBaoCaoDatVe()
+–Đây là lớp quản lý, có khả năng quản trị hệ thống như thêm, sửa, xóa
+các chương trình khuyến mãi và xem báo cáo về doanh thu từ các hoạt
+động đặt chỗ.
+51
+
+--- Trang 58 ---
+•BaoCaoDatVe (Báo cáo đặt vé) :
+– Biến :tongDoanhThu ,soLuongDatCho ,chiTietDoanhThuTheoLoai
+– Phương thức :xemChiTiet() ,tinhTongDoanhThu()
+–Lớp này chịu trách nhiệm tạo ra các báo cáo liên quan đến tổng doanh
+thu từ hoạt động đặt chỗ và chi tiết doanh thu theo loại hình dịch vụ (vé
+máy bay, khách sạn, thuê xe...).
+•DatVeMayBay (Đặt vé máy bay) :
+– Biến :maVe ,ngayDat ,diemKhoiHanh ,diemDen ,loaiGhe ,soTien
+– Phương thức :chonChuyenBay() ,nhapThongTinChuyenBay() ,
+tienHanhThanhToan() ,guiEmailXacNhan()
+–Lớp này quản lý các thông tin liên quan đến việc đặt vé máy bay, bao
+gồm chọn chuyến bay, nhập thông tin chi tiết và xử lý thanh toán.
+•DatKhachSan (Đặt khách sạn) :
+– Biến :maDatPhong ,ngayDat ,khachSan ,ngayNhanPhong ,ngayTraPhong ,
+loaiPhong ,soTien
+– Phương thức :chonKhachSan() ,nhapThongTinPhong() ,
+tienHanhThanhToan() ,guiEmailXacNhan()
+–Quản lý việc đặt phòng khách sạn với các thông tin như khách sạn,
+ngày nhận và trả phòng, loại phòng và xử lý thanh toán.
+•ThueXe (Thuê xe) :
+– Biến :maThueXe ,ngayDat ,loaiXe ,ngayBatDau ,ngayKetThuc ,soTien
+– Phương thức :chonXe() ,nhapThongTinThue() ,tienHanhThanhToan() ,
+guiEmailXacNhan()
+–Xử lý thông tin và quy trình liên quan đến việc thuê xe, bao gồm chọn
+xe, nhập thông tin thuê và thanh toán.
+52
+
+--- Trang 59 ---
+•DatHoatDong (Đặt hoạt động vui chơi) :
+– Biến :maHoatDong ,ngayDat ,loaiHoatDong ,soTien
+– Phương thức :chonHoatDong() ,nhapThongTinHoatDong() ,
+tienHanhThanhToan() ,guiEmailXacNhan()
+–Quản lý các hoạt động vui chơi của khách hàng, cho phép chọn loại
+hoạt động và tiến hành đặt chỗ, thanh toán.
+•ChuongTrinhKhuyenMai (Chương trình khuyến mãi) :
+– Biến :maKhuyenMai ,tenKhuyenMai ,giamGia ,moTa
+– Phương thức :xemKhuyenMai() ,apDungKhuyenMai()
+–Quản lý các chương trình khuyến mãi có sẵn và cho phép khách hàng
+áp dụng các mã khuyến mãi để được giảm giá.
+•ThanhToan (Thanh toán) :
+– Biến :maThanhToan ,soTien ,phuongThuc
+– Phương thức :xuLyThanhToan()
+–Lớp này chịu trách nhiệm xử lý các giao dịch thanh toán trong hệ thống.
+•DichVuEmail (Dịch vụ Email) :
+– Biến :diaChiEmail ,tieuDe ,noiDung
+– Phương thức :guiEmail()
+–Chịu trách nhiệm gửi email xác nhận cho khách hàng sau khi hoàn
+thành các giao dịch đặt chỗ hoặc áp dụng khuyến mãi.
+•CamNangDuLich (Cẩm nang du lịch) :
+– Biến :maCamNang ,tieuDe ,tepTaiLieu
+– Phương thức :taiCamNang() ,xemDanhSachCamNang()
+53
+
+--- Trang 60 ---
+–Quản lý việc hiển thị danh sách cẩm nang du lịch và cho phép khách
+hàng tải xuống các tài liệu hướng dẫn du lịch.
+•ThongTinCongTy (Thông tin công ty) :
+– Biến :tenCongTy ,diaChi ,soDienThoai ,email
+– Phương thức :xemThongTinCongTy()
+–Cung cấp thông tin chung về công ty, bao gồm tên, địa chỉ, số điện
+thoại và email liên hệ.
+•LichSuDatCho (Lịch sử đặt chỗ) :
+– Biến :danhSachDatCho
+– Phương thức :xemLichSuDatCho()
+–Quản lý danh sách các giao dịch đặt chỗ của khách hàng và cung cấp
+phương thức để xem chi tiết lịch sử đặt chỗ.
+•DatCho (Đặt chỗ) :
+– Biến :maDatCho ,ngayDat ,tongTien
+– Phương thức :hienThiChiTietDatCho()
+–Lớp này đại diện cho một giao dịch đặt chỗ cụ thể, quản lý các thông
+tin như mã đặt chỗ, ngày đặt và tổng số tiền đã thanh toán.
+Mối quan hệ giữa các lớp:
+•Các lớp như NguoiDung ,KhachHang , vàQuanLy là các đối tượng chính
+trong hệ thống. Khách hàng có thể thực hiện các thao tác như đặt vé máy
+bay, khách sạn, thuê xe, và hoạt động vui chơi. Sau đó, các thao tác này sẽ
+liên kết với các dịch vụ thanh toán và email để hoàn tất quá trình.
+•QuanLy có quyền thêm, sửa, xóa các chương trình khuyến mãi và xem báo
+cáo về hoạt động đặt chỗ.
+54
+
+--- Trang 61 ---
+•Các mối quan hệ composition giữa các lớp quản lý đặt chỗ và các lớp dịch
+vụ như thanh toán và email đảm bảo việc xử lý các quy trình đặt chỗ diễn
+ra tự động và chính xác.
+Truy cập để xem chi tiết về diagram
+55
+
+--- Trang 62 ---
+Figure 3.8: Class Diagram
+56
+
+--- Trang 63 ---
+3.3 Activity Diagram
+Activity Diagram dưới đây mô tả quy trình hoạt động của hệ thống website du
+lịch, bao gồm các chức năng chính như đặt vé máy bay, đặt khách sạn, thuê xe,
+hoạt động vui chơi, chương trình khuyến mãi, cẩm nang du lịch, và phần quản lý
+dành cho nhân viên. Sơ đồ giúp phân tách rõ ràng các chức năng mà người dùng
+và quản lý có thể thực hiện.
+Người dùng (User)
+1. Người dùng truy cập vào Homepage .
+2. Người dùng chọn chức năng Login .
+3. Hệ thống kiểm tra thông tin đăng nhập:
+•Nếu đăng nhập thành công, hệ thống hiển thị Display user informa-
+tion.
+•Nếu đăng nhập không thành công, người dùng sẽ bị chuyển hướng tới
+Login Page .
+4. Người dùng sau khi đăng nhập thành công có thể chọn một trong các chức
+năng sau:
+•Đặt vé máy bay :
+–Người dùng chọn chuyến bay ( Select flight ).
+–Nhập chi tiết chuyến bay ( Input flight details ).
+–Tiến hành thanh toán ( Proceed to Payment ).
+–Sau khi thanh toán thành công, hệ thống sẽ gửi email xác nhận
+(Send confirmation email ).
+•Đặt khách sạn :
+–Người dùng chọn khách sạn ( Select hotel ).
+57
+
+--- Trang 64 ---
+–Nhập thông tin lưu trú ( Input stay details ).
+–Tiến hành thanh toán ( Proceed to Payment ).
+–Sau khi thanh toán thành công, hệ thống sẽ gửi email xác nhận
+(Send confirmation email ).
+•Thuê xe :
+–Người dùng chọn loại xe ( Select car ).
+–Nhập thông tin thuê xe ( Input rental details ).
+–Tiến hành thanh toán ( Proceed to Payment ).
+–Sau khi thanh toán thành công, hệ thống sẽ gửi email xác nhận
+(Send confirmation email ).
+•Hoạt động vui chơi :
+–Người dùng chọn hoạt động ( Select activity ).
+–Nhập chi tiết hoạt động ( Input activity details ).
+–Tiến hành thanh toán ( Proceed to Payment ).
+–Sau khi thanh toán thành công, hệ thống sẽ gửi email xác nhận
+(Send confirmation email ).
+•Chương trình khuyến mãi :
+–Người dùng xem các khuyến mãi hiện có ( View available promo-
+tions ).
+–Chọn khuyến mãi để áp dụng ( Select promotion to apply ).
+–Tiến hành thanh toán ( Proceed to Payment ).
+–Sau khi thanh toán thành công, hệ thống sẽ gửi email xác nhận
+(Send confirmation email ).
+•Cẩm nang du lịch :
+–Người dùng duyệt qua cẩm nang du lịch ( Browse travel guide ).
+–Tải xuống cẩm nang ( Download guide ).
+•Về chúng tôi :
+58
+
+--- Trang 65 ---
+–Người dùng xem thông tin về công ty ( View company informa-
+tion).
+Nhân viên (Staff)
+1. Nhân viên có thể chọn chức năng Login as Manager .
+2. Sau khi đăng nhập thành công, nhân viên có thể truy cập vào Access Pro-
+motion Management .
+3. Trong phần quản lý chương trình khuyến mãi, nhân viên có thể thực hiện
+các hành động sau:
+•Create a new promotion : Nhân viên tạo chương trình khuyến mãi
+mới, nhập chi tiết và lưu chương trình ( Save new promotion ).
+•Update an existing promotion : Nhân viên chọn chương trình khuyến
+mãi cần cập nhật, chỉnh sửa thông tin và lưu lại ( Save changes ).
+•Delete a promotion : Nhân viên chọn chương trình khuyến mãi cần xóa
+và xác nhận việc xóa ( Confirm deletion ).
+4. Sau khi hoàn thành các tác vụ, nhân viên có thể Log out .
+Kết luận
+Sơ đồ hoạt động này mô tả các quy trình chính của hệ thống, cho phép người
+dùng thực hiện các chức năng đặt vé, thuê xe, tham gia hoạt động vui chơi, và
+nhân viên có thể quản lý các chương trình khuyến mãi. Điều này giúp đảm bảo
+luồng hoạt động của hệ thống diễn ra mạch lạc và rõ ràng.
+Truy cập để xem chi tiết về diagram
+59
+
+--- Trang 66 ---
+Figure 3.9: Activity Diagram
+60
+
+--- Trang 67 ---
+3.4 Sequence Diagram
+Giới thiệu
+Sequence Diagram này mô tả quá trình tương tác giữa các thành phần trong hệ
+thống website, bao gồm User (Người dùng), Web System (Hệ thống web), Pay-
+ment Gateway (Cổng thanh toán), Email Service (Dịch vụ email), và Database
+(Cơ sở dữ liệu). Quá trình tương tác diễn ra khi người dùng thực hiện các hành
+động trên hệ thống như đăng nhập, đặt vé máy bay, và thanh toán.
+Đặc tả chi tiết
+•Đăng nhập hệ thống
+– User : Người dùng yêu cầu đăng nhập vào hệ thống.
+– Web System :
+*Tiếp nhận yêu cầu đăng nhập từ người dùng.
+*Kiểm tra thông tin đăng nhập trong cơ sở dữ liệu (Database).
+*Nhận kết quả từ cơ sở dữ liệu: Nếu thông tin hợp lệ, người dùng
+được đăng nhập thành công.
+*Thông báo kết quả đăng nhập lại cho User.
+•Đặt vé máy bay
+– User : Sau khi đăng nhập, người dùng bắt đầu đặt vé máy bay.
+– Web System :
+*Hiển thị giao diện đặt vé cho người dùng nhập thông tin chi tiết
+(chuyến bay, thông tin cá nhân, v.v.).
+*Xác nhận thông tin và tiến hành xử lý đơn đặt vé.
+– Database :
+*Kiểm tra tính khả dụng của chuyến bay trong cơ sở dữ liệu.
+61
+
+--- Trang 68 ---
+*Xác nhận lại trạng thái của chuyến bay (sẵn sàng hay hết chỗ) và
+gửi phản hồi về cho hệ thống web.
+•Thanh toán
+– Web System : Sau khi thông tin vé máy bay đã được xác nhận, hệ thống
+gửi yêu cầu thanh toán.
+– Payment Gateway :
+*Xử lý thanh toán thông qua cổng thanh toán (ví dụ: thẻ tín dụng, ví
+điện tử).
+*Xác nhận thanh toán thành công hoặc thất bại và gửi phản hồi lại
+cho hệ thống web.
+– Web System : Nếu thanh toán thành công, tiếp tục các bước tiếp theo.
+•Gửi email xác nhận
+– Web System : Sau khi thanh toán thành công, hệ thống web tạo yêu cầu
+gửi email xác nhận.
+– Email Service :
+*Nhận yêu cầu từ hệ thống web để gửi email xác nhận (bao gồm
+thông tin đặt vé, chi tiết thanh toán, thông tin hành khách).
+*Gửi email cho người dùng để xác nhận đơn hàng đã hoàn tất.
+•Lưu trữ thông tin vào cơ sở dữ liệu
+– Web System : Sau khi hoàn tất quy trình, hệ thống web lưu trữ thông
+tin đặt vé và chi tiết thanh toán vào cơ sở dữ liệu.
+– Database :
+*Nhận yêu cầu lưu trữ và cập nhật dữ liệu về thông tin chuyến bay,
+thanh toán và người dùng.
+*Xác nhận thông tin đã được lưu thành công và gửi phản hồi lại cho
+hệ thống web.
+62
+
+--- Trang 69 ---
+•Thông báo kết quả cho người dùng
+– Web System :
+*Sau khi quá trình thanh toán, gửi email và lưu trữ hoàn tất, hệ thống
+sẽ hiển thị thông báo cho người dùng về tình trạng đặt vé (thành
+công hay thất bại).
+Các đối tượng chính trong Sequence Diagram
+•User: Người dùng thực hiện các hành động như đăng nhập, đặt vé, và thanh
+toán.
+•Web System : Hệ thống web là thành phần trung gian, xử lý các yêu cầu
+của người dùng và tương tác với các hệ thống khác như cổng thanh toán,
+dịch vụ email và cơ sở dữ liệu.
+•Payment Gateway : Cổng thanh toán chịu trách nhiệm xử lý các giao dịch
+thanh toán.
+•Email Service : Dịch vụ gửi email xác nhận giao dịch cho người dùng.
+•Database : Cơ sở dữ liệu lưu trữ thông tin người dùng, chuyến bay, và lịch
+sử giao dịch.
+Tóm tắt quy trình
+•Người dùng đăng nhập, chọn chuyến bay và tiến hành thanh toán.
+•Hệ thống xử lý thông tin qua cơ sở dữ liệu, cổng thanh toán, và dịch vụ
+email để hoàn tất giao dịch.
+•Hệ thống lưu trữ thông tin và thông báo cho người dùng kết quả.
+Truy cập để xem chi tiết về diagram
+63
+
+--- Trang 70 ---
+Figure 3.10: Sequence Diagram
+64
+
+--- Trang 71 ---
+Bibliography
+[1] 200Lab. “Giải thích các ký hiệu trong class diagram”. (2023), [Online].
+Available: https://200lab.io/blog/giai-thich-cac-ky-hieu-
+trong-class-diagram/?srsltid=AfmBOoq_Sv44rHkn1rkXC_lgRl-
+v1P4bjmMS6WIs_HXYcKkekoVHq82Y .
+[2] Bezkoder. “React, spring boot, mongodb architecture”. (2023), [Online].
+Available: https : / / www . bezkoder . com / react - spring - boot -
+mongodb/#Spring_Boot_React_and_MongoDB_Architecture .
+[3] Creately. “Er diagrams tutorial”. (2023), [Online]. Available: https://
+creately-com.translate.goog/guides/er-diagrams-tutorial/
+?_x_tr_sl=en&_x_tr_tl=vi&_x_tr_hl=vi&_x_tr_pto=tc .
+[4] CodeLearn. “Sequence diagram trong uml”. (2023), [Online]. Available:
+https://codelearn.io/sharing/sequence-diagram-trong-uml .
+[5] Figma. “Figma community file”. (2023), [Online]. Available: https://
+www.figma.com/community/file/817913152610525667 .
+[6] GeeksforGeeks. “Mongodb tutorial”. (2023), [Online]. Available: https:
+//www.geeksforgeeks.org/mongodb-tutorial/ .
+[7] GeeksforGeeks. “Unified modeling language (uml) class diagrams”. (2023),
+[Online]. Available: https://www.geeksforgeeks.org/unified-
+modeling-language-uml-class-diagrams/ .
+[8] GeeksforGeeks. “Mvc design pattern”. (2023), [Online]. Available: https:
+//www.geeksforgeeks.org/mvc-design-pattern/ .
+65
+
+--- Trang 72 ---
+[9] Gliffy. “How to draw an entity relationship diagram”. (2023), [Online].
+Available: https : / / www . gliffy . com / blog / how - to - draw - an -
+entity-relationship-diagram .
+[10] Javatpoint. “Java tutorial - javatpoint”. (2023), [Online]. Available: https:
+//www.javatpoint.com/java-tutorial .
+[11] Lucidchart. “Er diagrams - design and documentation tool”. (2023), [On-
+line]. Available: https://www.lucidchart.com/pages/er-diagrams .
+[12] Lucidchart. “Uml use case diagram - lucidchart”. (2023), [Online]. Avail-
+able: https : / / www . lucidchart . com / pages / uml - use - case -
+diagram .
+[13] Ramotion. “Mvc architecture in web application”. (2023), [Online]. Avail-
+able: https://www.ramotion.com/blog/mvc-architecture-in-
+web-application/ .
+[14] ThinhNotes. “Use case diagram và 5 sai lầm thường gặp”. (2023), [On-
+line]. Available: https://thinhnotes.com/chuyen-nghe-ba/use-
+case-diagram-va-5-sai-lam-thuong-gap/ .
+[15] TutorialsPoint. “Mongodb tutorial”. (2023), [Online]. Available: https:
+//www.tutorialspoint.com/mongodb/index.htm .
+[16] V. Paradigm. “What is a sequence diagram?” (2023), [Online]. Avail-
+able: https://www.visual-paradigm.com/guide/uml-unified-
+modeling-language/what-is-sequence-diagram/ .
+[17] W3Schools. “Sql tutorial - w3schools”. (2023), [Online]. Available: https:
+//www.w3schools.com/sql .
+66
