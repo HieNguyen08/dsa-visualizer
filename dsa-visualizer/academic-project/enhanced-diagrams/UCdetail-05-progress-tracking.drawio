@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-12-23T10:00:00.000Z" agent="Mozilla/5.0" version="24.7.17" etag="UCdetail-05" type="device">
+  <diagram name="UCdetail-05: Progress Tracking Module" id="ucdetail-05">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Title -->
+        <mxCell id="title" value="UCdetail-05: Progress Tracking Module" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fillColor=#13c2c2;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="800" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- System Boundary -->
+        <mxCell id="system-boundary" value="Progress Tracking Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#e6fffb;strokeColor=#13c2c2;strokeWidth=2;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="150" y="80" width="900" height="650" as="geometry"/>
+        </mxCell>
+
+        <!-- Actors -->
+        <mxCell id="student" value="Student" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="analytics-engine" value="Analytics&#xa;Engine" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1100" y="200" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="notification-system" value="Notification&#xa;System" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor="#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="1100" y="400" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Primary Use Cases -->
+        <mxCell id="view-dashboard" value="View Progress&#xa;Dashboard" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="track-learning-time" value="Track Learning&#xa;Time" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="360" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="monitor-completion" value="Monitor Algorithm&#xa;Completion" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="520" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="view-achievements" value="View&#xa;Achievements" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="680" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="set-goals" value="Set Learning&#xa;Goals" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="840" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Analytics Features -->
+        <mxCell id="performance-analytics" value="Performance&#xa;Analytics" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
+          <mxGeometry x="200" y="250" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="learning-patterns" value="Learning Pattern&#xa;Analysis" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
+          <mxGeometry x="360" y="250" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="strength-weakness" value="Strength/Weakness&#xa;Identification" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
+          <mxGeometry x="520" y="250" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="progress-reports" value="Generate Progress&#xa;Reports" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
+          <mxGeometry x="680" y="250" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Goal Management -->
+        <mxCell id="milestone-tracking" value="Milestone&#xa;Tracking" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff7e6;strokeColor=#d48806;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="360" y="380" width="140" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="receive-recommendations" value="Receive Study&#xa;Recommendations" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#fff0f6;strokeColor=#d48fb1" vertex="1" parent="1">
+          <mxGeometry x="540" y="380" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="share-progress" value="Share Progress&#xa;with Others" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#fff0f6;strokeColor=#d48fb1" vertex="1" parent="1">
+          <mxGeometry x="700" y="380" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Detailed Scenarios -->
+        <mxCell id="scenario-daily" value="Scenario 1: Daily Progress Check&#xa;• Student opens progress dashboard&#xa;• Reviews today's learning time&#xa;• Checks completed algorithms&#xa;• Views recent achievements&#xa;• Sets goals for next session&#xa;• Reviews study recommendations" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
+          <mxGeometry x="180" y="500" width="200" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scenario-weekly" value="Scenario 2: Weekly Analysis&#xa;• Student views weekly report&#xa;• Analyzes learning patterns&#xa;• Identifies strength/weakness areas&#xa;• Compares with previous weeks&#xa;• Adjusts learning strategy&#xa;• Plans upcoming topics" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#f6ffed;strokeColor=#52c41a" vertex="1" parent="1">
+          <mxGeometry x="400" y="500" width="200" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scenario-milestone" value="Scenario 3: Milestone Achievement&#xa;• System detects goal completion&#xa;• Student receives achievement badge&#xa;• Progress milestone is updated&#xa;• Performance analytics refresh&#xa;• New recommendations generated&#xa;• Success shared with peers" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="620" y="500" width="200" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Flow Arrows -->
+        <mxCell id="flow1" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="view-dashboard" target="track-learning-time">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="flow2" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="learning-patterns" target="milestone-tracking">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Actor Connections -->
+        <mxCell id="student-dashboard" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.3;" edge="1" parent="1" source="student" target="view-dashboard">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="analytics-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.3;" edge="1" parent="1" source="analytics-engine" target="performance-analytics">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
