@@ -42,162 +42,180 @@ Các use case chính trong Learning Process:
 
 \subsubsection{UC001: Algorithm Visualization Learning}
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|p{3cm}|p{10cm}|}
+\begin{longtable}{| p{3cm} | p{10cm} |}
 \hline
-\textbf{Use Case ID} & UC001 \\
-\hline
-\textbf{Use Case Name} & Algorithm Visualization Learning \\
-\hline
-\textbf{Actor} & Student \\
-\hline
-\textbf{Description} & Học viên học thuật toán thông qua visualization interactive \\
-\hline
+\textbf{Use Case ID} & UC001 \\ \hline
+\textbf{Tên Use Case} & Algorithm Visualization Learning \\ \hline
+\textbf{Actor} & Student \\ \hline
+\textbf{Mô tả ngắn gọn} & Học viên học thuật toán thông qua visualization interactive \\ \hline
+\textbf{Trigger} & Học viên muốn học và hiểu thuật toán thông qua visualization \\ \hline
 \textbf{Precondition} & 
-- Học viên đã đăng nhập vào hệ thống \\
-- Hệ thống có sẵn algorithm content \\
-\hline
-\textbf{Basic Flow} & 
-1. Học viên chọn loại thuật toán muốn học \\
-2. Hệ thống hiển thị danh sách algorithms available \\
-3. Học viên chọn specific algorithm (VD: Quick Sort) \\
-4. Hệ thống load algorithm visualizer \\
-5. Học viên input dữ liệu hoặc sử dụng sample data \\
-6. Học viên bắt đầu visualization process \\
-7. Hệ thống thực hiện step-by-step animation \\
-8. Học viên control speed, pause, resume \\
-9. Hệ thống hiển thị complexity analysis \\
-10. Học viên hoàn thành learning session \\
-\hline
-\textbf{Alternative Flow} & 
-Alt 1: Học viên muốn compare algorithms \\
-- Từ bước 3, học viên chọn multiple algorithms \\
-- Hệ thống hiển thị comparison view \\
-- Học viên chạy cùng lúc để so sánh performance \\
-\hline
-\textbf{Exception Flow} & 
-Exc 1: Input data không hợp lệ \\
-- Hệ thống hiển thị error message \\
-- Yêu cầu học viên nhập lại data \\
-Exc 2: Algorithm execution error \\
-- Hệ thống reset visualization \\
-- Hiển thị default sample data \\
-\hline
-\textbf{Postcondition} & 
-- Learning progress được cập nhật \\
-- Session data được lưu trong profile \\
-- Analytics data được ghi nhận \\
-\hline
-\end{tabular}
+\begin{itemize}
+    \item Học viên đã đăng nhập vào hệ thống
+    \item Hệ thống có sẵn algorithm content
+    \item Browser hỗ trợ HTML5 Canvas/WebGL
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item Học viên chọn loại thuật toán muốn học
+    \item Hệ thống hiển thị danh sách algorithms available
+    \item Học viên chọn specific algorithm (VD: Quick Sort)
+    \item Hệ thống load algorithm visualizer interface
+    \item Học viên input dữ liệu hoặc sử dụng sample data
+    \item Học viên bắt đầu visualization process
+    \item Hệ thống thực hiện step-by-step animation
+    \item Học viên control speed, pause, resume theo nhu cầu
+    \item Hệ thống hiển thị complexity analysis và explanation
+    \item Học viên hoàn thành learning session
+\end{enumerate} \\ \hline
+\textbf{Luồng sự kiện thay thế} & 
+\textbf{Alt 1:} Học viên muốn compare algorithms
+\begin{itemize}
+    \item Từ bước 3, học viên chọn multiple algorithms
+    \item Hệ thống hiển thị comparison view
+    \item Học viên chạy cùng lúc để so sánh performance
+\end{itemize} \\ \hline
+\textbf{Luồng ngoại lệ} & 
+\textbf{Exc 1:} Input data không hợp lệ
+\begin{itemize}
+    \item Hệ thống hiển thị error message
+    \item Yêu cầu học viên nhập lại data
+\end{itemize}
+\textbf{Exc 2:} Algorithm execution error
+\begin{itemize}
+    \item Hệ thống reset visualization
+    \item Hiển thị default sample data
+\end{itemize} \\ \hline
+\textbf{Post Condition} & 
+\begin{itemize}
+    \item Learning progress được cập nhật
+    \item Session data được lưu trong profile
+    \item Analytics data được ghi nhận
+\end{itemize} \\ \hline
 \caption{Use Case Scenario: Algorithm Visualization Learning}
-\label{tab:uc001}
-\end{table}
+\label{tab:uc001} \\
+\end{longtable}
 
 \subsubsection{UC002: Interactive Algorithm Practice}
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|p{3cm}|p{10cm}|}
+\begin{longtable}{| p{3cm} | p{10cm} |}
 \hline
-\textbf{Use Case ID} & UC002 \\
-\hline
-\textbf{Use Case Name} & Interactive Algorithm Practice \\
-\hline
-\textbf{Actor} & Student \\
-\hline
-\textbf{Description} & Học viên thực hành thuật toán với interactive controls và custom input \\
-\hline
+\textbf{Use Case ID} & UC002 \\ \hline
+\textbf{Tên Use Case} & Interactive Algorithm Practice \\ \hline
+\textbf{Actor} & Student \\ \hline
+\textbf{Mô tả ngắn gọn} & Học viên thực hành thuật toán với interactive controls và custom input \\ \hline
+\textbf{Trigger} & Học viên muốn thực hành để củng cố kiến thức thuật toán \\ \hline
 \textbf{Precondition} & 
-- Học viên đã hoàn thành basic learning session \\
-- Hệ thống có sẵn practice environment \\
-\hline
-\textbf{Basic Flow} & 
-1. Học viên chọn Practice Mode \\
-2. Hệ thống hiển thị available practice algorithms \\
-3. Học viên chọn algorithm để practice \\
-4. Hệ thống load interactive practice environment \\
-5. Học viên tạo custom input data \\
-6. Học viên predict algorithm behavior \\
-7. Học viên execute algorithm step by step \\
-8. Hệ thống provide real-time feedback \\
-9. Học viên so sánh prediction với actual result \\
-10. Hệ thống tính performance score \\
-\hline
-\textbf{Alternative Flow} & 
-Alt 1: Guided Practice Mode \\
-- Hệ thống provide hints và suggestions \\
-- Học viên được hỗ trợ trong quá trình practice \\
-Alt 2: Challenge Mode \\
-- Hệ thống đưa ra specific challenges \\
-- Học viên phải giải quyết trong thời gian giới hạn \\
-\hline
-\textbf{Exception Flow} & 
-Exc 1: Practice session timeout \\
-- Hệ thống save current progress \\
-- Cho phép học viên continue later \\
-\hline
-\textbf{Postcondition} & 
-- Practice score được ghi nhận \\
-- Skill assessment được cập nhật \\
-- Achievement badges có thể được unlock \\
-\hline
-\end{tabular}
+\begin{itemize}
+    \item Học viên đã hoàn thành basic learning session
+    \item Hệ thống có sẵn practice environment
+    \item Practice mode được activate
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item Học viên chọn Practice Mode từ main menu
+    \item Hệ thống hiển thị available practice algorithms
+    \item Học viên chọn algorithm để practice
+    \item Hệ thống load interactive practice environment
+    \item Học viên tạo custom input data hoặc chọn preset
+    \item Học viên predict algorithm behavior trước khi execute
+    \item Học viên execute algorithm step by step với controls
+    \item Hệ thống provide real-time feedback và hints
+    \item Học viên so sánh prediction với actual result
+    \item Hệ thống tính performance score và suggestions
+\end{enumerate} \\ \hline
+\textbf{Luồng sự kiện thay thế} & 
+\textbf{Alt 1:} Guided Practice Mode
+\begin{itemize}
+    \item Hệ thống provide hints và suggestions trong quá trình
+    \item Học viên được hỗ trợ với detailed explanations
+\end{itemize}
+\textbf{Alt 2:} Challenge Mode
+\begin{itemize}
+    \item Hệ thống đưa ra specific challenges với time limits
+    \item Học viên phải giải quyết trong thời gian giới hạn
+\end{itemize} \\ \hline
+\textbf{Luồng ngoại lệ} & 
+\textbf{Exc 1:} Practice session timeout
+\begin{itemize}
+    \item Hệ thống auto-save current progress
+    \item Cho phép học viên continue later từ checkpoint
+\end{itemize}
+\textbf{Exc 2:} Invalid practice input
+\begin{itemize}
+    \item Hệ thống validate input và show error
+    \item Provide suggested valid input examples
+\end{itemize} \\ \hline
+\textbf{Post Condition} & 
+\begin{itemize}
+    \item Practice score được ghi nhận vào user profile
+    \item Skill assessment metrics được cập nhật
+    \item Achievement badges có thể được unlock
+    \item Practice history được lưu cho future reference
+\end{itemize} \\ \hline
 \caption{Use Case Scenario: Interactive Algorithm Practice}
-\label{tab:uc002}
-\end{table}
+\label{tab:uc002} \\
+\end{longtable}
 
 \subsubsection{UC003: AI Assistant Consultation}
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|p{3cm}|p{10cm}|}
+\begin{longtable}{| p{3cm} | p{10cm} |}
 \hline
-\textbf{Use Case ID} & UC003 \\
-\hline
-\textbf{Use Case Name} & AI Assistant Consultation \\
-\hline
-\textbf{Actor} & Student \\
-\hline
-\textbf{Description} & Học viên sử dụng AI Assistant để được hỗ trợ học tập và giải đáp thắc mắc \\
-\hline
+\textbf{Use Case ID} & UC003 \\ \hline
+\textbf{Tên Use Case} & AI Assistant Consultation \\ \hline
+\textbf{Actor} & Student \\ \hline
+\textbf{Mô tả ngắn gọn} & Học viên sử dụng AI Assistant để được hỗ trợ học tập và giải đáp thắc mắc \\ \hline
+\textbf{Trigger} & Học viên gặp khó khăn hoặc có câu hỏi cần giải đáp về algorithm \\ \hline
 \textbf{Precondition} & 
-- Học viên đang trong learning session \\
-- AI Assistant service đang hoạt động \\
-\hline
-\textbf{Basic Flow} & 
-1. Học viên click vào AI Assistant icon \\
-2. Hệ thống mở AI chat interface \\
-3. Học viên nhập câu hỏi về algorithm \\
-4. AI Assistant phân tích context và question \\
-5. AI generate response với explanation \\
-6. Hệ thống hiển thị answer với code examples \\
-7. Học viên có thể ask follow-up questions \\
-8. AI provide additional hints nếu cần \\
-9. Học viên close AI Assistant khi satisfied \\
-\hline
-\textbf{Alternative Flow} & 
-Alt 1: Code Analysis Request \\
-- Học viên paste code để AI review \\
-- AI analyze code và suggest improvements \\
-Alt 2: Algorithm Recommendation \\
-- Học viên mô tả problem \\
-- AI recommend suitable algorithms \\
-\hline
-\textbf{Exception Flow} & 
-Exc 1: AI service unavailable \\
-- Hệ thống hiển thị fallback resources \\
-- Redirect đến documentation hoặc FAQ \\
-\hline
-\textbf{Postcondition} & 
-- Conversation history được lưu \\
-- AI learning được improve từ interaction \\
-- User satisfaction feedback được collect \\
-\hline
-\end{tabular}
+\begin{itemize}
+    \item Học viên đang trong learning session active
+    \item AI Assistant service đang hoạt động và available
+    \item Network connection stable cho real-time chat
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item Học viên click vào AI Assistant icon trong interface
+    \item Hệ thống mở AI chat interface với context loading
+    \item Học viên nhập câu hỏi về algorithm hiện tại
+    \item AI Assistant phân tích context và question intent
+    \item AI generate comprehensive response với examples
+    \item Hệ thống hiển thị answer với code examples và explanations
+    \item Học viên có thể ask follow-up questions để clarify
+    \item AI provide additional hints và learning resources nếu cần
+    \item Học viên close AI Assistant khi satisfied với answers
+\end{enumerate} \\ \hline
+\textbf{Luồng sự kiện thay thế} & 
+\textbf{Alt 1:} Code Analysis Request
+\begin{itemize}
+    \item Học viên paste existing code để AI review
+    \item AI analyze code và suggest improvements với explanations
+\end{itemize}
+\textbf{Alt 2:} Algorithm Recommendation
+\begin{itemize}
+    \item Học viên mô tả specific problem cần giải quyết
+    \item AI recommend suitable algorithms với comparison
+\end{itemize} \\ \hline
+\textbf{Luồng ngoại lệ} & 
+\textbf{Exc 1:} AI service temporarily unavailable
+\begin{itemize}
+    \item Hệ thống hiển thị fallback resources và documentation
+    \item Redirect đến static FAQ hoặc knowledge base
+\end{itemize}
+\textbf{Exc 2:} Question too complex hoặc ambiguous
+\begin{itemize}
+    \item AI request clarification với specific prompts
+    \item Suggest breaking down question into smaller parts
+\end{itemize} \\ \hline
+\textbf{Post Condition} & 
+\begin{itemize}
+    \item Conversation history được lưu trong user session
+    \item AI learning model được improve từ interaction
+    \item User satisfaction feedback được collect tự động
+    \item Related learning materials được suggest based on questions
+\end{itemize} \\ \hline
 \caption{Use Case Scenario: AI Assistant Consultation}
-\label{tab:uc003}
-\end{table}
+\label{tab:uc003} \\
+\end{longtable}
 
 \section{Class Diagram}
 \label{sec:class-diagram}
@@ -750,99 +768,68 @@ Thiết kế 5-layer architecture đảm bảo:
 Áp dụng SOLID principles, design patterns, và best practices để tạo ra một hệ thống robust và professional.
 
 Tiếp theo, Chapter 4 sẽ focus vào implementation details và technical specifications của từng component.
-\textbf{Use Case ID} & UC-VIS-001 \\ \hline
-\textbf{Use Case Name} & Practice with Visualization \\ \hline
-\textbf{Actor} & Student \\ \hline
-\textbf{Description} & Student tương tác với visualizer để hiểu cách thuật toán hoạt động từng bước \\ \hline
-\textbf{Preconditions} & 
-- Student đã đăng nhập vào hệ thống \\
-- Student đã chọn thuật toán cần học \\ \hline
-\textbf{Postconditions} & 
-- Visualization history được lưu vào learning progress \\
-- Time spent tracking được cập nhật \\ \hline
-\textbf{Main Flow} & 
-1. Student truy cập visualization page \\
-2. System hiển thị thuật toán với default input \\
-3. Student có thể: \\
-\hspace{0.5cm} 3.1. Thay đổi input data \\
-\hspace{0.5cm} 3.2. Điều chỉnh animation speed \\
-\hspace{0.5cm} 3.3. Step through từng bước \\
-\hspace{0.5cm} 3.4. View synchronized code \\
-4. Student click "Start Animation" \\
-5. System chạy visualization với settings đã chọn \\
-6. Student quan sát và học tập \\
-7. System lưu progress và statistics \\ \hline
-\textbf{Alternative Flows} & 
-A1: Custom Input \\
-\hspace{0.5cm} 3.1a. Student nhập custom input \\
-\hspace{0.5cm} 3.1b. System validate input format \\
-\hspace{0.5cm} 3.1c. Nếu invalid: show error message \\
-\\
-A2: AI Assistance \\
-\hspace{0.5cm} 6.1a. Student click "Get Help" \\
-\hspace{0.5cm} 6.1b. AI Assistant explain current step \\
-\hspace{0.5cm} 6.1c. Continue with main flow \\ \hline
-\textbf{Exception Flows} & 
-E1: Animation Error \\
-\hspace{0.5cm} 5.1a. Animation fails to render \\
-\hspace{0.5cm} 5.1b. System show error message \\
-\hspace{0.5cm} 5.1c. Offer alternative visualization mode \\ \hline
-\end{tabularx}
-\end{table}
 
 \subsubsection{Use Case: Get AI Assistance}
 
-\begin{table}[H]
-\centering
-\caption{Mô tả Use Case: Get AI Assistance}
-\label{tab:uc-ai-assistance}
-\begin{tabularx}{\textwidth}{|l|X|}
+\begin{longtable}{| p{3cm} | p{10cm} |}
 \hline
 \textbf{Use Case ID} & UC-AI-001 \\ \hline
-\textbf{Use Case Name} & Get AI Assistance \\ \hline
+\textbf{Tên Use Case} & Get AI Assistance \\ \hline
 \textbf{Actor} & Student \\ \hline
-\textbf{Description} & Student nhận hỗ trợ từ AI assistant để hiểu thuật toán hoặc giải quyết vấn đề \\ \hline
-\textbf{Preconditions} & 
-- Student đã đăng nhập vào hệ thống \\
-- AI service available \\ \hline
-\textbf{Postconditions} & 
-- Conversation history được lưu \\
-- AI usage statistics được cập nhật \\ \hline
-\textbf{Main Flow} & 
-1. Student click "AI Assistant" button \\
-2. System mở AI chat interface \\
-3. Student nhập câu hỏi hoặc chọn suggested questions \\
-4. System gửi request đến AI service với context \\
-5. AI service process request và trả về response \\
-6. System hiển thị AI response với formatting \\
-7. Student có thể: \\
-\hspace{0.5cm} 7.1. Tiếp tục hỏi follow-up questions \\
-\hspace{0.5cm} 7.2. Request code examples \\
-\hspace{0.5cm} 7.3. Ask for explanation in different language \\
-8. System lưu conversation history \\ \hline
-\textbf{Alternative Flows} & 
-A1: Code Generation Request \\
-\hspace{0.5cm} 3.1a. Student request code for current algorithm \\
-\hspace{0.5cm} 3.1b. Student chọn programming language \\
-\hspace{0.5cm} 4.1a. AI generate code với explanation \\
-\hspace{0.5cm} 6.1a. System hiển thị syntax-highlighted code \\
-\\
-A2: Step-by-step Explanation \\
-\hspace{0.5cm} 3.2a. Student click "Explain Current Step" \\
-\hspace{0.5cm} 4.2a. AI explain current visualization step \\
-\hspace{0.5cm} 6.2a. Explanation synchronized với animation \\ \hline
-\textbf{Exception Flows} & 
-E1: AI Service Unavailable \\
-\hspace{0.5cm} 4.1a. AI service timeout hoặc error \\
-\hspace{0.5cm} 4.1b. System show fallback static help \\
-\hspace{0.5cm} 4.1c. Log error for admin notification \\
-\\
-E2: Rate Limit Exceeded \\
-\hspace{0.5cm} 4.2a. Too many requests from user \\
-\hspace{0.5cm} 4.2b. System show rate limit message \\
-\hspace{0.5cm} 4.2c. Suggest waiting period \\ \hline
-\end{tabularx}
-\end{table}
+\textbf{Mô tả ngắn gọn} & Student nhận hỗ trợ từ AI assistant để hiểu thuật toán hoặc giải quyết vấn đề \\ \hline
+\textbf{Trigger} & Student gặp khó khăn và cần hỗ trợ trong quá trình học \\ \hline
+\textbf{Precondition} & 
+\begin{itemize}
+    \item Student đã đăng nhập vào hệ thống
+    \item AI service available và responsive
+    \item Current learning context được load
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item Student click "AI Assistant" button trong interface
+    \item System mở AI chat interface với context loading
+    \item Student nhập câu hỏi hoặc chọn suggested questions
+    \item System gửi request đến AI service kèm theo context
+    \item AI service process request và trả về comprehensive response
+    \item System hiển thị AI response với proper formatting
+    \item Student có thể tiếp tục conversation với follow-up questions
+    \item System tự động lưu conversation history
+\end{enumerate} \\ \hline
+\textbf{Luồng sự kiện thay thế} & 
+\textbf{Alt 1:} Code Generation Request
+\begin{itemize}
+    \item Student request code implementation cho current algorithm
+    \item Student chọn programming language preference
+    \item AI generate syntax-highlighted code với detailed explanation
+\end{itemize}
+\textbf{Alt 2:} Step-by-step Explanation
+\begin{itemize}
+    \item Student click "Explain Current Step" trong visualization
+    \item AI explain current step synchronized với animation
+\end{itemize} \\ \hline
+\textbf{Luồng ngoại lệ} & 
+\textbf{Exc 1:} AI Service Unavailable
+\begin{itemize}
+    \item AI service timeout hoặc connection error
+    \item System show fallback static help resources
+    \item Log error cho admin notification
+\end{itemize}
+\textbf{Exc 2:} Rate Limit Exceeded
+\begin{itemize}
+    \item Too many requests từ user trong short period
+    \item System show rate limit message với countdown
+    \item Suggest alternative help resources
+\end{itemize} \\ \hline
+\textbf{Post Condition} & 
+\begin{itemize}
+    \item Conversation history được lưu trong user profile
+    \item AI usage statistics được cập nhật cho analytics
+    \item Learning context được enrich từ conversation
+    \item User satisfaction metrics được collect
+\end{itemize} \\ \hline
+\caption{Use Case Scenario: Get AI Assistance}
+\label{tab:uc-ai-assistance} \\
+\end{longtable}
 
 \section{Class Diagram}
 \label{sec:class-diagram}
