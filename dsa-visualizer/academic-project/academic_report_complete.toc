@@ -1,74 +1,137 @@
-\babel@toc {vietnamese}{}\relax 
-\contentsline {section}{\numberline {1}Tóm tắt đồ án}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Mục tiêu}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Phạm vi}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Kết quả đạt được}{3}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Giới thiệu hệ thống}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Giới thiệu đề tài}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Mục tiêu cụ thể}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Mục tiêu chính}{4}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Mục tiêu kỹ thuật}{4}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}Đối tượng sử dụng}{4}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Phân tích yêu cầu}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Yêu cầu chức năng}{4}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Hệ thống xác thực và phân quyền}{4}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Visualizer thuật toán}{5}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}AI Learning Assistant}{5}{subsubsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.4}Community Features}{5}{subsubsection.3.1.4}%
-\contentsline {subsubsection}{\numberline {3.1.5}Admin Dashboard}{5}{subsubsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.2}Yêu cầu phi chức năng}{5}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Hiệu năng}{5}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Khả năng sử dụng}{6}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Bảo mật}{6}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Khả năng mở rộng}{6}{subsubsection.3.2.4}%
-\contentsline {section}{\numberline {4}Thiết kế hệ thống}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Kiến trúc tổng quan}{6}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Presentation Layer (Frontend)}{7}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Business Logic Layer}{7}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Data Access Layer}{8}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}Use Case Diagram}{8}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Guest User}{8}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Authenticated User}{9}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Teacher}{9}{subsubsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.4}Admin}{9}{subsubsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.3}Class Diagram}{10}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}User Management}{10}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Learning System}{10}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Community Features}{11}{subsubsection.4.3.3}%
-\contentsline {section}{\numberline {5}Phân tích thiết kế chi tiết}{12}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Activity Diagram}{12}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Giai đoạn khởi tạo}{12}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Giai đoạn chọn thuật toán}{13}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}Giai đoạn visualization}{13}{subsubsection.5.1.3}%
-\contentsline {subsubsection}{\numberline {5.1.4}Giai đoạn AI assistance}{13}{subsubsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.2}Sequence Diagram}{14}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Khởi tạo visualization}{14}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Execution và rendering}{14}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}AI interaction}{14}{subsubsection.5.2.3}%
-\contentsline {section}{\numberline {6}Cài đặt và triển khai}{15}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Công nghệ sử dụng}{15}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Cấu trúc dự án}{15}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Core Algorithm Implementations}{16}{subsection.6.3}%
-\contentsline {subsubsection}{\numberline {6.3.1}Sorting Algorithms}{16}{subsubsection.6.3.1}%
-\contentsline {section}{\numberline {7}Testing và đánh giá}{17}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Chiến lược Testing}{17}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}Unit Testing}{17}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Integration Testing}{17}{subsubsection.7.1.2}%
-\contentsline {subsubsection}{\numberline {7.1.3}Performance Testing}{18}{subsubsection.7.1.3}%
-\contentsline {subsection}{\numberline {7.2}Performance Metrics}{18}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}User Acceptance Testing}{18}{subsection.7.3}%
-\contentsline {subsubsection}{\numberline {7.3.1}Test với sinh viên (n=50)}{18}{subsubsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.2}Test với giảng viên (n=15)}{18}{subsubsection.7.3.2}%
-\contentsline {section}{\numberline {8}Kết luận và hướng phát triển}{18}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Kết quả đạt được}{18}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Thành tựu chính}{18}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Đóng góp về mặt kỹ thuật}{19}{subsubsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {8.1.3}Đóng góp về mặt giáo dục}{19}{subsubsection.8.1.3}%
-\contentsline {subsection}{\numberline {8.2}Hạn chế và thách thức}{19}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}Hạn chế hiện tại}{19}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2}Thách thức kỹ thuật}{19}{subsubsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.3}Hướng phát triển tương lai}{20}{subsection.8.3}%
-\contentsline {subsubsection}{\numberline {8.3.1}Tính năng mới}{20}{subsubsection.8.3.1}%
-\contentsline {subsubsection}{\numberline {8.3.2}Cải tiến kỹ thuật}{20}{subsubsection.8.3.2}%
-\contentsline {subsubsection}{\numberline {8.3.3}Mở rộng phạm vi}{20}{subsubsection.8.3.3}%
-\contentsline {subsection}{\numberline {8.4}Lời cảm ơn}{20}{subsection.8.4}%
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Tuyên bố về tính xác thực}{i}{chapter*.2}%
+\contentsline {chapter}{Lời cảm ơn}{ii}{chapter*.3}%
+\contentsline {chapter}{Tóm tắt}{iii}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}GIỚI THIỆU HỆ THỐNG}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Giới thiệu đề tài}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Bối cảnh đề tài}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Các Stakeholders của hệ thống}{3}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Nhu cầu của các đối tượng}{4}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Mục tiêu nghiên cứu}{5}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Task 1.2: Functional and non-functional requirements}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Functional}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Non-functional}{8}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Functional}{10}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Non-functional}{12}{subsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.4.1}Usability Requirements}{14}{subsubsection.1.2.4.1}%
+\contentsline {chapter}{\numberline {2}PHÂN TÍCH VÀ TÌM HIỂU THỊ TRƯỜNG}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Phân tích thị trường và cơ hội}{17}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Quy mô thị trường}{17}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Phân tích đối thủ cạnh tranh}{17}{subsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.2.1}Đối thủ trực tiếp}{17}{subsubsection.2.1.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.2.2}Đối thủ gián tiếp}{18}{subsubsection.2.1.2.2}%
+\contentsline {subsection}{\numberline {2.1.3}Cơ hội thị trường}{19}{subsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.3.1}Gaps trong thị trường hiện tại}{19}{subsubsection.2.1.3.1}%
+\contentsline {subsubsection}{\numberline {2.1.3.2}Xu hướng thị trường}{20}{subsubsection.2.1.3.2}%
+\contentsline {subsection}{\numberline {2.1.4}Target market analysis}{20}{subsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.4.1}Primary segments}{20}{subsubsection.2.1.4.1}%
+\contentsline {subsubsection}{\numberline {2.1.4.2}Market entry strategy}{21}{subsubsection.2.1.4.2}%
+\contentsline {subsection}{\numberline {2.1.5}Algorithm Visualizer}{21}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Data Structure Visualizations (USF)}{22}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Sorting Algorithms Animations}{22}{subsection.2.1.7}%
+\contentsline {section}{\numberline {2.2}Công nghệ nền tảng}{23}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Frontend Technologies}{23}{subsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.1.1}React.js}{23}{subsubsection.2.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.2.1.2}Next.js}{23}{subsubsection.2.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.2.1.3}TypeScript}{23}{subsubsection.2.2.1.3}%
+\contentsline {subsection}{\numberline {2.2.2}Animation Libraries}{24}{subsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.1}Framer Motion}{24}{subsubsection.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2.2}React Spring}{24}{subsubsection.2.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.3}D3.js}{24}{subsubsection.2.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Backend Technologies}{24}{subsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Node.js}{24}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2}Express.js}{25}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}Socket.io}{25}{subsubsection.2.2.3.3}%
+\contentsline {subsection}{\numberline {2.2.4}Database Technologies}{25}{subsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.4.1}PostgreSQL}{25}{subsubsection.2.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.2.4.2}Redis}{26}{subsubsection.2.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.2.4.3}MongoDB}{26}{subsubsection.2.2.4.3}%
+\contentsline {section}{\numberline {2.3}Gaps trong các nghiên cứu hiện tại}{26}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Technical Gaps}{26}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Pedagogical Gaps}{27}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Đóng góp của đồ án}{27}{section.2.4}%
+\contentsline {chapter}{\numberline {3}PHÂN TÍCH HỆ THỐNG}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Use Case Diagram}{29}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Tổng quan Use Case}{29}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Use Case chi tiết cho Learning Process}{29}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Detailed Use Case Specifications}{32}{subsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}UC001: Algorithm Visualization Learning}{32}{subsubsection.3.1.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.3.2}UC002: Interactive Algorithm Practice}{34}{subsubsection.3.1.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.3.3}UC003: AI Assistant Consultation}{36}{subsubsection.3.1.3.3}%
+\contentsline {section}{\numberline {3.2}Class Diagram}{37}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Tổng quan Class Diagram}{37}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Các nhóm Class chính}{37}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}User Management Classes}{37}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Algorithm Visualization Classes}{37}{subsubsection.3.2.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.3}Learning Management Classes}{38}{subsubsection.3.2.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.2.4}Assessment Classes}{39}{subsubsection.3.2.2.4}%
+\contentsline {subsection}{\numberline {3.2.3}Design Patterns được sử dụng}{39}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}Factory Pattern}{39}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}Observer Pattern}{39}{subsubsection.3.2.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.3.3}Strategy Pattern}{40}{subsubsection.3.2.3.3}%
+\contentsline {section}{\numberline {3.3}Activity Diagram}{40}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Tổng quan Activity Diagram}{40}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Quy trình hoạt động chính}{40}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}Authentication Flow}{40}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}Algorithm Learning Flow}{41}{subsubsection.3.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.3}AI Assistant Flow}{41}{subsubsection.3.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.3.2.4}Assessment Flow}{42}{subsubsection.3.3.2.4}%
+\contentsline {subsection}{\numberline {3.3.3}Parallel Activities}{42}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}Background Services}{43}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.3.2}Real-time Features}{43}{subsubsection.3.3.3.2}%
+\contentsline {section}{\numberline {3.4}Sequence Diagram}{43}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Tổng quan Sequence Diagram}{43}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Chi tiết Sequence Interactions}{43}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}Algorithm Visualization Sequence}{43}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}AI Assistant Interaction Sequence}{45}{subsubsection.3.4.2.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.3}Assessment and Quiz Sequence}{46}{subsubsection.3.4.2.3}%
+\contentsline {subsection}{\numberline {3.4.3}Error Handling Sequences}{47}{subsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.3.1}Authentication Error Sequence}{47}{subsubsection.3.4.3.1}%
+\contentsline {subsubsection}{\numberline {3.4.3.2}System Error Recovery Sequence}{47}{subsubsection.3.4.3.2}%
+\contentsline {section}{\numberline {3.5}System Architecture Analysis}{47}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Tổng quan Architecture}{47}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Chi tiết các Layer}{48}{subsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.1}UI Layer (Presentation Layer)}{48}{subsubsection.3.5.2.1}%
+\contentsline {subsubsection}{\numberline {3.5.2.2}Visualization Engine Layer}{48}{subsubsection.3.5.2.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.3}Backend Services Layer}{49}{subsubsection.3.5.2.3}%
+\contentsline {subsubsection}{\numberline {3.5.2.4}Data Management Layer}{50}{subsubsection.3.5.2.4}%
+\contentsline {subsubsection}{\numberline {3.5.2.5}Infrastructure Layer}{50}{subsubsection.3.5.2.5}%
+\contentsline {subsection}{\numberline {3.5.3}Integration Patterns}{51}{subsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.3.1}Event-Driven Architecture}{51}{subsubsection.3.5.3.1}%
+\contentsline {subsubsection}{\numberline {3.5.3.2}Caching Strategy}{51}{subsubsection.3.5.3.2}%
+\contentsline {section}{\numberline {3.6}Design Principles và Best Practices}{51}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}SOLID Principles Implementation}{51}{subsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.1.1}Single Responsibility Principle}{51}{subsubsection.3.6.1.1}%
+\contentsline {subsubsection}{\numberline {3.6.1.2}Open/Closed Principle}{52}{subsubsection.3.6.1.2}%
+\contentsline {subsubsection}{\numberline {3.6.1.3}Liskov Substitution Principle}{52}{subsubsection.3.6.1.3}%
+\contentsline {subsection}{\numberline {3.6.2}Performance Optimization}{52}{subsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.1}Frontend Optimization}{52}{subsubsection.3.6.2.1}%
+\contentsline {subsubsection}{\numberline {3.6.2.2}Backend Optimization}{52}{subsubsection.3.6.2.2}%
+\contentsline {subsection}{\numberline {3.6.3}Accessibility và Usability}{53}{subsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.3.1}Accessibility Features}{53}{subsubsection.3.6.3.1}%
+\contentsline {subsubsection}{\numberline {3.6.3.2}Usability Features}{53}{subsubsection.3.6.3.2}%
+\contentsline {section}{\numberline {3.7}Kết luận Chapter 3}{53}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Use Case Analysis}{53}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}UML Diagrams Analysis}{53}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}System Architecture}{54}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}Technical Excellence}{54}{subsection.3.7.4}%
+\contentsline {subsubsection}{\numberline {3.7.4.1}Use Case: Get AI Assistance}{57}{subsubsection.3.7.4.1}%
+\contentsline {section}{\numberline {3.8}Class Diagram}{58}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Core Domain Classes}{58}{subsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.1.1}User Management Classes}{58}{subsubsection.3.8.1.1}%
+\contentsline {subsubsection}{\numberline {3.8.1.2}Learning Domain Classes}{58}{subsubsection.3.8.1.2}%
+\contentsline {subsection}{\numberline {3.8.2}Service Layer Classes}{58}{subsection.3.8.2}%
+\contentsline {subsubsection}{\numberline {3.8.2.1}Visualization Services}{58}{subsubsection.3.8.2.1}%
+\contentsline {subsubsection}{\numberline {3.8.2.2}AI Services}{59}{subsubsection.3.8.2.2}%
+\contentsline {section}{\numberline {3.9}Activity Diagram}{59}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Learning Process Flow}{59}{subsection.3.9.1}%
+\contentsline {subsubsection}{\numberline {3.9.1.1}Main Activities}{59}{subsubsection.3.9.1.1}%
+\contentsline {subsubsection}{\numberline {3.9.1.2}Decision Points}{60}{subsubsection.3.9.1.2}%
+\contentsline {subsection}{\numberline {3.9.2}AI Assistance Flow}{60}{subsection.3.9.2}%
+\contentsline {section}{\numberline {3.10}Sequence Diagram}{60}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Visualization Rendering Sequence}{60}{subsection.3.10.1}%
+\contentsline {subsubsection}{\numberline {3.10.1.1}Participants}{61}{subsubsection.3.10.1.1}%
+\contentsline {subsubsection}{\numberline {3.10.1.2}Key Interactions}{61}{subsubsection.3.10.1.2}%
+\contentsline {subsection}{\numberline {3.10.2}AI Assistant Interaction Sequence}{61}{subsection.3.10.2}%
+\contentsline {subsubsection}{\numberline {3.10.2.1}Multi-Model AI Architecture}{61}{subsubsection.3.10.2.1}%
+\contentsline {subsection}{\numberline {3.10.3}Community Interaction Sequence}{62}{subsection.3.10.3}%

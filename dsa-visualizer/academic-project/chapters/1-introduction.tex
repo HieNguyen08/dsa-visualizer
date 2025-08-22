@@ -1,61 +1,65 @@
 \chapter{GIỚI THIỆU HỆ THỐNG}
 \label{ch:introduction}
 
+In chapter 1, the overview, objectives and goals of the research's project are illustrated. The outline of the report is also presented.
+
 \section{Giới thiệu đề tài}
 \label{sec:intro-topic}
 
 \subsection{Bối cảnh đề tài}
 \label{subsec:context}
 
-Trong thời đại công nghệ số phát triển mạnh mẽ, việc học tập và giảng dạy các cấu trúc dữ liệu và thuật toán (Data Structures and Algorithms - DSA) đóng vai trò vô cùng quan trọng trong ngành khoa học máy tính và kỹ thuật phần mềm. Tuy nhiên, việc hiểu và tiếp thu các khái niệm trừu tượng này thường gặp nhiều thách thức đối với sinh viên, đặc biệt là khi các phương pháp giảng dạy truyền thống chủ yếu dựa vào lý thuyết và mô tả bằng lời.
+Trong bối cảnh nhu cầu học tập về thuật toán và cấu trúc dữ liệu ngày càng tăng, sinh viên và người học thường gặp khó khăn khi phải tìm kiếm và tiếp cận thông tin học liệu từ nhiều nguồn khác nhau, quản lý và theo dõi tiến độ học tập phức tạp, và thiếu các công cụ trực quan hóa hiệu quả để hiểu rõ cách thức hoạt động của các thuật toán. Đồng thời, việc thực hành và áp dụng kiến thức lý thuyết vào các bài tập cụ thể thường mất nhiều thời gian và không thuận tiện. Hệ thống DSA Visualizer được xây dựng nhằm giải quyết các vấn đề này bằng cách cung cấp một nền tảng tích hợp, giúp người dùng dễ dàng học tập, thực hành, và quản lý tiến độ học về cấu trúc dữ liệu và thuật toán, đồng thời mang đến các công cụ trực quan hóa phù hợp với nhu cầu cá nhân và hỗ trợ các tính năng học tập một cách nhanh chóng và hiệu quả.
 
-Theo khảo sát của nhiều trường đại học trên thế giới, hơn 60\% sinh viên ngành khoa học máy tính gặp khó khăn trong việc hình dung và hiểu rõ cách thức hoạt động của các cấu trúc dữ liệu phức tạp như cây nhị phân, thuật toán sắp xếp hay các thuật toán đồ thị. Điều này dẫn đến tỷ lệ sinh viên bỏ học cao và hiệu quả học tập kém trong các môn học cốt lõi của chương trình đào tạo.
+\begin{itemize}
+\item \textbf{Tìm kiếm và tiếp cận thông tin học liệu phân tán:} Sinh viên phải truy cập nhiều trang web và nguồn thông tin khác nhau để tìm hiểu về các thuật toán và cấu trúc dữ liệu, bao gồm lý thuyết, ví dụ minh họa, code implementation và các bài tập thực hành từ các nguồn khác nhau. Sự phân tán thông tin này không chỉ gây mất thời gian mà còn làm giảm khả năng so sánh và đưa ra phương pháp học tập hợp lý.
 
-Nhận thức được tầm quan trọng của việc cải thiện phương pháp học tập DSA, nhiều tổ chức giáo dục và công ty công nghệ đã bắt đầu đầu tư vào các công cụ trực quan hóa và mô phỏng. Những công cụ này không chỉ giúp sinh viên dễ dàng theo dõi từng bước thực hiện của thuật toán mà còn tạo ra trải nghiệm học tập tương tác, sinh động và hấp dẫn hơn.
+\item \textbf{Quản lý và theo dõi tiến độ học tập phức tạp:} Sau khi học các thuật toán khác nhau, việc theo dõi tiến độ học tập, ghi nhớ các thuật toán đã học, và các kiến thức cần ôn tập trở nên khó khăn khi không có một hệ thống tập trung quản lý thông tin. Điều này có thể dẫn đến việc bỏ lỡ các kiến thức quan trọng và gây phiền toái cho người học.
+
+\item \textbf{Thiếu công cụ trực quan hóa và tương tác:} Các tài liệu học tập hiện tại thường cung cấp thông tin theo kiểu text và hình ảnh tĩnh, không đáp ứng được nhu cầu hiểu rõ cách thức hoạt động từng bước của thuật toán. Bên cạnh đó, việc tìm kiếm các công cụ mô phỏng và thực hành không được tích hợp, dẫn đến việc người học phải tốn thêm thời gian và công sức để chuẩn bị cho việc học tập của mình.
+
+\item \textbf{Hạn chế trong việc hỗ trợ học tập trực tuyến:} Nhiều người học gặp khó khăn trong việc nhận hỗ trợ nhanh chóng khi cần giải đáp thắc mắc hoặc gặp sự cố trong quá trình học thuật toán. Các kênh hỗ trợ truyền thống như forum hoặc email thường chậm và không đáp ứng kịp thời, gây ảnh hưởng đến trải nghiệm học tập.
+\end{itemize}
+
+Hệ thống DSA Visualizer sẽ khắc phục những khó khăn trên bằng cách cung cấp một nền tảng tích hợp, tập trung toàn bộ thông tin về các thuật toán và cấu trúc dữ liệu cùng với các công cụ trực quan hóa, giúp người dùng dễ dàng tìm hiểu, thực hành và theo dõi tiến độ. Hệ thống quản lý học tập chặt chẽ, cùng với các công cụ tương tác và hỗ trợ AI nhanh chóng, sẽ mang đến trải nghiệm học tập thuận tiện và hiệu quả hơn cho người dùng, từ đó nâng cao hiệu quả học tập và thúc đẩy nhu cầu tìm hiểu sâu hơn về DSA.
 
 \subsection{Các Stakeholders của hệ thống}
 \label{subsec:stakeholders}
 
-Hệ thống DSA Visualizer được thiết kế để phục vụ nhiều đối tượng người dùng khác nhau, mỗi nhóm có những nhu cầu và mong đợi riêng biệt:
+\begin{enumerate}
+\item \textbf{Sinh viên và học sinh (Người dùng):} Đây là nhóm người dùng trực tiếp sử dụng hệ thống để học tập, thực hành các thuật toán và cấu trúc dữ liệu, và sử dụng các công cụ trực quan hóa. Nhu cầu và trải nghiệm học tập của họ quyết định sự thành công của hệ thống. Họ cần một giao diện dễ sử dụng, nội dung học tập rõ ràng và công cụ hỗ trợ học tập hiệu quả. Phản hồi của họ có thể ảnh hưởng lớn đến việc cải thiện và phát triển tính năng mới cho hệ thống.
 
-\textbf{Sinh viên và học sinh:} Đây là nhóm người dùng chính của hệ thống, bao gồm sinh viên các trường đại học, cao đẳng theo học các ngành liên quan đến công nghệ thông tin, khoa học máy tính, và kỹ thuật phần mềm. Ngoài ra, hệ thống cũng hướng đến học sinh trung học phổ thông có định hướng theo học các ngành kỹ thuật trong tương lai.
+\item \textbf{Giảng viên và giáo viên (Người hướng dẫn):} Là những người sử dụng hệ thống để hỗ trợ giảng dạy, tạo bài tập, và theo dõi tiến độ học tập của sinh viên. Họ chịu trách nhiệm cung cấp nội dung học tập chất lượng, đảm bảo tính chính xác của thông tin và hiệu quả giảng dạy. Họ định hướng cách sử dụng hệ thống trong giảng dạy, quyết định các tính năng cần thiết cho việc quản lý lớp học, và đảm bảo hệ thống đáp ứng nhu cầu giáo dục.
 
-\textbf{Giảng viên và giáo viên:} Những người có trách nhiệm truyền đạt kiến thức về cấu trúc dữ liệu và thuật toán, từ giảng viên đại học đến giáo viên trung học. Họ cần những công cụ hỗ trợ giảng dạy hiệu quả để có thể minh họa và giải thích các khái niệm phức tạp một cách trực quan và dễ hiểu.
+\item \textbf{Nhà phát triển giáo dục và tổ chức:} Các công ty và tổ chức chuyên về phát triển nội dung giáo dục, những người quan tâm đến việc tích hợp hệ thống vào các chương trình đào tạo của họ. Họ cung cấp các yêu cầu về tính năng và tạo ra giá trị gia tăng cho người học. Sự hợp tác với các tổ chức này ảnh hưởng trực tiếp đến khả năng mở rộng và phát triển của hệ thống.
 
-\textbf{Người học tự học:} Những cá nhân muốn tự học và nâng cao kiến thức về lập trình và thuật toán, bao gồm các lập trình viên muốn cải thiện kỹ năng, những người chuyển ngành sang công nghệ thông tin, hoặc các chuyên gia muốn cập nhật kiến thức trong lĩnh vực này.
-
-\textbf{Nhà phát triển giáo dục:} Các tổ chức, công ty chuyên về phát triển nội dung giáo dục trực tuyến, những người quan tâm đến việc tích hợp các công cụ trực quan hóa vào chương trình đào tạo của họ để nâng cao chất lượng giáo dục.
+\item \textbf{Quản trị viên hệ thống:} Những người quản lý nội dung, duy trì hệ thống, hỗ trợ người dùng và điều phối các hoạt động vận hành của platform. Họ đóng vai trò quan trọng trong việc đảm bảo hệ thống luôn hoạt động ổn định, nội dung được cập nhật chính xác, hỗ trợ người dùng kịp thời và duy trì chất lượng dịch vụ. Hiệu quả làm việc của họ ảnh hưởng trực tiếp đến trải nghiệm người dùng và sự tin cậy của hệ thống.
+\end{enumerate}
 
 \subsection{Nhu cầu của các đối tượng}
 \label{subsec:needs}
 
-\textbf{Sinh viên và học sinh:} Họ cần một trải nghiệm học tập tương tác với giao diện trực quan, dễ sử dụng, cung cấp đầy đủ thông tin về các cấu trúc dữ liệu và thuật toán cùng với khả năng thực hành thông qua các bài tập mô phỏng. Họ mong muốn có thể điều chỉnh tốc độ thực hiện thuật toán, quan sát từng bước một cách chi tiết, và có thể thử nghiệm với dữ liệu đầu vào khác nhau để hiểu rõ hơn về cách thức hoạt động. Ngoài ra, việc có thể lưu trữ và theo dõi tiến độ học tập cũng là nhu cầu quan trọng đối với họ.
+\begin{itemize}
+\item \textbf{Sinh viên và học sinh:} Họ cần một trải nghiệm học tập tương tác với giao diện trực quan, dễ sử dụng, cung cấp đầy đủ thông tin về các thuật toán và cấu trúc dữ liệu cùng với khả năng thực hành thông qua các công cụ mô phỏng. Họ muốn có khả năng điều chỉnh tốc độ học tập và theo dõi tiến độ thông qua hệ thống tracking và thống kê cá nhân, đồng thời mong đợi được hỗ trợ kịp thời khi có thắc mắc hoặc khó khăn trong học tập. Ngoài ra, việc dễ dàng tiếp cận các tài nguyên học tập như code examples, quiz, và bài tập thực hành cũng là nhu cầu quan trọng đối với họ.
 
-\textbf{Giảng viên và giáo viên:} Với vai trò người truyền đạt kiến thức, họ cần một công cụ giảng dạy hiệu quả giúp minh họa các khái niệm trừu tượng, quản lý và theo dõi tiến độ học tập của sinh viên, tạo ra các bài tập và kịch bản mô phỏng phù hợp với từng chương trình học. Họ muốn có khả năng tùy chỉnh nội dung theo yêu cầu giảng dạy cụ thể và có thể dễ dàng tích hợp vào các hệ thống quản lý học tập hiện có.
+\item \textbf{Giảng viên và giáo viên:} Với vai trò người hướng dẫn, họ cần một công cụ giảng dạy hiệu quả giúp minh họa các thuật toán phức tạp, quản lý và theo dõi tiến độ học tập của sinh viên, tạo ra các bài tập và kịch bản học tập phù hợp với chương trình giảng dạy. Họ muốn có khả năng tùy chỉnh nội dung theo yêu cầu cụ thể và có thể dễ dàng tích hợp vào hệ thống quản lý học tập hiện có của trường học.
 
-\textbf{Người học tự học:} Họ cần một nền tảng học tập linh hoạt với khả năng tự định hướng, cung cấp lộ trình học tập rõ ràng từ cơ bản đến nâng cao, có hệ thống đánh giá và phản hồi để theo dõi tiến độ. Việc có thể truy cập mọi lúc, mọi nơi và học theo tốc độ riêng cũng là yêu cầu quan trọng đối với nhóm này.
+\item \textbf{Nhà phát triển giáo dục:} Họ cần một nền tảng giúp họ tiếp cận được nhiều người học hơn, tăng trưởng hiệu quả giảng dạy thông qua công nghệ, và duy trì chất lượng nội dung giáo dục cao. Họ cũng cần hệ thống cung cấp analytics và insights để hiểu rõ hành vi học tập của người dùng và cải thiện chất lượng nội dung.
 
-\textbf{Nhà phát triển giáo dục:} Họ quan tâm đến khả năng tích hợp và mở rộng của hệ thống, cần có API và tài liệu kỹ thuật chi tiết để có thể kết nối với các nền tảng giáo dục khác. Họ cũng cần có khả năng tùy chỉnh giao diện và nội dung theo thương hiệu và yêu cầu cụ thể của tổ chức.
+\item \textbf{Quản trị viên hệ thống:} Họ cần một hệ thống quản lý hiệu quả, giúp họ duy trì hoạt động của platform một cách ổn định, dễ sử dụng, hỗ trợ người dùng thuận tiện, và có thể dễ dàng cập nhật nội dung cũng như theo dõi tình hình hoạt động qua các báo cáo chi tiết. Việc đáp ứng đúng nhu cầu của từng nhóm stakeholder sẽ đảm bảo hệ thống phát triển bền vững và mang lại trải nghiệm tốt nhất cho tất cả các bên liên quan.
+\end{itemize}
 
 \subsection{Mục tiêu nghiên cứu}
 \label{subsec:objectives}
 
-\textbf{1. Sinh viên và học sinh:} sẽ được hưởng lợi từ một nền tảng học tập tương tác giúp họ dễ dàng hình dung và hiểu rõ các cấu trúc dữ liệu và thuật toán phức tạp mà trước đây chỉ có thể tiếp cận thông qua lý thuyết khô khan. Họ có thể tương tác trực tiếp với các mô phỏng, quan sát từng bước thực hiện của thuật toán, và thử nghiệm với các dữ liệu khác nhau để hiểu sâu hơn về bản chất của vấn đề. Hệ thống cung cấp môi trường học tập an toàn cho phép họ mắc lỗi và học hỏi từ những sai lầm mà không lo ngại về hậu quả, đồng thời giúp họ xây dựng nền tảng kiến thức vững chắc cho sự nghiệp trong lĩnh vực công nghệ.
+\begin{enumerate}
+\item \textbf{Sinh viên và học sinh:} sẽ được hưởng lợi từ một nền tảng học tập tích hợp giúp họ dễ dàng tìm hiểu và thực hành các thuật toán và cấu trúc dữ liệu, lựa chọn các phương pháp học tập phù hợp mà không cần mất nhiều thời gian tìm kiếm từ nhiều nguồn khác nhau. Họ có thể nhanh chóng theo dõi tiến độ học tập và nhận được các gợi ý cá nhân hóa, giúp tối ưu hóa trải nghiệm học tập theo năng lực và sở thích riêng. Hệ thống AI hỗ trợ và các công cụ trực quan hóa tương tác sẽ giúp họ tiết kiệm thời gian và đảm bảo hiệu quả trong toàn bộ quá trình học tập và thực hành.
 
-\textbf{2. Giảng viên và giáo viên:} sẽ nhận được một công cụ giảng dạy mạnh mẽ giúp họ truyền đạt kiến thức một cách hiệu quả hơn. Thay vì chỉ dựa vào bảng đen và thuyết trình, họ có thể sử dụng các mô phỏng trực quan để minh họa các khái niệm phức tạp, làm cho bài giảng trở nên sinh động và hấp dẫn hơn. Hệ thống cũng cung cấp khả năng theo dõi tiến độ học tập của sinh viên, từ đó có thể điều chỉnh phương pháp giảng dạy cho phù hợp. Điều này không chỉ nâng cao chất lượng giảng dạy mà còn giúp giảng viên tiết kiệm thời gian chuẩn bị bài giảng và tăng cường tương tác với sinh viên.
+\item \textbf{Giảng viên và giáo viên:} sẽ nhận được nhiều lợi ích từ việc sử dụng hệ thống trong giảng dạy, bao gồm việc nâng cao chất lượng giảng dạy, tiếp cận nhiều công cụ hỗ trợ giảng dạy hiện đại và tăng hiệu quả quản lý lớp học. Họ có thể cải thiện phương pháp giảng dạy nhờ vào các công cụ trực quan hóa và tương tác, giúp giảm thiểu thời gian chuẩn bị bài giảng và tăng cường sự tham gia của sinh viên. Bên cạnh đó, hệ thống còn giúp họ dễ dàng theo dõi tiến độ học tập của sinh viên, thu thập phản hồi và cải tiến phương pháp giảng dạy liên tục, từ đó nâng cao chất lượng giáo dục.
 
-\textbf{3. Người học tự học:} sẽ có cơ hội tiếp cận một nền tảng học tập chất lượng cao mà không cần phụ thuộc vào lịch trình cố định của các khóa học truyền thống. Họ có thể học theo tốc độ riêng, lặp lại các phần khó hiểu nhiều lần, và có thể truy cập vào kho tài nguyên học tập phong phú bao gồm các ví dụ thực tế, bài tập thực hành, và các kịch bản mô phỏng đa dạng. Hệ thống cũng cung cấp lộ trình học tập có cấu trúc, giúp họ định hướng việc học một cách khoa học và hiệu quả.
+\item \textbf{Nhà phát triển giáo dục:} sẽ có cơ hội mở rộng thị trường và tăng trưởng doanh thu thông qua việc cung cấp các giải pháp giáo dục chất lượng cao trên nền tảng DSA Visualizer. Nhờ tích hợp các công nghệ hiện đại như AI và visualization, họ có thể tạo ra các sản phẩm giáo dục đột phá và tiếp cận được nhiều đối tượng học tập đa dạng. Hơn nữa, việc hợp tác này giúp tạo ra một hệ sinh thái giáo dục toàn diện, đồng thời mang đến cho người học trải nghiệm học tập chất lượng cao và hiệu quả.
 
-\textbf{4. Nhà phát triển giáo dục:} sẽ có một nền tảng mở và linh hoạt để phát triển các sản phẩm giáo dục chất lượng cao. Họ có thể tận dụng các thành phần có sẵn của hệ thống để tạo ra các khóa học trực tuyến, ứng dụng di động, hoặc tích hợp vào các hệ thống quản lý học tập hiện có. Khả năng mở rộng và tùy chỉnh của hệ thống cho phép họ phát triển các sản phẩm đáp ứng nhu cầu cụ thể của từng thị trường và đối tượng khách hàng.
-        \item Trainer các trung tâm đào tạo lập trình
-    \end{itemize}
-    
-    \item \textbf{Quản trị viên (System Administrators)}:
-    \begin{itemize}
-        \item Admin hệ thống
-        \item Moderator cộng đồng
-        \item Content manager
-    \end{itemize}
+\item \textbf{Quản trị viên hệ thống:} sẽ được hỗ trợ bởi một hệ thống quản lý hiện đại và tự động hóa cao, giúp giảm bớt khối lượng công việc thủ công và tối ưu hóa quy trình vận hành. Họ có thể nhanh chóng giám sát và xử lý các vấn đề kỹ thuật, quản lý người dùng và nội dung một cách hiệu quả, từ đó nâng cao chất lượng dịch vụ và đảm bảo hoạt động ổn định của hệ thống. Hệ thống báo cáo và analytics chi tiết cũng giúp họ đưa ra các quyết định vận hành đúng đắn và cải thiện liên tục chất lượng dịch vụ.
 \end{enumerate}
 
 \section{Task 1.2: Functional and non-functional requirements}
@@ -63,6 +67,92 @@ Hệ thống DSA Visualizer được thiết kế để phục vụ nhiều đ�
 
 \subsection{Functional}
 \label{subsec:functional-req}
+
+\textbf{1. Đối với Sinh viên và học sinh:}
+
+\begin{itemize}
+\item \textbf{Tìm kiếm thuật toán và cấu trúc dữ liệu:} Người dùng có thể tìm kiếm các thuật toán và cấu trúc dữ liệu bằng cách nhập từ khóa như tên thuật toán hoặc loại cấu trúc dữ liệu. Hệ thống sẽ trả về danh sách các kết quả phù hợp để người dùng tham khảo. Hiển thị thông tin cơ bản như tên, độ phức tạp thời gian, và ứng dụng thực tế.
+
+\item \textbf{Xem chi tiết và trực quan hóa:} Người dùng có thể nhấp vào một thuật toán cụ thể để xem chi tiết về cách thức hoạt động, pseudocode, và implementation. Cho phép xem animation trực quan hóa từng bước thực hiện của thuật toán để phục vụ cho việc tìm hiểu và nghiên cứu.
+
+\item \textbf{Thực hành và tương tác:} Cho phép người dùng nhập dữ liệu đầu vào tùy chỉnh để mô phỏng quá trình thực hiện thuật toán. Hệ thống cung cấp các controls để điều chỉnh tốc độ animation, pause/resume, và step-by-step execution.
+
+\item \textbf{Quản lý tiến độ học tập:} Người dùng có thể xem lại lịch sử các thuật toán đã học trong mục "Learning Progress". Thông tin này bao gồm tên thuật toán, thời gian học, và mức độ hiểu biết. Cho phép đặt bookmark cho các thuật toán yêu thích và tạo learning path cá nhân.
+
+\item \textbf{Hỗ trợ AI và chatbot:} Cung cấp AI assistant để người dùng có thể đặt câu hỏi về thuật toán và nhận các câu trả lời chi tiết, gợi ý học tập, và giải thích code.
+\end{itemize}
+
+\textbf{2. Đối với Giảng viên và giáo viên:}
+
+\begin{itemize}
+\item \textbf{Quản lý nội dung học tập:} Cho phép thêm, sửa, và xóa các thông tin về thuật toán như mô tả, code examples, và test cases. Hệ thống hiển thị danh sách các thuật toán hiện có để giảng viên có thể chỉnh sửa hoặc tùy chỉnh cho phù hợp với chương trình giảng dạy.
+
+\item \textbf{Quản lý thông tin sinh viên:} Hiển thị danh sách tiến độ học tập của sinh viên bao gồm các thuật toán đã học, thời gian học tập, và kết quả quiz. Cung cấp chức năng tạo assignments và theo dõi completion rate.
+
+\item \textbf{Tạo và quản lý bài kiểm tra:} Cho phép tạo các quiz và assignments về thuật toán với câu hỏi đa dạng. Hệ thống tự động chấm điểm và cung cấp feedback chi tiết cho sinh viên.
+
+\item \textbf{Phân quyền và quản lý lớp học:} Có khả năng tạo virtual classrooms, mời sinh viên tham gia, và phân quyền truy cập vào các tài nguyên học tập cụ thể.
+
+\item \textbf{Thống kê và báo cáo:} Hiển thị số lượng sinh viên đã hoàn thành bài học, thời gian học trung bình, và các thuật toán được quan tâm nhiều nhất để giảng viên có cái nhìn tổng quan về hiệu quả giảng dạy.
+\end{itemize}
+
+\textbf{3. Đối với Nhà phát triển giáo dục:}
+
+\begin{itemize}
+\item \textbf{API tích hợp:} Cung cấp RESTful APIs cho phép tích hợp với các hệ thống LMS khác. APIs hỗ trợ truy cập nội dung, user management, và progress tracking.
+
+\item \textbf{Customization và white-labeling:} Cho phép tùy chỉnh giao diện, thương hiệu, và nội dung để phù hợp với yêu cầu của từng tổ chức giáo dục.
+
+\item \textbf{Analytics và insights:} Cung cấp dashboard analytics chi tiết về user behavior, learning patterns, và engagement metrics để hỗ trợ cải thiện chất lượng nội dung.
+\end{itemize}
+
+\textbf{4. Đối với Quản trị viên hệ thống:}
+
+\begin{itemize}
+\item \textbf{Quản lý người dùng và quyền hạn:} Quản trị viên có thể xem danh sách người dùng, phân quyền, và quản lý accounts. Cung cấp tools để monitor user activities và system usage.
+
+\item \textbf{Quản lý nội dung và quality control:} Cho phép review, approve, và publish nội dung mới. Đảm bảo chất lượng và tính chính xác của các thuật toán và visualizations.
+
+\item \textbf{Monitoring và maintenance:} Cung cấp system monitoring tools, performance metrics, và automated backup/restore functionality.
+\end{itemize}
+
+\subsection{Non-functional}
+\label{subsec:non-functional-req}
+
+\textbf{1. Hiệu năng:}
+\begin{itemize}
+\item Ứng dụng web cần được tối ưu để đảm bảo thời gian tải trang dưới 3 giây trên kết nối internet trung bình, tạo trải nghiệm mượt mà cho người dùng khi truy cập các visualization modules.
+\item Hệ thống phải có khả năng xử lý ít nhất 1000 người dùng đồng thời thực hiện các animation và tương tác mà không gặp tình trạng quá tải hoặc sụt giảm hiệu năng đáng kể.
+\item Animations phải chạy mượt mà với framerate ổn định $\geq$ 30 FPS để đảm bảo trải nghiệm học tập tốt nhất.
+\end{itemize}
+
+\textbf{2. Tính sẵn sàng:}
+\begin{itemize}
+\item Hệ thống phải đảm bảo uptime 99.5\% với khả năng tự động khôi phục trong trường hợp gặp sự cố.
+\item Không yêu cầu đảm bảo thời gian uptime cao như trong môi trường production, nhưng cần có khả năng nhanh chóng restart và recovery sau sự cố.
+\end{itemize}
+
+\textbf{3. Tính bảo mật:}
+\begin{itemize}
+\item Hệ thống cần triển khai các biện pháp bảo mật cơ bản như mã hóa SSL/TLS cho dữ liệu truyền tải, đảm bảo an toàn thông tin cá nhân và dữ liệu học tập của người dùng.
+\item Thực hiện xác thực và phân quyền người dùng đơn giản để kiểm soát quyền truy cập và tránh các lỗi bảo mật cơ bản.
+\item Tuân thủ các quy định về bảo vệ dữ liệu giáo dục và privacy laws.
+\end{itemize}
+
+\textbf{4. Khả năng mở rộng:}
+\begin{itemize}
+\item Hệ thống cần được thiết kế theo hướng dễ mở rộng, cho phép bổ sung các thuật toán và cấu trúc dữ liệu mới mà không làm ảnh hưởng đến cấu trúc hiện tại.
+\item Kiến trúc microservices để dễ dàng scale các components riêng biệt khi cần thiết.
+\end{itemize}
+
+\textbf{5. Trải nghiệm người dùng:}
+\begin{itemize}
+\item Giao diện người dùng cần được thiết kế đơn giản, trực quan, responsive design tương thích với desktop, tablet và mobile devices.
+\item Hỗ trợ accessibility features để đảm bảo người dùng khuyết tật có thể sử dụng hệ thống hiệu quả.
+\item Cung cấp multiple language support và comprehensive help documentation.
+\end{itemize}
+
+\subsection{Functional}
 
 \textbf{1. Đối với Sinh viên và học sinh:}
 
@@ -117,7 +207,6 @@ Hệ thống DSA Visualizer được thiết kế để phục vụ nhiều đ�
 \end{itemize}
 
 \subsection{Non-functional}
-\label{subsec:non-functional-req}
 
 \textbf{1. Hiệu năng:}
 \begin{itemize}
@@ -173,6 +262,6 @@ Hệ thống DSA Visualizer được thiết kế để phục vụ nhiều đ�
     \item \textbf{NFR-USA-001}: Responsive design (mobile, tablet, desktop)
     \item \textbf{NFR-USA-002}: WCAG 2.1 AA accessibility compliance
     \item \textbf{NFR-USA-003}: Multi-language support (Vi, En)
-    \item \textbf{NFR-USA-004}: Intuitive navigation ≤ 3 clicks to any feature
+    \item \textbf{NFR-USA-004}: Intuitive navigation $\leq$ 3 clicks to any feature
     \item \textbf{NFR-USA-005}: Consistent UI/UX across all modules
 \end{enumerate}
