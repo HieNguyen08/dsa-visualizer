@@ -104,6 +104,42 @@
           </mxGeometry>
         </mxCell>
 
+        <!-- UML Relationships -->
+        <mxCell id="include1" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="start-visualization" target="modify-parameters">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="include2" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="input-data" target="highlight-operations">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="include3" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="highlight-operations" target="practice-mode">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="extend1" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="compare-executions" target="pause-resume">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="extend2" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="save-session" target="view-state-info">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
         <!-- Actor Connections -->
         <mxCell id="student-start" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.3;" edge="1" parent="1" source="student" target="start-visualization">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -112,7 +148,28 @@
           </mxGeometry>
         </mxCell>
 
+        <mxCell id="student-input" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;" edge="1" parent="1" source="student" target="input-data">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="student-practice" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.7;" edge="1" parent="1" source="student" target="practice-mode">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
         <mxCell id="engine-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.3;" edge="1" parent="1" source="visualization-engine" target="step-through">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="animation-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" edge="1" parent="1" source="animation-controller" target="view-state-info">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="400" y="400" as="sourcePoint"/>
             <mxPoint x="450" y="350" as="targetPoint"/>

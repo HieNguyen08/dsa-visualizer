@@ -104,6 +104,42 @@
           </mxGeometry>
         </mxCell>
 
+        <!-- UML Relationships -->
+        <mxCell id="include1" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="access-theory" target="interactive-examples">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="include2" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="watch-video-tutorial" target="step-by-step-guide">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="include3" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="step-by-step-guide" target="track-reading-progress">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="extend1" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="bookmark-content" target="read-documentation">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="extend2" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="take-notes" target="concept-visualization">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
         <!-- Actor Connections -->
         <mxCell id="student-theory" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.3;" edge="1" parent="1" source="student" target="access-theory">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -112,7 +148,28 @@
           </mxGeometry>
         </mxCell>
 
+        <mxCell id="student-watch" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;" edge="1" parent="1" source="student" target="watch-video-tutorial">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="student-progress" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.7;" edge="1" parent="1" source="student" target="track-reading-progress">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
         <mxCell id="content-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.3;" edge="1" parent="1" source="content-manager" target="read-documentation">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="multimedia-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" edge="1" parent="1" source="multimedia-system" target="concept-visualization">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="400" y="400" as="sourcePoint"/>
             <mxPoint x="450" y="350" as="targetPoint"/>
