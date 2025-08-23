@@ -1,182 +1,145 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2024-12-23T10:00:00.000Z" agent="Mozilla/5.0" version="24.7.17" etag="UCdetail-02" type="device">
-  <diagram name="UCdetail-02: Learning Content Module" id="ucdetail-02">
-    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
-      <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-        
-        <!-- Title -->
-        <mxCell id="title" value="UCdetail-02: Learning Content Module" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fillColor=#52c41a;fontColor=#ffffff" vertex="1" parent="1">
-          <mxGeometry x="200" y="20" width="800" height="40" as="geometry"/>
-        </mxCell>
-
-        <!-- System Boundary -->
-        <mxCell id="system-boundary" value="Learning Content Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#f6ffed;strokeColor=#52c41a;strokeWidth=2;verticalAlign=top" vertex="1" parent="1">
-          <mxGeometry x="150" y="80" width="900" height="650" as="geometry"/>
-        </mxCell>
-
-        <!-- Actors -->
-        <mxCell id="student" value="Student" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
-          <mxGeometry x="50" y="300" width="40" height="80" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="content-manager" value="Content&#xa;Manager" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
-          <mxGeometry x="1100" y="200" width="40" height="80" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="multimedia-system" value="Multimedia&#xa;System" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
-          <mxGeometry x="1100" y="400" width="40" height="80" as="geometry"/>
-        </mxCell>
-
-        <!-- Primary Use Cases -->
-        <mxCell id="access-theory" value="Access Algorithm&#xa;Theory" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="200" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="watch-video-tutorial" value="Watch Video&#xa;Tutorial" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
-          <mxGeometry x="360" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="read-documentation" value="Read Algorithm&#xa;Documentation" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
-          <mxGeometry x="520" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="explore-pseudocode" value="Explore&#xa;Pseudocode" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
-          <mxGeometry x="680" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="view-complexity-analysis" value="View Complexity&#xa;Analysis" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
-          <mxGeometry x="840" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <!-- Interactive Learning -->
-        <mxCell id="interactive-examples" value="Interactive&#xa;Examples" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
-          <mxGeometry x="280" y="250" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="step-by-step-guide" value="Step-by-Step&#xa;Guide" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
-          <mxGeometry x="440" y="250" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="concept-visualization" value="Concept&#xa;Visualization" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
-          <mxGeometry x="600" y="250" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="bookmark-content" value="Bookmark&#xa;Content" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
-          <mxGeometry x="760" y="250" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <!-- Learning Progress -->
-        <mxCell id="track-reading-progress" value="Track Reading&#xa;Progress" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff7e6;strokeColor=#d48806;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="440" y="380" width="140" height="80" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="take-notes" value="Take Learning&#xa;Notes" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#fff0f6;strokeColor=#d48fb1" vertex="1" parent="1">
-          <mxGeometry x="620" y="380" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <!-- Detailed Scenarios -->
-        <mxCell id="scenario-theory" value="Scenario 1: Theory Study&#xa;• Student opens algorithm theory&#xa;• Reads introduction and concepts&#xa;• Watches explanatory video&#xa;• Studies pseudocode examples&#xa;• Reviews complexity analysis&#xa;• Takes notes on key points" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
-          <mxGeometry x="180" y="500" width="200" height="120" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="scenario-interactive" value="Scenario 2: Interactive Learning&#xa;• Student follows step-by-step guide&#xa;• Interacts with visual examples&#xa;• Experiments with different inputs&#xa;• Observes algorithm behavior&#xa;• Bookmarks important sections&#xa;• Completes understanding check" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#f6ffed;strokeColor=#52c41a" vertex="1" parent="1">
-          <mxGeometry x="400" y="500" width="200" height="120" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="scenario-deep-dive" value="Scenario 3: Deep Dive Study&#xa;• Advanced student explores variants&#xa;• Compares different implementations&#xa;• Studies optimization techniques&#xa;• Analyzes real-world applications&#xa;• Creates comprehensive notes&#xa;• Prepares for advanced practice" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
-          <mxGeometry x="620" y="500" width="200" height="120" as="geometry"/>
-        </mxCell>
-
-        <!-- Flow Arrows -->
-        <mxCell id="flow1" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="access-theory" target="watch-video-tutorial">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="flow2" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="step-by-step-guide" target="track-reading-progress">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <!-- UML Relationships -->
-        <mxCell id="include1" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="access-theory" target="interactive-examples">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="include2" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="watch-video-tutorial" target="step-by-step-guide">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="include3" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="step-by-step-guide" target="track-reading-progress">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="extend1" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="bookmark-content" target="read-documentation">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="extend2" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="take-notes" target="concept-visualization">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <!-- Actor Connections -->
-        <mxCell id="student-theory" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.3;" edge="1" parent="1" source="student" target="access-theory">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="student-watch" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;" edge="1" parent="1" source="student" target="watch-video-tutorial">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="student-progress" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.7;" edge="1" parent="1" source="student" target="track-reading-progress">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="content-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.3;" edge="1" parent="1" source="content-manager" target="read-documentation">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="multimedia-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" edge="1" parent="1" source="multimedia-system" target="concept-visualization">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram name="UCdetail-02: Learning Content Module" id="ucdetail-02">
+        <mxGraphModel dx="626" dy="219" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="UCdetail-02: Learning Content Module" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fillColor=#52c41a;fontColor=#ffffff" parent="1" vertex="1">
+                    <mxGeometry x="200" y="20" width="800" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="system-boundary" value="Learning Content Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#f6ffed;strokeColor=#52c41a;strokeWidth=2;verticalAlign=top" parent="1" vertex="1">
+                    <mxGeometry x="150" y="80" width="900" height="650" as="geometry"/>
+                </mxCell>
+                <mxCell id="student" value="Student" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366" parent="1" vertex="1">
+                    <mxGeometry x="50" y="300" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="content-manager" value="Content&#xa;Manager" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="190" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="multimedia-system" value="Multimedia&#xa;System" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="400" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="access-theory" value="Access Algorithm&#xa;Theory" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="200" y="120" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="watch-video-tutorial" value="Watch Video&#xa;Tutorial" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" parent="1" vertex="1">
+                    <mxGeometry x="390" y="120" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="read-documentation" value="Read Algorithm&#xa;Documentation" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" parent="1" vertex="1">
+                    <mxGeometry x="870" y="180" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="explore-pseudocode" value="Explore&#xa;Pseudocode" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" parent="1" vertex="1">
+                    <mxGeometry x="870" y="405" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="view-complexity-analysis" value="View Complexity&#xa;Analysis" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" parent="1" vertex="1">
+                    <mxGeometry x="870" y="500" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="interactive-examples" value="Interactive&#xa;Examples" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
+                    <mxGeometry x="200" y="280" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="step-by-step-guide" value="Step-by-Step&#xa;Guide" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
+                    <mxGeometry x="390" y="280" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="concept-visualization" value="Concept&#xa;Visualization" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
+                    <mxGeometry x="600" y="280" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="bookmark-content" value="Bookmark&#xa;Content" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" parent="1" vertex="1">
+                    <mxGeometry x="590" y="180" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="track-reading-progress" value="Track Reading&#xa;Progress" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff7e6;strokeColor=#d48806;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="190" y="375" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="take-notes" value="Take Learning&#xa;Notes" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#fff0f6;strokeColor=#d48fb1" parent="1" vertex="1">
+                    <mxGeometry x="600" y="405" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="scenario-theory" value="Scenario 1: Theory Study&#xa;• Student opens algorithm theory&#xa;• Reads introduction and concepts&#xa;• Watches explanatory video&#xa;• Studies pseudocode examples&#xa;• Reviews complexity analysis&#xa;• Takes notes on key points" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
+                    <mxGeometry x="180" y="500" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="scenario-interactive" value="Scenario 2: Interactive Learning&#xa;• Student follows step-by-step guide&#xa;• Interacts with visual examples&#xa;• Experiments with different inputs&#xa;• Observes algorithm behavior&#xa;• Bookmarks important sections&#xa;• Completes understanding check" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#f6ffed;strokeColor=#52c41a" parent="1" vertex="1">
+                    <mxGeometry x="400" y="500" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="scenario-deep-dive" value="Scenario 3: Deep Dive Study&#xa;• Advanced student explores variants&#xa;• Compares different implementations&#xa;• Studies optimization techniques&#xa;• Analyzes real-world applications&#xa;• Creates comprehensive notes&#xa;• Prepares for advanced practice" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#fff7e6;strokeColor=#d48806" parent="1" vertex="1">
+                    <mxGeometry x="620" y="500" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="student-theory" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.3;" parent="1" source="student" target="access-theory" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="450" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="student-watch" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;" parent="1" source="student" target="watch-video-tutorial" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="450" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="student-progress" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.7;" parent="1" source="student" target="track-reading-progress" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="450" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="content-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.3;" parent="1" source="content-manager" target="read-documentation" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="450" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="multimedia-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="multimedia-system" target="concept-visualization" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="450" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="access-theory" target="watch-video-tutorial">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="240" y="100" as="sourcePoint"/>
+                        <mxPoint x="400" y="100" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="interactive-examples" target="access-theory">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="240" y="240" as="sourcePoint"/>
+                        <mxPoint x="400" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-by-step-guide" target="track-reading-progress">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="240" y="380" as="sourcePoint"/>
+                        <mxPoint x="400" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="take-notes" target="concept-visualization">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="620" y="380" as="sourcePoint"/>
+                        <mxPoint x="780" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="step-by-step-guide" target="watch-video-tutorial">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="330" y="165" as="sourcePoint"/>
+                        <mxPoint x="400" y="165" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="bookmark-content" target="read-documentation">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="850" y="200" as="sourcePoint"/>
+                        <mxPoint x="1010" y="200" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="multimedia-system" target="explore-pseudocode">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1110" y="450" as="sourcePoint"/>
+                        <mxPoint x="721" y="313" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="multimedia-system" target="view-complexity-analysis">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1110" y="450" as="sourcePoint"/>
+                        <mxPoint x="1000" y="450" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>

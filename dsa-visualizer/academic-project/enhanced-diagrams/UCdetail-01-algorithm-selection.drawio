@@ -1,147 +1,144 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2024-12-23T10:00:00.000Z" agent="Mozilla/5.0" version="24.7.17" etag="UCdetail-01-fixed" type="device">
-  <diagram name="UCdetail-01: Algorithm Selection Module" id="ucdetail-01">
-    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
-      <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-        
-        <mxCell id="title" value="UCdetail-01: Algorithm Selection Module" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fillColor=#1ba1e2;fontColor=#ffffff" vertex="1" parent="1">
-          <mxGeometry x="200" y="20" width="800" height="40" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="system-boundary" value="Algorithm Selection Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;verticalAlign=top" vertex="1" parent="1">
-          <mxGeometry x="150" y="80" width="900" height="650" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="student" value="Student" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
-          <mxGeometry x="50" y="300" width="40" height="80" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="algorithm-db" value="Algorithm Database" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
-          <mxGeometry x="1100" y="200" width="40" height="80" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="recommendation-engine" value="Recommendation Engine" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
-          <mxGeometry x="1100" y="400" width="40" height="80" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="browse-categories" value="Browse Algorithm Categories" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="200" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="search-algorithms" value="Search for Specific Algorithm" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
-          <mxGeometry x="360" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="filter-by-difficulty" value="Filter by Difficulty Level" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
-          <mxGeometry x="520" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="view-algorithm-details" value="View Algorithm Details" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
-          <mxGeometry x="680" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="compare-algorithms" value="Compare Algorithms" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
-          <mxGeometry x="840" y="120" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="get-recommendations" value="Get Algorithm Recommendations" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
-          <mxGeometry x="280" y="250" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="bookmark-algorithm" value="Bookmark Algorithm" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
-          <mxGeometry x="440" y="250" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="view-prerequisites" value="View Prerequisites" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
-          <mxGeometry x="600" y="250" width="120" height="70" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="select-algorithm" value="Select Algorithm for Learning" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#f0f9ff;strokeColor=#1890ff;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="520" y="380" width="140" height="80" as="geometry"/>
-        </mxCell>
-
-        <!-- Include Relationships -->
-        <mxCell id="include1" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="browse-categories" target="get-recommendations">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="350" as="sourcePoint"/>
-            <mxPoint x="450" y="300" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="include2" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="search-algorithms" target="view-algorithm-details">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="350" as="sourcePoint"/>
-            <mxPoint x="450" y="300" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <!-- Extend Relationships -->
-        <mxCell id="extend1" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=0;entryX=0.2;entryY=1;" edge="1" parent="1" source="bookmark-algorithm" target="view-algorithm-details">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="350" as="sourcePoint"/>
-            <mxPoint x="450" y="300" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="extend2" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="view-prerequisites" target="compare-algorithms">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="350" as="sourcePoint"/>
-            <mxPoint x="450" y="300" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <!-- Actor Connections -->
-        <mxCell id="student-browse" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.3;" edge="1" parent="1" source="student" target="browse-categories">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="student-search" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;" edge="1" parent="1" source="student" target="search-algorithms">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="student-select" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.7;" edge="1" parent="1" source="student" target="select-algorithm">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="db-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" edge="1" parent="1" source="algorithm-db" target="search-algorithms">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <mxCell id="recommendation-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" edge="1" parent="1" source="recommendation-engine" target="get-recommendations">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="400" as="sourcePoint"/>
-            <mxPoint x="450" y="350" as="targetPoint"/>
-          </mxGeometry>
-        </mxCell>
-
-        <!-- Scenarios -->
-        <mxCell id="scenario-browse" value="Scenario 1: Browse Categories&#xa;1. Student browses algorithm categories&#xa;2. System provides recommendations&#xa;3. Student views algorithm details&#xa;4. Student bookmarks interesting algorithms" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
-          <mxGeometry x="180" y="520" width="180" height="90" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="scenario-search" value="Scenario 2: Search Algorithm&#xa;1. Student searches for specific algorithm&#xa;2. System queries algorithm database&#xa;3. Student compares multiple algorithms&#xa;4. Student views prerequisites&#xa;5. Student selects algorithm for learning" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f6ffed;strokeColor=#52c41a" vertex="1" parent="1">
-          <mxGeometry x="380" y="520" width="180" height="90" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="scenario-recommend" value="Scenario 3: Get Recommendations&#xa;1. Student filters by difficulty level&#xa;2. Recommendation engine analyzes profile&#xa;3. System suggests suitable algorithms&#xa;4. Student reviews recommendations&#xa;5. Student makes final selection" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
-          <mxGeometry x="580" y="520" width="180" height="90" as="geometry"/>
-        </mxCell>
-
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram name="UCdetail-01: Algorithm Selection Module" id="ucdetail-01">
+        <mxGraphModel dx="1080" dy="338" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="UCdetail-01: Algorithm Selection Module" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fillColor=#1ba1e2;fontColor=#ffffff" parent="1" vertex="1">
+                    <mxGeometry x="200" y="20" width="800" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="system-boundary" value="Algorithm Selection Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;verticalAlign=top" parent="1" vertex="1">
+                    <mxGeometry x="150" y="80" width="900" height="650" as="geometry"/>
+                </mxCell>
+                <mxCell id="student" value="Student" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366" parent="1" vertex="1">
+                    <mxGeometry x="50" y="300" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="algorithm-db" value="Algorithm Database" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="200" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="recommendation-engine" value="Recommendation Engine" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="400" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="browse-categories" value="Browse Algorithm Categories" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="210" y="90" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="filter-by-difficulty" value="Filter by Difficulty Level" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" parent="1" vertex="1">
+                    <mxGeometry x="210" y="330" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="view-algorithm-details" value="View Algorithm Details" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" parent="1" vertex="1">
+                    <mxGeometry x="470" y="120" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="compare-algorithms" value="Compare Algorithms" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" parent="1" vertex="1">
+                    <mxGeometry x="470" y="260" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="get-recommendations" value="Get Algorithm Recommendations" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656" parent="1" vertex="1">
+                    <mxGeometry x="470" y="405" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="view-prerequisites" value="View Prerequisites" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" parent="1" vertex="1">
+                    <mxGeometry x="840" y="260" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="select-algorithm" value="Select Algorithm for Learning" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;fillColor=#f0f9ff;strokeColor=#1890ff;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="200" y="420" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="include1" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=1;exitY=1;entryX=0;entryY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" parent="1" source="search-algorithms" target="get-recommendations" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="350" as="sourcePoint"/>
+                        <mxPoint x="450" y="300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="include2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=1;exitY=0;entryX=0;entryY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" parent="1" source="search-algorithms" target="view-algorithm-details" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="350" as="sourcePoint"/>
+                        <mxPoint x="450" y="300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="extend1" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" parent="1" source="bookmark-algorithm" target="view-algorithm-details" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="350" as="sourcePoint"/>
+                        <mxPoint x="450" y="300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="extend2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" parent="1" source="view-prerequisites" target="compare-algorithms" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="350" as="sourcePoint"/>
+                        <mxPoint x="450" y="300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="student-browse" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.3;" parent="1" source="student" target="browse-categories" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="450" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="student-search" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;" parent="1" source="student" target="search-algorithms" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="450" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="student-select" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.7;" parent="1" source="student" target="select-algorithm" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="450" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="db-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" parent="1" source="algorithm-db" target="search-algorithms" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="400" as="sourcePoint"/>
+                        <mxPoint x="450" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="scenario-browse" value="Scenario 1: Browse Categories&#xa;1. Student browses algorithm categories&#xa;2. System provides recommendations&#xa;3. Student views algorithm details&#xa;4. Student bookmarks interesting algorithms" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
+                    <mxGeometry x="180" y="520" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="scenario-search" value="Scenario 2: Search Algorithm&#xa;1. Student searches for specific algorithm&#xa;2. System queries algorithm database&#xa;3. Student compares multiple algorithms&#xa;4. Student views prerequisites&#xa;5. Student selects algorithm for learning" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f6ffed;strokeColor=#52c41a" parent="1" vertex="1">
+                    <mxGeometry x="380" y="520" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="scenario-recommend" value="Scenario 3: Get Recommendations&#xa;1. Student filters by difficulty level&#xa;2. Recommendation engine analyzes profile&#xa;3. System suggests suitable algorithms&#xa;4. Student reviews recommendations&#xa;5. Student makes final selection" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#fff7e6;strokeColor=#d48806" parent="1" vertex="1">
+                    <mxGeometry x="580" y="520" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" edge="1" parent="1" source="recommendation-engine" target="bookmark-algorithm">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1100" y="440" as="sourcePoint"/>
+                        <mxPoint x="397" y="297" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bookmark-algorithm" value="Bookmark Algorithm" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" parent="1" vertex="1">
+                    <mxGeometry x="840" y="120" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="get-recommendations" target="recommendation-engine">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="540" y="417.23" as="sourcePoint"/>
+                        <mxPoint x="769.1729114885795" y="462.7614722960857" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="student" target="filter-by-difficulty">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="530" y="450" as="sourcePoint"/>
+                        <mxPoint x="1110" y="450" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="browse-categories" target="search-algorithms">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="270" y="210" as="sourcePoint"/>
+                        <mxPoint x="460" y="405" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7">
+                    <mxGeometry x="-0.0269" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="search-algorithms" value="Search for Specific Algorithm" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" parent="1" vertex="1">
+                    <mxGeometry x="210" y="205" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="student" target="compare-algorithms">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="100" y="350" as="sourcePoint"/>
+                        <mxPoint x="237" y="274" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
