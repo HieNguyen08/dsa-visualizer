@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-12-23T12:00:00.000Z" agent="Mozilla/5.0" version="24.7.17" etag="UCdetail-06" type="device">
+  <diagram name="UCdetail-06: User Management Module" id="ucdetail-06">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <mxCell id="title" value="UCdetail-06: User Management Module" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fillColor=#52c41a;fontColor=#ffffff" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="800" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="system-boundary" value="User Management Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#f6ffed;strokeColor=#52c41a;strokeWidth=2;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="150" y="80" width="900" height="650" as="geometry"/>
+        </mxCell>
+
+        <!-- Actors -->
+        <mxCell id="user" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="auth-service" value="Authentication Service" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="1100" y="200" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="email-service" value="Email Service" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="1100" y="400" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Primary Use Cases -->
+        <mxCell id="register-account" value="Register New Account" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="login" value="Login to System" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="360" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="logout" value="Logout from System" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="520" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="manage-profile" value="Manage User Profile" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="680" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="change-password" value="Change Password" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="840" y="120" width="120" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Support Use Cases -->
+        <mxCell id="validate-credentials" value="Validate User Credentials" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
+          <mxGeometry x="280" y="250" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="send-verification" value="Send Email Verification" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
+          <mxGeometry x="420" y="250" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="reset-password" value="Reset Password" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="560" y="250" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="manage-sessions" value="Manage User Sessions" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
+          <mxGeometry x="700" y="250" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Include Relationships -->
+        <mxCell id="include1" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="login" target="validate-credentials">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint"/>
+            <mxPoint x="450" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="include2" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="register-account" target="send-verification">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint"/>
+            <mxPoint x="450" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Extend Relationships -->
+        <mxCell id="extend1" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="reset-password" target="login">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint"/>
+            <mxPoint x="450" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Actor Connections -->
+        <mxCell id="user-register" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.3;" edge="1" parent="1" source="user" target="register-account">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="user-login" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;" edge="1" parent="1" source="user" target="login">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="auth-service-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" edge="1" parent="1" source="auth-service" target="validate-credentials">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="email-service-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" edge="1" parent="1" source="email-service" target="send-verification">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Scenarios -->
+        <mxCell id="scenario-registration" value="Scenario 1: New User Registration" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
+          <mxGeometry x="180" y="380" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scenario-login" value="Scenario 2: User Login" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#f6ffed;strokeColor=#52c41a" vertex="1" parent="1">
+          <mxGeometry x="400" y="380" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scenario-password-reset" value="Scenario 3: Password Reset" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="620" y="380" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
