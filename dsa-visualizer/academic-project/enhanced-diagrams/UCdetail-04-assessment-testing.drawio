@@ -74,6 +74,64 @@
           <mxGeometry x="700" y="380" width="120" height="70" as="geometry"/>
         </mxCell>
 
+        <!-- Include Relationships -->
+        <mxCell id="include1" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="take-quiz" target="track-scores">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint"/>
+            <mxPoint x="450" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="include2" value="&lt;&lt;include&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.8;exitY=1;entryX=0.2;entryY=0;" edge="1" parent="1" source="solve-coding-problems" target="generate-report">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint"/>
+            <mxPoint x="450" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Extend Relationships -->
+        <mxCell id="extend1" value="&lt;&lt;extend&gt;&gt;" style="endArrow=openThin;html=1;rounded=0;fontSize=9;startSize=8;endSize=8;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="retake-assessment" target="timed-assessments">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint"/>
+            <mxPoint x="450" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Actor Connections -->
+        <mxCell id="student-quiz" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.3;" edge="1" parent="1" source="student" target="take-quiz">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="student-coding" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=1;exitY=0.5;" edge="1" parent="1" source="student" target="solve-coding-problems">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="assessment-connection" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;" edge="1" parent="1" source="assessment-engine" target="timed-assessments">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Scenarios -->
+        <mxCell id="scenario-quiz" value="Scenario 1: Quiz Assessment&#xa;1. Student takes algorithm quiz&#xa;2. System tracks scores automatically&#xa;3. Provides immediate feedback&#xa;4. Student reviews wrong answers" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" vertex="1" parent="1">
+          <mxGeometry x="180" y="520" width="180" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scenario-coding" value="Scenario 2: Coding Challenge&#xa;1. Student solves coding problems&#xa;2. System generates progress report&#xa;3. Performance analysis provided&#xa;4. Identifies improvement areas" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f6ffed;strokeColor=#52c41a" vertex="1" parent="1">
+          <mxGeometry x="380" y="520" width="180" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scenario-timed" value="Scenario 3: Timed Assessment&#xa;1. Student takes timed test&#xa;2. Assessment engine monitors progress&#xa;3. Time constraints enforced&#xa;4. Option to retake if needed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#fff7e6;strokeColor=#d48806" vertex="1" parent="1">
+          <mxGeometry x="580" y="520" width="180" height="90" as="geometry"/>
+        </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
