@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="UCdetail-03: Visualization Practice Module" id="ucdetail-03">
-        <mxGraphModel dx="887" dy="310" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+        <mxGraphModel dx="449" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -14,7 +14,7 @@
                     <mxGeometry x="50" y="300" width="40" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="visualization-engine" value="Visualization&#xa;Engine" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf" parent="1" vertex="1">
-                    <mxGeometry x="1100" y="200" width="40" height="80" as="geometry"/>
+                    <mxGeometry x="1100" y="275" width="40" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="animation-controller" value="Animation&#xa;Controller" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656" parent="1" vertex="1">
                     <mxGeometry x="1100" y="390" width="40" height="80" as="geometry"/>
@@ -38,10 +38,10 @@
                     <mxGeometry x="200" y="300" width="120" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="highlight-operations" value="Highlight Current&#xa;Operations" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
-                    <mxGeometry x="460" y="395" width="120" height="70" as="geometry"/>
+                    <mxGeometry x="460" y="250" width="120" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="view-state-info" value="View Data Structure&#xa;State Info" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
-                    <mxGeometry x="830" y="395" width="120" height="70" as="geometry"/>
+                    <mxGeometry x="590" y="280" width="120" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="compare-executions" value="Compare Multiple&#xa;Executions" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" parent="1" vertex="1">
                     <mxGeometry x="590" y="120" width="120" height="70" as="geometry"/>
@@ -50,7 +50,7 @@
                     <mxGeometry x="190" y="390" width="140" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="save-session" value="Save Practice&#xa;Session" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#fff0f6;strokeColor=#d48fb1" parent="1" vertex="1">
-                    <mxGeometry x="610" y="395" width="120" height="70" as="geometry"/>
+                    <mxGeometry x="460" y="395" width="120" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="scenario-basic" value="Scenario 1: Basic Visualization&#xa;• Student selects sorting algorithm&#xa;• Inputs array [64,34,25,12,22]&#xa;• Starts visualization with normal speed&#xa;• Observes step-by-step execution&#xa;• Pauses to analyze specific step&#xa;• Completes full algorithm run" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
                     <mxGeometry x="180" y="500" width="200" height="120" as="geometry"/>
@@ -91,52 +91,58 @@
                         <mxPoint x="450" y="350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="3" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="start-visualization" target="input-data">
+                <mxCell id="3" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="start-visualization" target="input-data" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="200" y="240" as="sourcePoint"/>
                         <mxPoint x="360" y="240" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="4" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="start-visualization" target="modify-parameters">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="330" y="165" as="sourcePoint"/>
-                        <mxPoint x="400" y="165" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="5" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="practice-mode" target="highlight-operations">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="310" y="380" as="sourcePoint"/>
-                        <mxPoint x="470" y="380" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="6" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="input-data" target="highlight-operations">
+                <mxCell id="6" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="input-data" target="highlight-operations" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="319" y="412" as="sourcePoint"/>
                         <mxPoint x="468" y="320" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="7" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="start-visualization" target="control-animation">
+                <mxCell id="7" value="&amp;lt;&amp;lt;extend&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="start-visualization" target="control-animation" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="330" y="165" as="sourcePoint"/>
                         <mxPoint x="470" y="165" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="8" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="save-session" target="view-state-info">
+                <mxCell id="8" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="step-through" target="view-state-info" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="730" y="460" as="sourcePoint"/>
                         <mxPoint x="890" y="460" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="9" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="compare-executions" target="pause-resume">
+                <mxCell id="11" value="&amp;lt;&amp;lt;include&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="practice-mode" target="control-animation">
                     <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="730" y="230" as="sourcePoint"/>
-                        <mxPoint x="890" y="230" as="targetPoint"/>
+                        <mxPoint x="312" y="190" as="sourcePoint"/>
+                        <mxPoint x="430" y="310" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="10" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="visualization-engine" target="pause-resume">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="1110" y="234" as="sourcePoint"/>
-                        <mxPoint x="958" y="304" as="targetPoint"/>
+                <mxCell id="12" value="&amp;lt;&amp;lt;extend&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="practice-mode" target="save-session">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="312" y="190" as="sourcePoint"/>
+                        <mxPoint x="430" y="310" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="compare-executions" target="view-state-info">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="720" y="165" as="sourcePoint"/>
+                        <mxPoint x="850" y="165" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="pause-resume" target="step-through">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="660" y="200" as="sourcePoint"/>
+                        <mxPoint x="660" y="290" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="&amp;lt;&amp;lt;extend&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="start-visualization" target="modify-parameters">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="312" y="190" as="sourcePoint"/>
+                        <mxPoint x="430" y="310" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
