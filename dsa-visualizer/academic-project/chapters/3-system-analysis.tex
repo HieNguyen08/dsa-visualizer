@@ -399,6 +399,233 @@ Phần này trình bày chi tiết các use case chính của hệ thống theo 
 \label{tab:uc005} \\
 \end{longtable}
 
+\subsubsection{UC006: User Management}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Use Case ID} & UC006 \\ \hline
+\textbf{Tên Use Case} & User Account Management \\ \hline
+\textbf{Mô tả} & Quản lý tài khoản người dùng bao gồm đăng ký, đăng nhập, quản lý profile và phân quyền \\ \hline
+\textbf{Actor chính} & Student, Instructor, Administrator \\ \hline
+\textbf{Actor phụ} & Email Service, Authentication Service \\ \hline
+\textbf{Điều kiện tiên quyết} & 
+\begin{itemize}
+    \item Hệ thống authentication service hoạt động
+    \item Database user management khả dụng
+    \item Email service kết nối thành công
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item User truy cập registration/login page
+    \item System hiển thị authentication form với validation
+    \item User nhập thông tin account (email, password, role)
+    \item System validate thông tin và check duplicate email
+    \item System tạo user account với encrypted password
+    \item System gửi verification email để kích hoạt tài khoản
+    \item User click verification link từ email
+    \item System activate account và redirect đến dashboard
+    \item System log user activity và update last login time
+\end{enumerate} \\ \hline
+\textbf{Luồng thay thế} & 
+\begin{itemize}
+    \item Email đã tồn tại: System hiển thị error message và suggest login
+    \item Verification email failed: System provide resend verification option
+    \item Password không đạt requirements: System hiển thị password strength indicator
+    \item Social login: User có thể login through Google/GitHub OAuth
+\end{itemize} \\ \hline
+\textbf{Điều kiện sau} & 
+\begin{itemize}
+    \item User account được tạo và activated successfully
+    \item User session được establish với appropriate permissions
+    \item User profile data được initialize với default settings
+    \item System tạo user workspace và learning progress tracking
+\end{itemize} \\ \hline
+\caption{Use Case Scenario: User Management}
+\label{tab:uc006} \\
+\end{longtable}
+
+\subsubsection{UC007: Collaborative Learning}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Use Case ID} & UC007 \\ \hline
+\textbf{Tên Use Case} & Collaborative Learning Environment \\ \hline
+\textbf{Mô tả} & Tạo môi trường học tập collaborative với sharing, discussion, và peer review \\ \hline
+\textbf{Actor chính} & Student, Instructor \\ \hline
+\textbf{Actor phụ} & Notification Service, Real-time Communication Service \\ \hline
+\textbf{Điều kiện tiên quyết} & 
+\begin{itemize}
+    \item User đã đăng nhập với quyền appropriate
+    \item Real-time communication service hoạt động
+    \item Notification system khả dụng
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item User tạo hoặc join study group/classroom
+    \item System setup shared workspace với collaborative tools
+    \item User share visualization session với group members
+    \item System enable real-time code sharing và discussion
+    \item Members có thể comment, suggest improvements trên algorithms
+    \item System track collaborative activities và contributions
+    \item Instructor có thể monitor group progress và provide guidance
+    \item System generate collaboration reports và peer evaluation
+    \item User receive notifications về group activities và updates
+\end{enumerate} \\ \hline
+\textbf{Luồng thay thế} & 
+\begin{itemize}
+    \item Private study session: User có thể work independently nếu muốn
+    \item Offline mode: System cache collaborative data để sync later
+    \item Permission conflicts: System resolve quyền access theo role hierarchy
+    \item Network issues: System provide offline collaboration features
+\end{itemize} \\ \hline
+\textbf{Điều kiện sau} & 
+\begin{itemize}
+    \item Collaborative session được establish successfully
+    \item All participants có access đến shared resources
+    \item Real-time synchronization hoạt động properly
+    \item Collaboration history được lưu để future reference
+\end{itemize} \\ \hline
+\caption{Use Case Scenario: Collaborative Learning}
+\label{tab:uc007} \\
+\end{longtable}
+
+\subsubsection{UC008: AI-Powered Learning Assistant}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Use Case ID} & UC008 \\ \hline
+\textbf{Tên Use Case} & AI-Powered Personalized Learning Assistant \\ \hline
+\textbf{Mô tả} & AI assistant cung cấp hỗ trợ học tập personalized, giải thích algorithms, và recommendation \\ \hline
+\textbf{Actor chính} & Student, Instructor \\ \hline
+\textbf{Actor phụ} & AI Engine, Knowledge Base, Analytics Service \\ \hline
+\textbf{Điều kiện tiên quyết} & 
+\begin{itemize}
+    \item AI service models đã được trained và deployed
+    \item User learning history và preferences available
+    \item Knowledge base updated với current algorithms
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item User gửi query hoặc request help về specific algorithm
+    \item AI assistant analyze user question và current learning context
+    \item System retrieve relevant information từ knowledge base
+    \item AI generate personalized explanation với appropriate complexity level
+    \item System provide interactive examples và visual demonstrations
+    \item AI suggest related algorithms và learning paths
+    \item User có thể ask follow-up questions để clarify concepts
+    \item System update user learning profile based on interactions
+    \item AI recommend next learning steps và practice exercises
+\end{enumerate} \\ \hline
+\textbf{Luồng thay thế} & 
+\begin{itemize}
+    \item Complex queries: AI escalate đến human instructor nếu cần
+    \item Multilingual support: AI có thể respond bằng preferred language
+    \item Learning style adaptation: AI adjust explanation style theo user preference
+    \item Code debugging: AI analyze user code và suggest improvements
+\end{itemize} \\ \hline
+\textbf{Điều kiện sau} & 
+\begin{itemize}
+    \item User nhận được accurate và helpful explanation
+    \item Learning progress được update với AI interaction data
+    \item AI model được retrained với user feedback
+    \item Personalized recommendations được generated cho future learning
+\end{itemize} \\ \hline
+\caption{Use Case Scenario: AI-Powered Learning Assistant}
+\label{tab:uc008} \\
+\end{longtable}
+
+\subsubsection{UC009: Content Management System}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Use Case ID} & UC009 \\ \hline
+\textbf{Tên Use Case} & Dynamic Content Management \\ \hline
+\textbf{Mô tả} & Quản lý nội dung học tập dynamic bao gồm algorithms, exercises, và educational materials \\ \hline
+\textbf{Actor chính} & Instructor, Content Administrator \\ \hline
+\textbf{Actor phụ} & Content Validation Service, Version Control System \\ \hline
+\textbf{Điều kiện tiên quyết} & 
+\begin{itemize}
+    \item User có quyền content management permissions
+    \item Content management system hoạt động properly
+    \item Version control service available
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item Instructor access content management dashboard
+    \item System hiển thị existing content library với search/filter options
+    \item Instructor tạo new algorithm content hoặc modify existing
+    \item System provide rich text editor với code highlighting
+    \item Instructor add visualization parameters và interactive elements
+    \item System validate content format và algorithm correctness
+    \item Instructor setup exercises và assessment questions
+    \item System preview content với different complexity levels
+    \item Instructor publish content sau khi review và approval
+    \item System update content index và notify relevant users
+\end{enumerate} \\ \hline
+\textbf{Luồng thay thế} & 
+\begin{itemize}
+    \item Content import: Instructor có thể import từ external sources
+    \item Collaborative editing: Multiple instructors có thể collaborate trên same content
+    \item Content versioning: System maintain version history để rollback nếu cần
+    \item Bulk operations: System support bulk upload và modification
+\end{itemize} \\ \hline
+\textbf{Điều kiện sau} & 
+\begin{itemize}
+    \item New content được published và available cho users
+    \item Content metadata được index properly để search
+    \item Version history được maintain cho content tracking
+    \item Related users receive notifications về new content
+\end{itemize} \\ \hline
+\caption{Use Case Scenario: Content Management System}
+\label{tab:uc009} \\
+\end{longtable}
+
+\subsubsection{UC010: System Administration}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Use Case ID} & UC010 \\ \hline
+\textbf{Tên Use Case} & System Administration và Monitoring \\ \hline
+\textbf{Mô tả} & Quản lý hệ thống comprehensive bao gồm monitoring, maintenance, và security management \\ \hline
+\textbf{Actor chính} & System Administrator, DevOps Engineer \\ \hline
+\textbf{Actor phụ} & Monitoring Service, Backup Service, Security Scanner \\ \hline
+\textbf{Điều kiện tiên quyết} & 
+\begin{itemize}
+    \item Administrator có full system access privileges
+    \item Monitoring tools và dashboards operational
+    \item Backup systems configured properly
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item Administrator access system administration dashboard
+    \item System hiển thị real-time metrics: performance, usage, errors
+    \item Administrator monitor user activities và system health
+    \item System generate automated reports về usage patterns
+    \item Administrator perform routine maintenance tasks
+    \item System backup critical data và configurations
+    \item Administrator review security logs và access patterns
+    \item System perform security scans và vulnerability assessments
+    \item Administrator update system configurations và policies
+    \item System notify relevant stakeholders về maintenance activities
+\end{enumerate} \\ \hline
+\textbf{Luồng thay thế} & 
+\begin{itemize}
+    \item Emergency response: System trigger alerts cho critical issues
+    \item Automated maintenance: System perform scheduled tasks automatically
+    \item Performance optimization: Administrator tune system parameters
+    \item Disaster recovery: System execute backup restore procedures
+\end{itemize} \\ \hline
+\textbf{Điều kiện sau} & 
+\begin{itemize}
+    \item System health metrics trong acceptable ranges
+    \item Security policies được enforced properly
+    \item Backup data verified và accessible
+    \item System performance optimized cho user experience
+\end{itemize} \\ \hline
+\caption{Use Case Scenario: System Administration}
+\label{tab:uc010} \\
+\end{longtable}
+
 \section{Class Diagram}
 \label{sec:class-diagram}
 
