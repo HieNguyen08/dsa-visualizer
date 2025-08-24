@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Class Diagram" id="class-diagram-clean">
-        <mxGraphModel dx="2150" dy="294" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="2000" math="0" shadow="0">
+        <mxGraphModel dx="510" dy="222" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="2000" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -53,7 +53,7 @@
                     <mxGeometry x="1200" y="360" width="140" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="ai-assistant" value="AIAssistant&#xa;────────────────&#xa;- sessionId: String&#xa;- userId: String&#xa;- context: String&#xa;- language: String&#xa;────────────────&#xa;+ generateExplanation(step: Step): String&#xa;+ provideHints(problem: String): List&lt;String&gt;&#xa;+ optimizeCode(code: String): String&#xa;+ answerQuestions(question: String): String" style="whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f5ff;strokeColor=#1677ff;align=left;verticalAlign=top" parent="1" vertex="1">
-                    <mxGeometry x="20" y="560" width="200" height="150" as="geometry"/>
+                    <mxGeometry x="70" y="570" width="200" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="lesson" value="Lesson&#xa;────────────────&#xa;- lessonId: String&#xa;- title: String&#xa;- content: String&#xa;- algorithmIds: List&lt;String&gt;&#xa;- difficulty: Level&#xa;- createdBy: String&#xa;────────────────&#xa;+ getContent(): String&#xa;+ addAlgorithm(id: String): void&#xa;+ updateDifficulty(level: Level): void" style="whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff7e6;strokeColor=#d48806;align=left;verticalAlign=top" parent="1" vertex="1">
                     <mxGeometry x="190" y="800" width="180" height="150" as="geometry"/>
@@ -65,7 +65,7 @@
                     <mxGeometry x="790" y="740" width="180" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="progress" value="Progress&#xa;────────────────&#xa;- progressId: String&#xa;- userId: String&#xa;- algorithmId: String&#xa;- completedSteps: Integer&#xa;- totalSteps: Integer&#xa;- score: Integer&#xa;- startTime: Date&#xa;────────────────&#xa;+ updateProgress(step: Integer): void&#xa;+ calculateScore(): Integer&#xa;+ getCompletion(): Double" style="whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff;align=left;verticalAlign=top" parent="1" vertex="1">
-                    <mxGeometry x="-210" y="500" width="180" height="160" as="geometry"/>
+                    <mxGeometry y="760" width="180" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="performance-tracker" value="PerformanceTracker&#xa;────────────────&#xa;- testId: String&#xa;- algorithmId: String&#xa;- inputSize: Integer&#xa;- executionTime: Long&#xa;- memoryUsage: Long&#xa;- timeComplexity: String&#xa;────────────────&#xa;+ runTest(): TestResult&#xa;+ compareResults(): Comparison&#xa;+ generateReport(): Report" style="whiteSpace=wrap;html=1;fontSize=10;fillColor=#f0f9ff;strokeColor=#1677ff;align=left;verticalAlign=top" parent="1" vertex="1">
                     <mxGeometry x="470" y="940" width="180" height="160" as="geometry"/>
@@ -154,7 +154,7 @@
                         <mxPoint x="800" y="350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="assoc-student-progress" style="endArrow=none;html=1;rounded=0;" parent="1" source="student" target="progress" edge="1">
+                <mxCell id="assoc-student-progress" style="endArrow=none;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="student" target="progress" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="150" y="500" as="sourcePoint"/>
                         <mxPoint x="200" y="450" as="targetPoint"/>
@@ -166,13 +166,13 @@
                         <mxPoint x="400" y="450" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="assoc-control-vis" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="visualizer" edge="1" source="control-panel">
+                <mxCell id="assoc-control-vis" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="control-panel" target="visualizer" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="1150" y="795" as="sourcePoint"/>
                         <mxPoint x="1000" y="210" as="targetPoint"/>
                         <Array as="points">
                             <mxPoint x="1050" y="795"/>
-                            <mxPoint x="1050" y="220"/>
+                            <mxPoint x="1050" y="215"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>

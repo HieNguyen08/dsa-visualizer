@@ -47,67 +47,67 @@ sequenceDiagram
     rect rgb(255, 245, 230)
     Note over S,AS: Vòng lặp Trả lời Câu hỏi
     loop Cho mỗi câu hỏi
-        QS->>+UI: getNextQuestion()
-        UI-->>-S: displayQuestion(question, options)
+        QS->>UI: getNextQuestion()
+        UI->>S: displayQuestion(question, options)
         
-        S->>+UI: submitAnswer(answer, timeSpent)
-        UI->>+QS: validateAnswer(questionId, answer, timeSpent)
+        S->>UI: submitAnswer(answer, timeSpent)
+        UI->>QS: validateAnswer(questionId, answer, timeSpent)
         
         par Đánh giá câu trả lời
-            QS->>+AS: analyzeAnswer(answer, correctAnswer, timeSpent)
-            AS-->>-QS: detailedFeedback
+            QS->>AS: analyzeAnswer(answer, correctAnswer, timeSpent)
+            AS->>QS: detailedFeedback
         and Cập nhật thống kê
-            QS->>+DB: updateQuestionStats(questionId, correct, timeSpent)
-            DB-->>-QS: statsUpdated
+            QS->>DB: updateQuestionStats(questionId, correct, timeSpent)
+            DB->>QS: statsUpdated
         end
         
-        QS-->>-UI: answerResult(correct, explanation, feedback)
-        UI-->>-S: showFeedback(result, explanation)
+        QS->>UI: answerResult(correct, explanation, feedback)
+        UI->>S: showFeedback(result, explanation)
         
         opt Cần giải thích thêm
-            S->>+UI: requestDetailedExplanation()
-            UI->>+QS: getDetailedExplanation(questionId, userAnswer)
-            QS->>+QG: generateExplanation(questionId, misconception)
-            QG-->>-QS: detailedExplanation
-            QS-->>-UI: explanation
-            UI-->>-S: displayExplanation()
+            S->>UI: requestDetailedExplanation()
+            UI->>QS: getDetailedExplanation(questionId, userAnswer)
+            QS->>QG: generateExplanation(questionId, misconception)
+            QG->>QS: detailedExplanation
+            QS->>UI: explanation
+            UI->>S: displayExplanation()
         end
         
         opt Điều chỉnh độ khó thích ứng
-            QS->>+AS: adjustDifficulty(currentPerformance)
-            AS-->>-QS: nextQuestionLevel
+            QS->>AS: adjustDifficulty(currentPerformance)
+            AS->>QS: nextQuestionLevel
         end
     end
     end
 
     rect rgb(255, 230, 245)
     Note over S,AS: Hoàn thành và Phân tích
-    QS->>+AS: calculateFinalScore(answers, timeSpent, difficulty)
-    AS-->>-QS: scoreDetails
+    QS->>AS: calculateFinalScore(answers, timeSpent, difficulty)
+    AS->>QS: scoreDetails
     
     par Lưu kết quả
-        QS->>+DB: saveQuizResult(sessionId, score, answers, analytics)
-        DB-->>-QS: resultSaved
+        QS->>DB: saveQuizResult(sessionId, score, answers, analytics)
+        DB->>QS: resultSaved
     and Cập nhật hồ sơ học tập
-        QS->>+DB: updateLearningProfile(userId, performance)
-        DB-->>-QS: profileUpdated
+        QS->>DB: updateLearningProfile(userId, performance)
+        DB->>QS: profileUpdated
     end
     
-    QS->>+AS: generatePerformanceAnalysis(userResults, classResults)
-    AS-->>-QS: analysisReport
-    QS-->>-UI: finalResults(score, analysis, recommendations)
-    UI-->>-S: displayResults()
+    QS->>AS: generatePerformanceAnalysis(userResults, classResults)
+    AS->>QS: analysisReport
+    QS->>UI: finalResults(score, analysis, recommendations)
+    UI->>S: displayResults()
     end
 
     rect rgb(230, 255, 240)
     Note over S,AS: Khuyến nghị Cải thiện
     opt Đề xuất học tập tiếp theo
-        AS->>+DB: getWeakAreas(userId, quizResults)
-        DB-->>-AS: weaknessList
-        AS->>+QG: generatePracticeRecommendations(weaknesses)
-        QG-->>-AS: practiceTopics
-        AS->>+UI: suggestImprovementPlan(practiceTopics)
-        UI-->>-S: displayImprovementPlan()
+        AS->>DB: getWeakAreas(userId, quizResults)
+        DB->>AS: weaknessList
+        AS->>QG: generatePracticeRecommendations(weaknesses)
+        QG->>AS: practiceTopics
+        AS->>UI: suggestImprovementPlan(practiceTopics)
+        UI->>S: displayImprovementPlan()
     end
     end
 ```

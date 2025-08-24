@@ -1,14 +1,14 @@
 <mxfile host="65bd71144e">
     <diagram name="UCdetail-09: Content Management Module" id="ucdetail-09">
-        <mxGraphModel dx="1053" dy="776" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+        <mxGraphModel dx="1340" dy="583" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="title" value="UCdetail-09: Content Management Module" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fillColor=#eb2f96;fontColor=#ffffff" parent="1" vertex="1">
-                    <mxGeometry x="200" y="20" width="800" height="40" as="geometry"/>
+                    <mxGeometry x="95" y="20" width="800" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="system-boundary" value="Content Management Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#fff0f6;strokeColor=#eb2f96;strokeWidth=2;verticalAlign=top" parent="1" vertex="1">
-                    <mxGeometry x="150" y="80" width="900" height="650" as="geometry"/>
+                    <mxGeometry x="150" y="80" width="690" height="560" as="geometry"/>
                 </mxCell>
                 <mxCell id="instructor" value="Content Creator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6" parent="1" vertex="1">
                     <mxGeometry x="50" y="200" width="40" height="80" as="geometry"/>
@@ -17,7 +17,7 @@
                     <mxGeometry x="50" y="500" width="40" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="content-repository" value="Content Repository" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656" parent="1" vertex="1">
-                    <mxGeometry x="1100" y="455" width="40" height="80" as="geometry"/>
+                    <mxGeometry x="900" y="455" width="40" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="create-algorithm-content" value="Create Algorithm Content" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="200" y="190" width="120" height="70" as="geometry"/>
@@ -94,64 +94,55 @@
                         <mxPoint x="450" y="350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="scenario-creation" value="Scenario 1: Content Creation&#xa;1. Instructor creates algorithm content&#xa;2. System validates quality&#xa;3. Multimedia integration&#xa;4. Content metadata organization" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
-                    <mxGeometry x="390" y="630" width="180" height="90" as="geometry"/>
-                </mxCell>
-                <mxCell id="scenario-management" value="Scenario 2: Curriculum Management&#xa;1. Instructor organizes curriculum&#xa;2. Interactive exercises creation&#xa;3. Assessment integration&#xa;4. Version control tracking" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f6ffed;strokeColor=#52c41a" parent="1" vertex="1">
-                    <mxGeometry x="590" y="630" width="180" height="90" as="geometry"/>
-                </mxCell>
-                <mxCell id="scenario-approval" value="Scenario 3: Content Publication&#xa;1. Admin reviews content&#xa;2. Approves for publication&#xa;3. Content localization&#xa;4. Usage tracking enabled" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#fff7e6;strokeColor=#d48806" parent="1" vertex="1">
-                    <mxGeometry x="790" y="630" width="180" height="90" as="geometry"/>
-                </mxCell>
-                <mxCell id="2" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="create-algorithm-content" target="validate-content">
+                <mxCell id="2" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;" parent="1" source="create-algorithm-content" target="validate-content" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="420" y="380" as="sourcePoint"/>
                         <mxPoint x="580" y="380" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="3" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="create-algorithm-content" target="organize-metadata">
+                <mxCell id="3" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="create-algorithm-content" target="organize-metadata" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="330" y="165" as="sourcePoint"/>
                         <mxPoint x="480" y="165" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="4" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="upload-resources" target="backup-content">
+                <mxCell id="4" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="upload-resources" target="backup-content" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="313" y="190" as="sourcePoint"/>
                         <mxPoint x="480" y="250" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="7" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="version-control" target="backup-content">
+                <mxCell id="7" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="version-control" target="backup-content" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="330" y="250" as="sourcePoint"/>
                         <mxPoint x="600" y="350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="8" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="approve-content" target="track-usage">
+                <mxCell id="8" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="approve-content" target="track-usage" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="330" y="250" as="sourcePoint"/>
                         <mxPoint x="600" y="350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="9" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="create-algorithm-content" target="multimedia-integration">
+                <mxCell id="9" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;" parent="1" source="create-algorithm-content" target="multimedia-integration" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="440" y="380" as="sourcePoint"/>
                         <mxPoint x="600" y="380" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="10" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="create-algorithm-content" target="interactive-exercises">
+                <mxCell id="10" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;" parent="1" source="create-algorithm-content" target="interactive-exercises" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="330" y="231" as="sourcePoint"/>
                         <mxPoint x="600" y="213" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="11" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;" edge="1" parent="1" source="create-algorithm-content" target="localization">
+                <mxCell id="11" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;" parent="1" source="create-algorithm-content" target="localization" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="330" y="235" as="sourcePoint"/>
                         <mxPoint x="710" y="240" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="12" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="manage-curriculum" target="assessment-integration">
+                <mxCell id="12" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="manage-curriculum" target="assessment-integration" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="328" y="245" as="sourcePoint"/>
                         <mxPoint x="712" y="311" as="targetPoint"/>

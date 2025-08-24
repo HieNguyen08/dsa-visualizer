@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="UCdetail-05: Progress Tracking Module" id="ucdetail-05">
-        <mxGraphModel dx="617" dy="712" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+        <mxGraphModel dx="1072" dy="466" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -8,7 +8,7 @@
                     <mxGeometry x="200" y="20" width="800" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="system-boundary" value="Progress Tracking Module" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#e6fffb;strokeColor=#13c2c2;strokeWidth=2;verticalAlign=top" parent="1" vertex="1">
-                    <mxGeometry x="150" y="80" width="900" height="650" as="geometry"/>
+                    <mxGeometry x="150" y="80" width="900" height="440" as="geometry"/>
                 </mxCell>
                 <mxCell id="student" value="Student" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366" parent="1" vertex="1">
                     <mxGeometry x="50" y="300" width="40" height="80" as="geometry"/>
@@ -58,16 +58,7 @@
                         <mxPoint x="360" y="155" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="scenario-dashboard" value="Scenario 1: Progress Dashboard&#xa;1. Student views progress dashboard&#xa;2. System tracks milestones automatically&#xa;3. Displays completion statistics&#xa;4. Shows learning patterns" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f0f9ff;strokeColor=#1890ff" parent="1" vertex="1">
-                    <mxGeometry x="180" y="520" width="180" height="90" as="geometry"/>
-                </mxCell>
-                <mxCell id="scenario-achievements" value="Scenario 2: Achievement Tracking&#xa;1. Student tracks achievements&#xa;2. Analytics engine processes data&#xa;3. System provides recommendations&#xa;4. Progress shared with community" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#f6ffed;strokeColor=#52c41a" parent="1" vertex="1">
-                    <mxGeometry x="380" y="520" width="180" height="90" as="geometry"/>
-                </mxCell>
-                <mxCell id="scenario-analytics" value="Scenario 3: Learning Analytics&#xa;1. System analyzes learning patterns&#xa;2. Generates detailed reports&#xa;3. Identifies weak areas&#xa;4. Suggests improvement strategies" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;align=left;verticalAlign=top;fillColor=#fff7e6;strokeColor=#d48806" parent="1" vertex="1">
-                    <mxGeometry x="580" y="520" width="180" height="90" as="geometry"/>
-                </mxCell>
-                <mxCell id="2" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="notification-system" target="receive-recommendations">
+                <mxCell id="2" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;exitX=0;exitY=0.5;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="notification-system" target="receive-recommendations" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="1100" y="440" as="sourcePoint"/>
                         <mxPoint x="660" y="418" as="targetPoint"/>
@@ -76,49 +67,49 @@
                 <mxCell id="share-progress" value="Share Progress with Others" style="ellipse;whiteSpace=wrap;html=1;fontSize=11;fillColor=#fff0f6;strokeColor=#d48fb1" parent="1" vertex="1">
                     <mxGeometry x="200" y="210" width="120" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="share-progress" target="progress-reports">
+                <mxCell id="4" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="share-progress" target="progress-reports" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="740" y="420" as="sourcePoint"/>
                         <mxPoint x="900" y="420" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="5" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="milestone-tracking" target="view-dashboard">
+                <mxCell id="5" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="milestone-tracking" target="view-dashboard" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="140" y="420" as="sourcePoint"/>
                         <mxPoint x="300" y="420" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="6" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="milestone-tracking" target="set-goals">
+                <mxCell id="6" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="milestone-tracking" target="set-goals" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="870" y="480" as="sourcePoint"/>
                         <mxPoint x="870" y="580" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="7" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="analytics-engine" target="learning-patterns">
+                <mxCell id="7" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="analytics-engine" target="learning-patterns" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="1110" y="450" as="sourcePoint"/>
                         <mxPoint x="970" y="450" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="8" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="student" target="view-achievements">
+                <mxCell id="8" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="student" target="view-achievements" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="100" y="334" as="sourcePoint"/>
                         <mxPoint x="240" y="195" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="9" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="track-learning-time" target="performance-analytics">
+                <mxCell id="9" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="track-learning-time" target="performance-analytics" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="430" y="430" as="sourcePoint"/>
                         <mxPoint x="590" y="430" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="10" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="view-achievements" target="receive-recommendations">
+                <mxCell id="10" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="view-achievements" target="receive-recommendations" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="330" y="350" as="sourcePoint"/>
                         <mxPoint x="510" y="350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="11" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="student" target="share-progress">
+                <mxCell id="11" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="student" target="share-progress" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="100" y="334" as="sourcePoint"/>
                         <mxPoint x="240" y="195" as="targetPoint"/>

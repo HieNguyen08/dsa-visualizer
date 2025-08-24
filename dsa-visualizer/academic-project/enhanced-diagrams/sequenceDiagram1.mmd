@@ -1,0 +1,73 @@
+sequenceDiagram
+    participant S as Sinh viên
+    participant UI as Bộ điều khiển UI
+    participant AI as Dịch vụ Trợ lý AI
+    participant KB as Cơ sở Kiến thức
+    participant DB as Cơ sở dữ liệu
+    participant ML as Mô hình ML
+
+    autonumber
+
+    rect rgb(230, 245, 255)
+    Note over S,ML: Khởi tạo Phiên Trợ lý AI
+    S->>+UI: openAIAssistant()
+    UI->>+AI: initializeSession(userId, context)
+    AI->>+DB: getUserLearningContext(userId)
+    DB-->>-AI: learningContext
+    AI->>+ML: loadPersonalizedModel(userProfile)
+    ML-->>-AI: modelReady
+    AI-->>-UI: sessionReady
+    UI-->>-S: displayChatInterface()
+    end
+
+    rect rgb(245, 255, 230)
+    Note over S,ML: Tương tác Hỏi-Đáp
+    loop Phiên hỏi đáp
+        S->>+UI: askQuestion(question)
+        UI->>+AI: processQuestion(question, context)
+        
+        par Phân tích câu hỏi
+            AI->>+ML: analyzeIntent(question)
+            ML-->>-AI: intent, confidence
+        and Truy xuất kiến thức
+            AI->>+KB: searchRelevantContent(intent, context)
+            KB-->>-AI: relevantKnowledge
+        end
+        
+        AI->>+ML: generateResponse(knowledge, context, userLevel)
+        ML-->>-AI: personalizedResponse
+        
+        opt Cần ví dụ trực quan
+            AI->>+UI: generateVisualization(concept)
+            UI-->>-AI: visualizationCreated
+        end
+        
+        AI-->>-UI: response
+        UI-->>-S: displayResponse(response, visualization)
+        
+        S->>+UI: rateResponse(rating)
+        UI->>+AI: logFeedback(rating, question, response)
+        AI->>+DB: updateUserProfile(feedback)
+        DB-->>-AI: profileUpdated
+        AI-->>-UI: feedbackProcessed
+        UI-->>-S: thankYouMessage()
+    end
+    end
+
+    rect rgb(255, 245, 230)
+    Note over AI,DB: Học tập Thích ứng
+    AI->>+ML: updateModelWeights(interactions)
+    ML-->>-AI: modelUpdated
+    AI->>+DB: logInteraction(userId, question, response, rating)
+    DB-->>-AI: interactionLogged
+    end
+
+    rect rgb(255, 230, 245)
+    Note over S,KB: Khuyến nghị Học tập
+    opt Đề xuất nội dung tiếp theo
+        AI->>+KB: getRecommendations(userContext, performance)
+        KB-->>-AI: recommendedTopics
+        AI->>+UI: suggestNextTopics(recommendations)
+        UI-->>-S: displayRecommendations()
+    end
+    end
