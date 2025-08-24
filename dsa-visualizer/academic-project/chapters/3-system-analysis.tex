@@ -1,44 +1,84 @@
 \chapter{PHÂN TÍCH HỆ THỐNG}
 \label{ch:system-analysis}
 
-\section{Use Case Diagram}
+\section{Tổng quan Phân tích Hệ thống}
+\label{sec:system-analysis-overview}
+
+Chương này trình bày phân tích chi tiết hệ thống DSA Visualizer Platform từ góc độ kiến trúc phần mềm và thiết kế hệ thống. Phân tích được thực hiện thông qua các mô hình UML chuẩn bao gồm Use Case Diagram, Class Diagram, Activity Diagram, và Sequence Diagram, nhằm mô tả đầy đủ các yêu cầu chức năng, tương tác người dùng, và kiến trúc hệ thống.
+
+\section{Use Case Diagram và Phân tích}
 \label{sec:use-case-diagram}
 
-\subsection{Tổng quan Use Case}
-\label{subsec:use-case-overview}
+\subsection{Tổng quan Use Case System}
+\label{subsec:use-case-system-overview}
 
-Hệ thống DSA Visualizer Platform phục vụ ba nhóm actor chính: Student, Instructor và Admin. Mỗi actor có các use case riêng biệt phù hợp với vai trò và quyền hạn của họ trong hệ thống.
+Hệ thống DSA Visualizer Platform được thiết kế để phục vụ ba nhóm actor chính với các vai trò và quyền hạn khác nhau:
 
-\begin{center}
-\textbf{[Use Case Diagram - System Overview]}\\
-\textit{Diagram available in enhanced-diagrams/usecase-system-overview.drawio}
-\end{center}
+\begin{itemize}
+    \item \textbf{Student (Học viên)}: Nhóm người dùng chính, sử dụng platform để học tập thuật toán
+    \item \textbf{Instructor (Giảng viên)}: Quản lý nội dung học tập, tạo bài tập và theo dõi tiến độ học viên
+    \item \textbf{Administrator (Quản trị viên)}: Quản lý hệ thống, người dùng và duy trì hoạt động platform
+\end{itemize}
 
-\subsection{Use Case chi tiết cho Learning Process}
-\label{subsec:learning-process-usecase}
+Ngoài ra, hệ thống tương tác với các external systems để cung cấp các dịch vụ hỗ trợ:
 
-Quá trình học tập là core functionality của platform, bao gồm nhiều use case phức tạp với các interaction giữa Student và các subsystem khác nhau.
+\begin{itemize}
+    \item \textbf{AI System}: Cung cấp hỗ trợ học tập thông minh
+    \item \textbf{Database System}: Lưu trữ và quản lý dữ liệu
+    \item \textbf{Notification Service}: Gửi thông báo và alerts
+    \item \textbf{Analytics Service}: Thu thập và phân tích dữ liệu học tập
+\end{itemize}
 
-\begin{center}
-\textbf{[Use Case Diagram - Detailed Scenarios]}\\
-\textit{Diagram available in enhanced-diagrams/usecase-detailed-scenarios.drawio}
-\end{center}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{enhanced-diagrams/UCdetail-01-algorithm-selection.png}
+\caption{Use Case Diagram - System Overview}
+\label{fig:usecase-system-overview}
+\end{figure}
 
-Các use case chính trong Learning Process:
+\subsection{Phân nhóm Use Case theo Chức năng}
+\label{subsec:use-case-functional-groups}
 
+Các use case được tổ chức thành 4 nhóm chức năng chính:
+
+\subsubsection{Student Learning Group (5 use cases)}
 \begin{enumerate}
-    \item \textbf{Start Learning Session}: Khởi tạo session học tập mới
-    \item \textbf{Select Algorithm}: Chọn thuật toán cần học
-    \item \textbf{Study Theory}: Đọc tài liệu lý thuyết
-    \item \textbf{Practice with Visualization}: Thực hành với animation
-    \item \textbf{Solve Practice Problems}: Giải bài tập thực hành
-    \item \textbf{Take Assessment}: Làm bài kiểm tra đánh giá
-    \item \textbf{Get AI Assistance}: Nhận hỗ trợ từ AI assistant
-    \item \textbf{Track Progress}: Theo dõi tiến độ học tập
+    \item \textbf{Learn Algorithm Concepts}: Học các khái niệm thuật toán cơ bản
+    \item \textbf{Practice with Visualizations}: Thực hành với animation tương tác
+    \item \textbf{Take Assessments}: Thực hiện các bài kiểm tra đánh giá
+    \item \textbf{Track Learning Progress}: Theo dõi tiến độ học tập cá nhân
+    \item \textbf{Collaborate with Peers}: Tương tác và học tập cùng đồng học
+\end{enumerate}
+
+\subsubsection{Instructor Management Group (4 use cases)}
+\begin{enumerate}
+    \item \textbf{Manage Learning Content}: Quản lý nội dung học tập và tài liệu
+    \item \textbf{Create Assessments}: Tạo các bài kiểm tra và quiz
+    \item \textbf{Monitor Student Progress}: Theo dõi tiến độ học tập của học viên
+    \item \textbf{Manage Classes}: Quản lý lớp học và nhóm học viên
+\end{enumerate}
+
+\subsubsection{System Administration Group (4 use cases)}
+\begin{enumerate}
+    \item \textbf{Manage System Users}: Quản lý tài khoản và quyền người dùng
+    \item \textbf{System Maintenance}: Bảo trì và cập nhật hệ thống
+    \item \textbf{Monitor System Performance}: Giám sát hiệu suất hệ thống
+    \item \textbf{Security Management}: Quản lý bảo mật và quyền truy cập
+\end{enumerate}
+
+\subsubsection{Core System Support Group (5 use cases)}
+\begin{enumerate}
+    \item \textbf{User Authentication}: Xác thực và quản lý phiên đăng nhập
+    \item \textbf{Data Management}: Quản lý dữ liệu và storage
+    \item \textbf{AI-Powered Assistance}: Cung cấp hỗ trợ AI thông minh
+    \item \textbf{Send Notifications}: Gửi thông báo và cảnh báo
+    \item \textbf{Generate Analytics}: Tạo báo cáo và phân tích dữ liệu
 \end{enumerate}
 
 \subsection{Detailed Use Case Specifications}
 \label{subsec:detailed-usecase-specs}
+
+Phần này trình bày chi tiết các use case chính của hệ thống theo format chuẩn academic, mô tả đầy đủ các luồng sự kiện, điều kiện tiên quyết, và kết quả mong đợi.
 
 \subsubsection{UC001: Algorithm Visualization Learning}
 
@@ -103,55 +143,55 @@ Các use case chính trong Learning Process:
 \textbf{Use Case ID} & UC002 \\ \hline
 \textbf{Tên Use Case} & Interactive Algorithm Practice \\ \hline
 \textbf{Actor} & Student \\ \hline
-\textbf{Mô tả ngắn gọn} & Học viên thực hành thuật toán với interactive controls và custom input \\ \hline
-\textbf{Trigger} & Học viên muốn thực hành để củng cố kiến thức thuật toán \\ \hline
+\textbf{Mô tả ngắn gọn} & Học viên thực hành thuật toán với interactive controls và custom input để củng cố kiến thức \\ \hline
+\textbf{Trigger} & Học viên muốn thực hành và kiểm tra hiểu biết về thuật toán đã học \\ \hline
 \textbf{Precondition} & 
 \begin{itemize}
-    \item Học viên đã hoàn thành basic learning session
-    \item Hệ thống có sẵn practice environment
-    \item Practice mode được activate
+    \item Học viên đã hoàn thành basic visualization learning
+    \item Practice environment được kích hoạt
+    \item Algorithm templates có sẵn trong hệ thống
 \end{itemize} \\ \hline
 \textbf{Luồng sự kiện chính} & 
 \begin{enumerate}
-    \item Học viên chọn Practice Mode từ main menu
-    \item Hệ thống hiển thị available practice algorithms
-    \item Học viên chọn algorithm để practice
-    \item Hệ thống load interactive practice environment
-    \item Học viên tạo custom input data hoặc chọn preset
+    \item Học viên chọn "Practice Mode" từ algorithm interface
+    \item Hệ thống hiển thị danh sách available practice algorithms
+    \item Học viên chọn specific algorithm để practice
+    \item Hệ thống load interactive practice environment với controls
+    \item Học viên tạo custom input data hoặc chọn từ preset examples
     \item Học viên predict algorithm behavior trước khi execute
-    \item Học viên execute algorithm step by step với controls
-    \item Hệ thống provide real-time feedback và hints
-    \item Học viên so sánh prediction với actual result
-    \item Hệ thống tính performance score và suggestions
+    \item Học viên execute algorithm với step-by-step controls
+    \item Hệ thống provide real-time feedback và performance hints
+    \item Học viên so sánh prediction với actual execution result
+    \item Hệ thống calculate practice score và provide improvement suggestions
 \end{enumerate} \\ \hline
 \textbf{Luồng sự kiện thay thế} & 
 \textbf{Alt 1:} Guided Practice Mode
 \begin{itemize}
-    \item Hệ thống provide hints và suggestions trong quá trình
-    \item Học viên được hỗ trợ với detailed explanations
+    \item Hệ thống cung cấp hints và step-by-step guidance
+    \item Học viên được hỗ trợ với detailed explanations cho mỗi step
 \end{itemize}
-\textbf{Alt 2:} Challenge Mode
+\textbf{Alt 2:} Challenge Practice Mode
 \begin{itemize}
-    \item Hệ thống đưa ra specific challenges với time limits
-    \item Học viên phải giải quyết trong thời gian giới hạn
+    \item Hệ thống đưa ra specific challenges với time constraints
+    \item Học viên phải complete tasks trong giới hạn thời gian
 \end{itemize} \\ \hline
 \textbf{Luồng ngoại lệ} & 
-\textbf{Exc 1:} Practice session timeout
+\textbf{Exc 1:} Invalid practice input data
 \begin{itemize}
-    \item Hệ thống auto-save current progress
-    \item Cho phép học viên continue later từ checkpoint
+    \item Hệ thống validate input và hiển thị specific error messages
+    \item Provide suggested valid input examples và format guidelines
 \end{itemize}
-\textbf{Exc 2:} Invalid practice input
+\textbf{Exc 2:} Practice session timeout
 \begin{itemize}
-    \item Hệ thống validate input và show error
-    \item Provide suggested valid input examples
+    \item Hệ thống auto-save current progress và state
+    \item Cho phép học viên resume từ saved checkpoint
 \end{itemize} \\ \hline
 \textbf{Post Condition} & 
 \begin{itemize}
-    \item Practice score được ghi nhận vào user profile
-    \item Skill assessment metrics được cập nhật
+    \item Practice performance score được record vào user profile
+    \item Skill assessment metrics được update dựa trên performance
     \item Achievement badges có thể được unlock
-    \item Practice history được lưu cho future reference
+    \item Practice history được save cho future reference và review
 \end{itemize} \\ \hline
 \caption{Use Case Scenario: Interactive Algorithm Practice}
 \label{tab:uc002} \\
@@ -164,57 +204,199 @@ Các use case chính trong Learning Process:
 \textbf{Use Case ID} & UC003 \\ \hline
 \textbf{Tên Use Case} & AI Assistant Consultation \\ \hline
 \textbf{Actor} & Student \\ \hline
-\textbf{Mô tả ngắn gọn} & Học viên sử dụng AI Assistant để được hỗ trợ học tập và giải đáp thắc mắc \\ \hline
-\textbf{Trigger} & Học viên gặp khó khăn hoặc có câu hỏi cần giải đáp về algorithm \\ \hline
+\textbf{Mô tả ngắn gọn} & Học viên tương tác với AI Assistant để nhận hỗ trợ học tập thông minh và giải đáp thắc mắc \\ \hline
+\textbf{Trigger} & Học viên gặp khó khăn hoặc cần explanations chi tiết về algorithm concepts \\ \hline
 \textbf{Precondition} & 
 \begin{itemize}
-    \item Học viên đang trong learning session active
-    \item AI Assistant service đang hoạt động và available
-    \item Network connection stable cho real-time chat
+    \item Học viên đang trong active learning session
+    \item AI Assistant service đang available và responsive
+    \item Network connection stable cho real-time interaction
+    \item Current learning context được load successfully
 \end{itemize} \\ \hline
 \textbf{Luồng sự kiện chính} & 
 \begin{enumerate}
-    \item Học viên click vào AI Assistant icon trong interface
-    \item Hệ thống mở AI chat interface với context loading
-    \item Học viên nhập câu hỏi về algorithm hiện tại
-    \item AI Assistant phân tích context và question intent
-    \item AI generate comprehensive response với examples
-    \item Hệ thống hiển thị answer với code examples và explanations
-    \item Học viên có thể ask follow-up questions để clarify
-    \item AI provide additional hints và learning resources nếu cần
+    \item Học viên click vào AI Assistant icon trong learning interface
+    \item Hệ thống mở AI chat interface với current context loading
+    \item Học viên nhập câu hỏi về algorithm hiện tại hoặc related concepts
+    \item AI Assistant analyze question context và intent recognition
+    \item AI generate comprehensive response với examples và explanations
+    \item Hệ thống display AI answer với proper formatting và code highlighting
+    \item Học viên có thể ask follow-up questions để clarify doubts
+    \item AI provide additional learning resources và hints nếu appropriate
     \item Học viên close AI Assistant khi satisfied với answers
+    \item Hệ thống save conversation history cho future reference
 \end{enumerate} \\ \hline
 \textbf{Luồng sự kiện thay thế} & 
 \textbf{Alt 1:} Code Analysis Request
 \begin{itemize}
-    \item Học viên paste existing code để AI review
-    \item AI analyze code và suggest improvements với explanations
+    \item Học viên paste existing code snippet để AI review
+    \item AI analyze code quality và suggest optimizations với detailed explanations
 \end{itemize}
 \textbf{Alt 2:} Algorithm Recommendation
 \begin{itemize}
-    \item Học viên mô tả specific problem cần giải quyết
-    \item AI recommend suitable algorithms với comparison
+    \item Học viên describe specific problem cần solve
+    \item AI recommend suitable algorithms với pros/cons comparison
+\end{itemize}
+\textbf{Alt 3:} Step-by-step Explanation
+\begin{itemize}
+    \item Học viên request explanation cho current visualization step
+    \item AI provide synchronized explanation với animation context
 \end{itemize} \\ \hline
 \textbf{Luồng ngoại lệ} & 
 \textbf{Exc 1:} AI service temporarily unavailable
 \begin{itemize}
-    \item Hệ thống hiển thị fallback resources và documentation
-    \item Redirect đến static FAQ hoặc knowledge base
+    \item Hệ thống display fallback resources và static documentation
+    \item Redirect đến FAQ hoặc community knowledge base
+    \item Log incident cho service monitoring
 \end{itemize}
 \textbf{Exc 2:} Question too complex hoặc ambiguous
 \begin{itemize}
-    \item AI request clarification với specific prompts
-    \item Suggest breaking down question into smaller parts
+    \item AI request clarification với specific guiding questions
+    \item Suggest breaking down complex question thành smaller parts
+\end{itemize}
+\textbf{Exc 3:} Rate limiting exceeded
+\begin{itemize}
+    \item Display rate limit message với cooldown timer
+    \item Suggest alternative help resources during waiting period
 \end{itemize} \\ \hline
 \textbf{Post Condition} & 
 \begin{itemize}
-    \item Conversation history được lưu trong user session
-    \item AI learning model được improve từ interaction
+    \item Conversation history được save trong user learning profile
+    \item AI interaction data contribute đến model improvement
     \item User satisfaction feedback được collect tự động
-    \item Related learning materials được suggest based on questions
+    \item Related learning materials được suggest based on interaction patterns
+    \item Learning analytics được update với AI usage metrics
 \end{itemize} \\ \hline
 \caption{Use Case Scenario: AI Assistant Consultation}
 \label{tab:uc003} \\
+\end{longtable}
+
+\subsubsection{UC004: Algorithm Comparison Analysis}
+
+\begin{longtable}{| p{3cm} | p{10cm} |}
+\hline
+\textbf{Use Case ID} & UC004 \\ \hline
+\textbf{Tên Use Case} & Algorithm Comparison Analysis \\ \hline
+\textbf{Actor} & Student \\ \hline
+\textbf{Mô tả ngắn gọn} & Học viên so sánh performance và characteristics của multiple algorithms cùng lúc \\ \hline
+\textbf{Trigger} & Học viên muốn hiểu sự khác biệt và trade-offs giữa các algorithms \\ \hline
+\textbf{Precondition} & 
+\begin{itemize}
+    \item Ít nhất 2 algorithms được available cho comparison
+    \item Comparison interface được support bởi browser
+    \item Input data compatible với tất cả algorithms được chọn
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item Học viên chọn "Compare Algorithms" từ algorithm library
+    \item Hệ thống hiển thị selection interface cho multiple algorithms
+    \item Học viên chọn 2-4 algorithms để compare (VD: Bubble Sort vs Quick Sort vs Merge Sort)
+    \item Hệ thống load comparison interface với side-by-side views
+    \item Học viên configure common input data cho all algorithms
+    \item Học viên start simultaneous execution của tất cả algorithms
+    \item Hệ thống run algorithms concurrently với synchronized visualization
+    \item Display real-time performance metrics: time complexity, space usage, steps count
+    \item Học viên có thể adjust execution speed và pause/resume all algorithms
+    \item Hệ thống present final comparison results với statistical analysis
+\end{enumerate} \\ \hline
+\textbf{Luồng sự kiện thay thế} & 
+\textbf{Alt 1:} Different Input Sizes Comparison
+\begin{itemize}
+    \item Học viên chọn multiple input sizes để test scalability
+    \item Hệ thống run algorithms với different dataset sizes
+    \item Display performance scaling charts và complexity analysis
+\end{itemize}
+\textbf{Alt 2:} Best/Worst Case Analysis
+\begin{itemize}
+    \item Học viên select specific test cases: best, average, worst case scenarios
+    \item Hệ thống generate appropriate input data cho each scenario
+\end{itemize} \\ \hline
+\textbf{Luồng ngoại lệ} & 
+\textbf{Exc 1:} Incompatible algorithm selection
+\begin{itemize}
+    \item Hệ thống detect algorithms không thể compare directly
+    \item Suggest alternative algorithms hoặc provide explanation về incompatibility
+\end{itemize}
+\textbf{Exc 2:} Performance measurement error
+\begin{itemize}
+    \item Hệ thống retry measurement với adjusted parameters
+    \item Provide approximate results với confidence intervals
+\end{itemize} \\ \hline
+\textbf{Post Condition} & 
+\begin{itemize}
+    \item Comparison results được save trong user learning history
+    \item Performance benchmarks được contribute đến system analytics
+    \item Understanding assessment được update based on comparison insights
+    \item Related learning resources được suggest for deeper understanding
+\end{itemize} \\ \hline
+\caption{Use Case Scenario: Algorithm Comparison Analysis}
+\label{tab:uc004} \\
+\end{longtable}
+
+\subsubsection{UC005: Learning Progress Tracking}
+
+\begin{longtable}{| p{3cm} | p{10cm} |}
+\hline
+\textbf{Use Case ID} & UC005 \\ \hline
+\textbf{Tên Use Case} & Learning Progress Tracking \\ \hline
+\textbf{Actor} & Student \\ \hline
+\textbf{Mô tả ngắn gọn} & Học viên theo dõi và review learning progress với detailed analytics và recommendations \\ \hline
+\textbf{Trigger} & Học viên muốn review learning achievements và plan next learning steps \\ \hline
+\textbf{Precondition} & 
+\begin{itemize}
+    \item Học viên đã có ít nhất một learning session được completed
+    \item Progress tracking service đang hoạt động normally
+    \item User profile data accessible và up-to-date
+\end{itemize} \\ \hline
+\textbf{Luồng sự kiện chính} & 
+\begin{enumerate}
+    \item Học viên access "My Progress" dashboard từ main navigation
+    \item Hệ thống load comprehensive progress data và analytics
+    \item Display overall learning statistics: algorithms completed, time spent, skill levels
+    \item Show detailed breakdown theo algorithm categories và difficulty levels
+    \item Present learning trajectory với progress over time charts
+    \item Display achievement badges earned và milestones reached
+    \item Show personalized recommendations cho next learning objectives
+    \item Học viên có thể drill down vào specific algorithm performance details
+    \item Review practice scores và assessment results với trend analysis
+    \item Set learning goals và targets cho upcoming study sessions
+\end{enumerate} \\ \hline
+\textbf{Luồng sự kiện thay thế} & 
+\textbf{Alt 1:} Comparison với Peer Performance
+\begin{itemize}
+    \item Học viên enable anonymous peer comparison features
+    \item Hệ thống show relative performance metrics so với class/group averages
+\end{itemize}
+\textbf{Alt 2:} Detailed Time Analysis
+\begin{itemize}
+    \item Học viên request detailed time spending analysis
+    \item Display time allocation across different learning activities
+\end{itemize}
+\textbf{Alt 3:} Export Progress Report
+\begin{itemize}
+    \item Học viên request downloadable progress report
+    \item Hệ thống generate PDF report với comprehensive analytics
+\end{itemize} \\ \hline
+\textbf{Luồng ngoại lệ} & 
+\textbf{Exc 1:} Insufficient progress data
+\begin{itemize}
+    \item Hệ thống notify về minimum data requirements
+    \item Suggest completing more learning activities để unlock full analytics
+\end{itemize}
+\textbf{Exc 2:} Analytics service unavailable
+\begin{itemize}
+    \item Display cached progress data với timestamp indication
+    \item Schedule automatic refresh khi service becomes available
+\end{itemize} \\ \hline
+\textbf{Post Condition} & 
+\begin{itemize}
+    \item Progress review activity được log cho usage analytics
+    \item Learning goals và targets được save in user profile
+    \item Recommendation engine được update với user interaction patterns
+    \item Motivation metrics được calculate based on progress review frequency
+\end{itemize} \\ \hline
+\caption{Use Case Scenario: Learning Progress Tracking}
+\label{tab:uc005} \\
 \end{longtable}
 
 \section{Class Diagram}
@@ -831,201 +1013,701 @@ Tiếp theo, Chapter 4 sẽ focus vào implementation details và technical spec
 \label{tab:uc-ai-assistance} \\
 \end{longtable}
 
-\section{Class Diagram}
+\section{Class Diagram và Thiết kế Hướng đối tượng}
 \label{sec:class-diagram}
 
-\subsection{Core Domain Classes}
-\label{subsec:core-classes}
+\subsection{Tổng quan Class Diagram}
+\label{subsec:class-overview}
 
-Hệ thống được thiết kế theo Domain-Driven Design với các core domain classes sau:
+Class diagram của hệ thống DSA Visualizer được thiết kế theo mô hình Clean Architecture và Domain-Driven Design, đảm bảo tính modular, scalability và maintainability. Hệ thống được tổ chức thành các layers rõ ràng với separation of concerns và loose coupling giữa các components.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.0\textwidth]{enhanced-diagrams/class-diagram-clean.drawio}
-\caption{Class Diagram cho Core Domain}
-\label{fig:class-core}
+\includegraphics[width=1.0\textwidth]{enhanced-diagrams/class-diagram-clean.png}
+\caption{Class Diagram - Core System Architecture}
+\label{fig:class-diagram-overview}
 \end{figure}
 
-\subsubsection{User Management Classes}
+\subsection{Phân tích các Domain Classes}
+\label{subsec:domain-classes}
 
+\subsubsection{User Management Domain}
+
+\textbf{User Abstract Class:}
 \begin{itemize}
-    \item \textbf{User}: Base class cho tất cả users
-    \item \textbf{Student}: Extends User, thêm learning-specific attributes
-    \item \textbf{Instructor}: Extends User, thêm teaching-specific attributes  
-    \item \textbf{Admin}: Extends User, thêm system management capabilities
+    \item \textbf{Attributes:} userID: String, email: String, username: String, password: String, role: UserRole, createdAt: DateTime, lastLogin: DateTime, isActive: Boolean
+    \item \textbf{Methods:} login(): AuthResult, logout(): void, updateProfile(profile: UserProfile): void, changePassword(oldPass: String, newPass: String): Boolean
+    \item \textbf{Relationships:} Abstract class được inherit bởi Student, Instructor, Administrator
 \end{itemize}
 
-\subsubsection{Learning Domain Classes}
-
+\textbf{Student Class (extends User):}
 \begin{itemize}
-    \item \textbf{Algorithm}: Represents thuật toán với metadata
-    \item \textbf{Visualization}: Chứa animation data và configuration
-    \item \textbf{LearningSession}: Tracks user interaction với algorithm
-    \item \textbf{Progress}: Theo dõi learning progress của user
-    \item \textbf{Assessment}: Quiz và evaluation system
+    \item \textbf{Additional Attributes:} studentID: String, currentLevel: SkillLevel, enrollmentDate: DateTime, preferredLanguage: String
+    \item \textbf{Methods:} startLearningSession(algorithm: Algorithm): LearningSession, takeAssessment(quiz: Quiz): QuizResult, getProgress(): Progress
+    \item \textbf{Relationships:} Has nhiều LearningSession, owns một Progress, participates trong nhiều Assessment
+\end{itemize}
+
+\textbf{Instructor Class (extends User):}
+\begin{itemize}
+    \item \textbf{Additional Attributes:} instructorID: String, department: String, specialization: String[], courses: Course[]
+    \item \textbf{Methods:} createContent(content: LearningContent): void, createAssessment(quiz: Quiz): void, monitorStudents(classID: String): StudentProgress[]
+    \item \textbf{Relationships:} Manages nhiều Course, creates nhiều LearningContent và Assessment
+\end{itemize}
+
+\subsubsection{Algorithm Visualization Domain}
+
+\textbf{Algorithm Abstract Class:}
+\begin{itemize}
+    \item \textbf{Attributes:} algorithmID: String, name: String, category: AlgorithmCategory, description: String, timeComplexity: ComplexityInfo, spaceComplexity: ComplexityInfo, difficulty: DifficultyLevel
+    \item \textbf{Methods:} execute(input: InputData): ExecutionResult, generateSteps(input: InputData): AlgorithmStep[], getComplexityAnalysis(): ComplexityAnalysis
+    \item \textbf{Relationships:} Has nhiều AlgorithmStep, belongs to một Category, used in nhiều Visualization
+\end{itemize}
+
+\textbf{SortingAlgorithm Class (extends Algorithm):}
+\begin{itemize}
+    \item \textbf{Additional Attributes:} comparisonCount: Integer, swapCount: Integer, isStable: Boolean, isInPlace: Boolean
+    \item \textbf{Methods:} sort(array: Array): SortedResult, compare(a: Element, b: Element): Integer, swap(i: Integer, j: Integer): void
+    \item \textbf{Implementations:} BubbleSort, QuickSort, MergeSort, HeapSort classes
+\end{itemize}
+
+\textbf{VisualizationEngine Class:}
+\begin{itemize}
+    \item \textbf{Attributes:} engineID: String, renderingMode: RenderMode, animationSpeed: Float, currentStep: Integer, isPlaying: Boolean
+    \item \textbf{Methods:} initialize(algorithm: Algorithm, data: InputData): void, start(): void, pause(): void, resume(): void, step(): void, reset(): void
+    \item \textbf{Relationships:} Uses Algorithm, creates VisualizationSession, manages AnimationController
+\end{itemize}
+
+\subsubsection{Learning Management Domain}
+
+\textbf{LearningSession Class:}
+\begin{itemize}
+    \item \textbf{Attributes:} sessionID: String, userID: String, algorithmID: String, startTime: DateTime, endTime: DateTime, duration: TimeSpan, completionStatus: SessionStatus
+    \item \textbf{Methods:} start(): void, complete(): SessionResult, pause(): void, resume(): void, calculateScore(): Float, saveProgress(): void
+    \item \textbf{Relationships:} Belongs to User và Algorithm, generates Progress updates
+\end{itemize}
+
+\textbf{Progress Class:}
+\begin{itemize}
+    \item \textbf{Attributes:} progressID: String, userID: String, totalSessions: Integer, completedAlgorithms: String[], skillLevel: SkillLevel, experiencePoints: Integer
+    \item \textbf{Methods:} updateProgress(session: LearningSession): void, calculateSkillLevel(): SkillLevel, getStatistics(): ProgressStats, generateReport(): ProgressReport
+    \item \textbf{Relationships:} Belongs to User, tracks multiple LearningSession
+\end{itemize}
+
+\subsubsection{Assessment và AI Support Domain}
+
+\textbf{Quiz Class:}
+\begin{itemize}
+    \item \textbf{Attributes:} quizID: String, title: String, description: String, questions: Question[], timeLimit: Integer, passingScore: Float
+    \item \textbf{Methods:} generateQuestions(algorithm: Algorithm): Question[], validateAnswers(answers: Answer[]): QuizResult, calculateScore(result: QuizResult): Float
+    \item \textbf{Relationships:} Contains nhiều Question, generates nhiều QuizResult
+\end{itemize}
+
+\textbf{AIAssistant Class:}
+\begin{itemize}
+    \item \textbf{Attributes:} assistantID: String, modelType: AIModel, contextWindow: Integer, conversationHistory: Message[]
+    \item \textbf{Methods:} processQuery(query: String, context: LearningContext): AIResponse, generateExplanation(algorithm: Algorithm): String, analyzeCode(code: String): CodeAnalysis
+    \item \textbf{Relationships:} Supports LearningSession, generates AIResponse objects
 \end{itemize}
 
 \subsection{Service Layer Classes}
 \label{subsec:service-classes}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.0\textwidth]{enhanced-diagrams/class-diagram-clean.drawio}
-\caption{Class Diagram cho Service Layer}
-\label{fig:class-services}
-\end{figure}
-
 \subsubsection{Visualization Services}
 
+\textbf{VisualizationService Class:}
 \begin{itemize}
-    \item \textbf{VisualizationEngine}: Core engine cho animation rendering
-    \item \textbf{AnimationController}: Điều khiển animation playback
-    \item \textbf{DataProcessor}: Xử lý input data cho visualization
-    \item \textbf{RenderingService}: Abstract layer cho different renderers
+    \item \textbf{Attributes:} serviceID: String, supportedAlgorithms: AlgorithmType[], renderingEngine: RenderingEngine
+    \item \textbf{Methods:} createVisualization(algorithm: Algorithm, config: VisualizationConfig): Visualization, updateVisualization(step: AlgorithmStep): void
+    \item \textbf{Design Patterns:} Implements Factory Pattern để tạo different visualization types
 \end{itemize}
 
-\subsubsection{AI Services}
-
+\textbf{AnimationController Class:}
 \begin{itemize}
-    \item \textbf{AIAssistant}: Main interface cho AI interactions
-    \item \textbf{OpenAIService}: Integration với OpenAI GPT
-    \item \textbf{GeminiService}: Integration với Google Gemini
-    \item \textbf{ContextBuilder}: Xây dựng context cho AI requests
+    \item \textbf{Attributes:} controllerID: String, frameRate: Integer, duration: Float, easingFunction: EasingType
+    \item \textbf{Methods:} animateStep(step: AlgorithmStep): Animation, setSpeed(speed: Float): void, addKeyframe(keyframe: Keyframe): void
+    \item \textbf{Design Patterns:} Observer Pattern để notify UI components về animation state changes
 \end{itemize}
 
-\section{Activity Diagram}
+\subsubsection{AI Integration Services}
+
+\textbf{AIServiceManager Class:}
+\begin{itemize}
+    \item \textbf{Attributes:} managerID: String, availableModels: AIModel[], currentModel: AIModel, rateLimiter: RateLimiter
+    \item \textbf{Methods:} selectOptimalModel(queryType: QueryType): AIModel, processRequest(request: AIRequest): AIResponse, handleFallback(): FallbackResponse
+    \item \textbf{Design Patterns:} Strategy Pattern cho different AI model integrations
+\end{itemize}
+
+\subsection{Design Patterns Implementation}
+\label{subsec:design-patterns}
+
+\subsubsection{Creational Patterns}
+
+\textbf{Factory Method Pattern:}
+\begin{itemize}
+    \item \textbf{AlgorithmFactory:} Tạo instances của different algorithm types
+    \item \textbf{VisualizationFactory:} Tạo appropriate visualization components
+    \item \textbf{AssessmentFactory:} Generate different types của quizzes và assessments
+\end{itemize}
+
+\textbf{Builder Pattern:}
+\begin{itemize}
+    \item \textbf{QuizBuilder:} Construct complex quiz objects với multiple configurations
+    \item \textbf{VisualizationConfigBuilder:} Build visualization configurations step by step
+\end{itemize}
+
+\subsubsection{Behavioral Patterns}
+
+\textbf{Observer Pattern:}
+\begin{itemize}
+    \item \textbf{ProgressObserver:} Update UI khi learning progress changes
+    \item \textbf{AnimationObserver:} Notify components về animation state changes
+    \item \textbf{ScoreObserver:} Update scoring displays real-time
+\end{itemize}
+
+\textbf{Strategy Pattern:}
+\begin{itemize}
+    \item \textbf{ExecutionStrategy:} Different execution modes (step-by-step, continuous, comparison)
+    \item \textbf{RenderingStrategy:} Multiple rendering approaches (Canvas, SVG, WebGL)
+    \item \textbf{AssessmentStrategy:} Various assessment types (multiple choice, coding, interactive)
+\end{itemize}
+
+\textbf{Command Pattern:}
+\begin{itemize}
+    \item \textbf{VisualizationCommand:} Encapsulate visualization operations (play, pause, step, reset)
+    \item \textbf{UndoRedoCommand:} Support undo/redo functionality trong learning sessions
+\end{itemize}
+
+\subsubsection{Structural Patterns}
+
+\textbf{Adapter Pattern:}
+\begin{itemize}
+    \item \textbf{AIModelAdapter:} Adapt different AI APIs (OpenAI, Gemini) to common interface
+    \item \textbf{DatabaseAdapter:} Abstract database operations cho different storage systems
+\end{itemize}
+
+\textbf{Decorator Pattern:}
+\begin{itemize}
+    \item \textbf{AlgorithmDecorator:} Add additional features (logging, timing, debugging) to algorithms
+    \item \textbf{VisualizationDecorator:} Enhance visualizations với additional effects và features
+\end{itemize}
+
+\section{Activity Diagram và Workflow Analysis}
 \label{sec:activity-diagram}
 
-\subsection{Learning Process Flow}
-\label{subsec:learning-flow}
+\subsection{Tổng quan Activity Modeling}
+\label{subsec:activity-overview}
 
-Activity diagram sau mô tả complete learning process từ khi student bắt đầu học một thuật toán mới:
+Activity Diagram được sử dụng để mô tả các business process và workflow chính của hệ thống, từ high-level user journeys đến detailed technical processes. Các diagram này giúp hiểu rõ luồng hoạt động, decision points, và parallel activities trong system.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{enhanced-diagrams/activity-diagram-clean.drawio}
-\caption{Activity Diagram cho Learning Process}
-\label{fig:activity-learning}
+\includegraphics[width=1.0\textwidth]{enhanced-diagrams/activity-diagram-clean.png}
+\caption{Activity Diagram - Main Learning Workflow}
+\label{fig:activity-main-workflow}
 \end{figure}
 
-\subsubsection{Main Activities}
+\subsection{Core Learning Process Workflow}
+\label{subsec:learning-workflow}
+
+\subsubsection{User Authentication và Authorization Flow}
 
 \begin{enumerate}
-    \item \textbf{Algorithm Selection}: Student chọn thuật toán từ library
-    \item \textbf{Theory Study}: Đọc theoretical background
-    \item \textbf{Visualization Practice}: Tương tác với animated visualization
-    \item \textbf{Code Understanding}: Phân tích implementation code
-    \item \textbf{Problem Solving}: Áp dụng thuật toán vào bài tập
-    \item \textbf{Assessment}: Đánh giá mức độ hiểu biết
-    \item \textbf{Progress Update}: Cập nhật learning progress
+    \item \textbf{Start}: User access application URL
+    \item \textbf{Decision}: Check existing authentication status
+    \item \textbf{Branch False}: Redirect to login page
+    \item \textbf{Login Process}: User enters credentials (email/username + password)
+    \item \textbf{Validation}: System validates credentials against database
+    \item \textbf{Decision}: Credentials valid?
+    \item \textbf{Branch False}: Display error message, return to login form
+    \item \textbf{Branch True}: Generate JWT token, establish user session
+    \item \textbf{Authorization Check}: Verify user role và permissions
+    \item \textbf{Dashboard Access}: Redirect to appropriate dashboard based on role
 \end{enumerate}
 
-\subsubsection{Decision Points}
+\subsubsection{Algorithm Learning Session Workflow}
+
+\begin{enumerate}
+    \item \textbf{Category Selection}: User browses và chọn algorithm category
+    \item \textbf{Algorithm Browse}: Display available algorithms với metadata
+    \item \textbf{Prerequisite Check}: Validate user có sufficient background knowledge
+    \item \textbf{Decision}: Prerequisites met?
+    \item \textbf{Branch False}: Suggest prerequisite algorithms hoặc background reading
+    \item \textbf{Branch True}: Proceed to algorithm selection
+    \item \textbf{Algorithm Selection}: User chọn specific algorithm để learn
+    \item \textbf{Learning Mode Selection}: Choose between Guided, Practice, hoặc Challenge mode
+    \item \textbf{Visualizer Initialization}: Load algorithm visualizer với appropriate configuration
+    \item \textbf{Input Configuration}: User configure input data (custom hoặc preset examples)
+    \item \textbf{Theory Study}: Optional step để review algorithm theory và concepts
+    \item \textbf{Visualization Execution}: Begin interactive algorithm visualization
+    \item \textbf{Step-by-step Control}: User controls animation speed, pause/resume, step forward/backward
+    \item \textbf{Real-time Feedback}: System provides explanations và hints cho each step
+    \item \textbf{Understanding Check}: Periodic comprehension questions during visualization
+    \item \textbf{Decision}: Understanding satisfactory?
+    \item \textbf{Branch False}: Provide additional explanations, repeat steps
+    \item \textbf{Branch True}: Continue to completion
+    \item \textbf{Session Completion}: Display final results, complexity analysis, performance metrics
+    \item \textbf{Progress Update}: Update user learning progress và achievements
+    \item \textbf{Recommendation Generation}: Suggest next learning objectives
+\end{enumerate}
+
+\subsubsection{AI Assistant Interaction Workflow}
+
+\begin{enumerate}
+    \item \textbf{AI Assistant Trigger}: User clicks AI help button hoặc encounters difficulty
+    \item \textbf{Context Collection}: System gathers current learning context và user history
+    \item \textbf{Interface Loading}: Display AI chat interface với context-aware suggestions
+    \item \textbf{Query Input}: User types question hoặc selects từ suggested questions
+    \item \textbf{Intent Analysis}: AI analyzes question intent và determines response strategy
+    \item \textbf{Model Selection}: Choose appropriate AI model based on query type
+    \item \textbf{Parallel Processing}: 
+    \begin{itemize}
+        \item Knowledge Retrieval từ algorithm database
+        \item Context Enhancement với user learning history
+        \item Response Generation với personalized explanations
+    \end{itemize}
+    \item \textbf{Response Formatting}: Format AI response với code highlighting, examples, links
+    \item \textbf{Response Display}: Present answer với interactive elements
+    \item \textbf{Follow-up Options}: Provide related questions hoặc deeper dive options
+    \item \textbf{Feedback Collection}: Gather user satisfaction rating cho response quality
+    \item \textbf{Conversation Continuation}: Allow follow-up questions trong same context
+    \item \textbf{Session Termination}: Save conversation history, update AI interaction metrics
+\end{enumerate}
+
+\subsection{Assessment và Evaluation Workflow}
+\label{subsec:assessment-workflow}
+
+\subsubsection{Quiz Generation và Execution Process}
+
+\begin{enumerate}
+    \item \textbf{Assessment Trigger}: User completes algorithm learning hoặc explicitly requests quiz
+    \item \textbf{Skill Assessment}: Analyze user current skill level và learning progress
+    \item \textbf{Quiz Configuration}: Determine appropriate difficulty, question types, time limits
+    \item \textbf{Dynamic Question Generation}: AI-powered question generation based on algorithm specifics
+    \item \textbf{Quiz Presentation}: Display questions với appropriate interface (multiple choice, coding, interactive)
+    \item \textbf{Time Management}: Track time spent per question và overall quiz duration
+    \item \textbf{Answer Processing}: Validate answers real-time với immediate feedback options
+    \item \textbf{Adaptive Questioning}: Adjust subsequent question difficulty based on current performance
+    \item \textbf{Completion Check}: Determine khi quiz should end (all questions hoặc time limit)
+    \item \textbf{Score Calculation}: Calculate final score với weighted scoring algorithm
+    \item \textbf{Performance Analysis}: Analyze strong/weak areas, identify learning gaps
+    \item \textbf{Recommendation Generation}: Suggest remedial learning hoặc advanced topics
+    \item \textbf{Results Presentation}: Display comprehensive results với visual analytics
+    \item \textbf{Progress Integration}: Integrate quiz results vào overall learning progress
+\end{enumerate}
+
+\subsection{Parallel Activities và Background Processes}
+\label{subsec:parallel-activities}
+
+\subsubsection{Real-time Analytics Collection}
+
+Hệ thống continuously collect và process analytics data trong background:
 
 \begin{itemize}
-    \item \textbf{Prerequisite Check}: Kiểm tra điều kiện tiên quyết
-    \item \textbf{Difficulty Assessment}: Đánh giá độ khó phù hợp
-    \item \textbf{Understanding Verification}: Xác nhận mức độ hiểu
-    \item \textbf{Need Help Decision}: Quyết định có cần AI assistance
+    \item \textbf{User Interaction Tracking}: Mouse movements, click patterns, time on sections
+    \item \textbf{Learning Behavior Analysis}: Difficulty patterns, help-seeking behavior, completion rates
+    \item \textbf{Performance Metrics}: Algorithm execution times, visualization rendering performance
+    \item \textbf{Engagement Measurements}: Session duration, return visit patterns, feature usage
 \end{itemize}
 
-\subsection{AI Assistance Flow}
-\label{subsec:ai-flow}
+\subsubsection{System Maintenance Activities}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{enhanced-diagrams/activity-diagram-clean.drawio}
-\caption{Activity Diagram cho AI Assistance Flow}
-\label{fig:activity-ai}
-\end{figure}
+\begin{itemize}
+    \item \textbf{Cache Management}: Periodic cache refresh và optimization
+    \item \textbf{Database Optimization}: Index maintenance, query optimization
+    \item \textbf{Content Updates}: Algorithm library updates, new feature deployments
+    \item \textbf{Security Monitoring}: Threat detection, access pattern analysis
+\end{itemize}
 
-Process khi student request AI help:
-
-\begin{enumerate}
-    \item \textbf{Context Collection}: Gather current learning context
-    \item \textbf{Query Processing}: Process natural language query
-    \item \textbf{AI Model Selection}: Chọn appropriate AI model
-    \item \textbf{Response Generation}: Generate contextual response
-    \item \textbf{Response Formatting}: Format cho display
-    \item \textbf{Feedback Collection}: Thu thập user feedback
-\end{enumerate}
-
-\section{Sequence Diagram}
+\section{Sequence Diagram và Interaction Analysis}
 \label{sec:sequence-diagram}
 
-\subsection{Visualization Rendering Sequence}
+\subsection{Tổng quan Sequence Modeling}
+\label{subsec:sequence-overview}
+
+Sequence Diagram được sử dụng để mô tả detailed interactions giữa các system components theo time sequence, đặc biệt focusing vào main learning scenarios và AI assistant interactions. Các diagram này illustrate message passing, object lifetimes, và coordination giữa different services.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{enhanced-diagrams/class-diagram-clean.png}
+\caption{Sequence Diagram - Algorithm Learning Process (Detailed)}
+\label{fig:sequence-detailed}
+\end{figure}
+
+\subsection{Algorithm Visualization Sequence Analysis}
 \label{subsec:visualization-sequence}
 
-Sequence diagram sau mô tả interaction giữa các components khi render visualization:
+\subsubsection{Participants và Responsibilities}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.0\textwidth]{enhanced-diagrams/sequence-diagram-clean.drawio}
-\caption{Sequence Diagram cho Visualization Rendering}
-\label{fig:sequence-viz}
-\end{figure}
-
-\subsubsection{Participants}
+Sequence diagram bao gồm các key participants với specific responsibilities:
 
 \begin{itemize}
-    \item \textbf{Student}: User initiating visualization
-    \item \textbf{VisualizationUI}: Frontend visualization component
-    \item \textbf{VisualizationEngine}: Core rendering engine
-    \item \textbf{AnimationController}: Animation management
-    \item \textbf{DataProcessor}: Input data processing
-    \item \textbf{ProgressTracker}: Learning progress tracking
+    \item \textbf{Student User}: Primary actor initiating learning activities
+    \item \textbf{Browser Interface}: Frontend presentation layer handling user interactions
+    \item \textbf{ReactApp Component}: Main application controller managing state và navigation
+    \item \textbf{AlgorithmController Service}: Business logic layer coordinating algorithm operations
+    \item \textbf{VisualizationEngine Core}: Specialized engine cho algorithm animation và rendering
+    \item \textbf{AIAssistant Service}: AI-powered support service providing intelligent assistance
+    \item \textbf{DataManager Repository}: Data access layer managing persistence và retrieval
+    \item \textbf{Database PostgreSQL}: Storage layer containing user data, algorithms, và progress
 \end{itemize}
 
-\subsubsection{Key Interactions}
+\subsubsection{Phase 1: Initialization và Setup (Messages 1-7)}
 
 \begin{enumerate}
-    \item Student selects algorithm và input parameters
-    \item UI validates input và sends request to engine
-    \item Engine processes data và prepares animation steps
-    \item AnimationController manages playback timing
-    \item Progress tracking updates throughout process
-    \item Final state saved to user progress
+    \item \textbf{Student → Browser}: selectAlgorithm(bubbleSort) - User chọn thuật toán cần học
+    \item \textbf{Browser → ReactApp}: loadComponent(AlgorithmPage) - Load appropriate learning interface
+    \item \textbf{ReactApp → AlgorithmController}: initializeAlgorithm(bubbleSort) - Setup algorithm context
+    \item \textbf{AlgorithmController → VisualizationEngine}: createVisualization(config) - Initialize visualization environment
+    \item \textbf{VisualizationEngine → AIAssistant}: getExplanation(algorithm) - Request contextual explanations
+    \item \textbf{AIAssistant → DataManager}: fetchAlgorithmData() - Retrieve algorithm metadata và examples
+    \item \textbf{DataManager → Database}: SELECT * FROM algorithms - Database query cho algorithm details
 \end{enumerate}
 
-\subsection{AI Assistant Interaction Sequence}
-\label{subsec:ai-sequence}
+\textbf{Return Flow}: Database returns algorithm details → DataManager processes data → AIAssistant generates explanations → VisualizationEngine prepares rendering → AlgorithmController confirms setup → ReactApp loads interface → Browser displays algorithm page → Student receives interactive learning environment.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=1.0\textwidth]{enhanced-diagrams/sequence-diagram-clean.drawio}
-\caption{Sequence Diagram cho AI Assistant Interaction}
-\label{fig:sequence-ai}
-\end{figure}
+\subsubsection{Phase 2: Data Input và Execution Setup (Messages 8-12)}
+
+\begin{enumerate}
+    \item \textbf{Student → Browser}: inputData([64,34,25,12,22]) - User provides input data for algorithm
+    \item \textbf{Browser → ReactApp}: setArrayData(data) - Frontend processes và validates input
+    \item \textbf{Student → Browser}: startSorting() - User initiates algorithm execution
+    \item \textbf{Browser → ReactApp}: executeAlgorithm() - Trigger algorithm execution workflow
+    \item \textbf{ReactApp → AlgorithmController}: runBubbleSort(array) - Start specific algorithm với input data
+\end{enumerate}
+
+\subsubsection{Phase 3: Algorithm Processing với Loop Fragment (Messages 13-16)}
+
+Loop fragment được implement để handle iterative algorithm execution:
+
+\textbf{Loop Condition}: [for each step in algorithm execution]
+
+\begin{enumerate}
+    \item \textbf{AlgorithmController → VisualizationEngine}: animateStep(step) - Animate current algorithm step
+    \item \textbf{VisualizationEngine → ReactApp}: updateVisualization() - Update UI với current state
+    \item \textbf{ReactApp → Browser}: renderStep() - Render animation frame
+    \item \textbf{Browser → Student}: displayStep() - Show visual representation to user
+\end{enumerate}
+
+\textbf{Loop Continuation}: Process repeats until algorithm completion, với user có ability để pause, resume, hoặc adjust speed.
+
+\subsubsection{Final Return Messages}
+
+Khi algorithm execution complete:
+\begin{itemize}
+    \item VisualizationEngine signals completion
+    \item AlgorithmController processes final results
+    \item ReactApp updates completion status
+    \item Browser displays final sorted array và performance metrics
+    \item Student receives completion confirmation với learning analytics
+\end{itemize}
+
+\subsection{AI Assistant Interaction Sequence}
+\label{subsec:ai-interaction-sequence}
 
 \subsubsection{Multi-Model AI Architecture}
 
-Platform sử dụng multiple AI models để optimize cho different use cases:
+Hệ thống implements sophisticated AI architecture với multiple models:
 
 \begin{enumerate}
-    \item \textbf{OpenAI GPT}: Cho natural language explanations
-    \item \textbf{Google Gemini}: Cho code generation và analysis
-    \item \textbf{Context Router}: Intelligent routing dựa trên query type
-    \item \textbf{Response Aggregator}: Combine responses từ multiple models
+    \item \textbf{Context Router}: Intelligent routing based on query type và complexity
+    \item \textbf{OpenAI GPT Integration}: Specialized cho natural language explanations và conceptual questions
+    \item \textbf{Google Gemini Integration}: Optimized cho code generation, analysis, và technical details
+    \item \textbf{Response Aggregator}: Combines insights từ multiple models when appropriate
 \end{enumerate}
 
-\subsection{Community Interaction Sequence}
-\label{subsec:community-sequence}
+\subsubsection{AI Assistance Sequence Flow}
+
+\begin{enumerate}
+    \item \textbf{Context Collection}: AIAssistant gathers current learning context, user history, và algorithm state
+    \item \textbf{Intent Analysis}: Natural language processing để understand user question intent
+    \item \textbf{Model Selection}: Intelligent routing đến appropriate AI model based on query characteristics
+    \item \textbf{Knowledge Retrieval}: Access relevant algorithm documentation, examples, và best practices
+    \item \textbf{Response Generation}: Generate contextual, personalized response với code examples
+    \item \textbf{Quality Assurance}: Validate response accuracy và appropriateness cho user level
+    \item \textbf{Response Delivery}: Format và present response với rich formatting, syntax highlighting
+    \item \textbf{Feedback Loop}: Collect user satisfaction để improve future responses
+\end{enumerate}
+
+\subsection{Error Handling và Recovery Sequences}
+\label{subsec:error-handling-sequences}
+
+\subsubsection{Service Unavailable Recovery}
+
+Khi AI service hoặc other critical services become unavailable:
+
+\begin{enumerate}
+    \item \textbf{Service Monitor}: Detects service failure hoặc timeout
+    \item \textbf{Fallback Activation}: Automatically switch to backup resources
+    \item \textbf{User Notification}: Inform user về temporary limitations
+    \item \textbf{Graceful Degradation}: Provide alternative functionality
+    \item \textbf{Service Recovery}: Monitor và restore service khi available
+    \item \textbf{Resume Normal Operation}: Seamlessly return to full functionality
+\end{enumerate}
+
+\subsubsection{Data Validation và Input Error Handling}
+
+\begin{enumerate}
+    \item \textbf{Input Validation}: Real-time validation của user input data
+    \item \textbf{Error Detection}: Identify specific validation failures
+    \item \textbf{User Feedback}: Provide clear, actionable error messages
+    \item \textbf{Correction Guidance}: Suggest valid input formats và examples
+    \item \textbf{Auto-correction}: Offer to automatically fix common input errors
+    \item \textbf{Retry Mechanism}: Allow user to retry với corrected input
+\end{enumerate}
+
+\section{System Architecture và Technical Design}
+\label{sec:system-architecture}
+
+\subsection{Architectural Overview}
+\label{subsec:architecture-overview}
+
+Hệ thống DSA Visualizer được thiết kế theo Multi-Layer Architecture pattern với clear separation of concerns, ensuring scalability, maintainability, và performance optimization. Architecture được organize thành 5 distinct layers, mỗi layer có specific responsibilities và well-defined interfaces.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.0\textwidth]{enhanced-diagrams/sequence-diagram-clean.drawio}
-\caption{Sequence Diagram cho Community Features}
-\label{fig:sequence-community}
+\includegraphics[width=1.0\textwidth]{enhanced-diagrams/system-architecture-clean.png}
+\caption{System Architecture - Multi-Layer Design}
+\label{fig:system-architecture}
 \end{figure}
 
-Mô tả interaction trong forum và Q\&A system:
+\subsection{Layer-by-Layer Analysis}
+\label{subsec:layer-analysis}
 
-\begin{enumerate}
-    \item User posts question hoặc discussion topic
-    \item System validates content và applies moderation rules
-    \item Notification service alerts relevant users
-    \item Other users provide answers và comments
-    \item Voting system ranks responses
-    \item AI assistant có thể provide supplementary answers
-    \item Final resolution updates knowledge base
-\end{enumerate}
+\subsubsection{Layer 1: Presentation Layer (UI/Frontend)}
+
+\textbf{Technologies}: Next.js 14, React 18, TypeScript, TailwindCSS, Framer Motion
+
+\textbf{Core Components}:
+\begin{itemize}
+    \item \textbf{Interactive Visualizers}: Canvas-based algorithm animations với real-time rendering
+    \item \textbf{Control Interfaces}: Speed control, step navigation, pause/resume functionality
+    \item \textbf{Dashboard Systems}: User progress tracking, analytics visualization, achievement displays
+    \item \textbf{AI Chat Interface}: Real-time conversational AI với context-aware responses
+    \item \textbf{Assessment Platform}: Interactive quizzes, coding challenges, instant feedback systems
+\end{itemize}
+
+\textbf{Design Patterns Implemented}:
+\begin{itemize}
+    \item Component-based architecture với reusable UI elements
+    \item State management using React Context API và custom hooks
+    \item Responsive design patterns cho mobile-first approach
+    \item Progressive Web App (PWA) features cho offline capability
+\end{itemize}
+
+\subsubsection{Layer 2: Visualization Engine Layer}
+
+\textbf{Technologies}: D3.js, HTML5 Canvas API, WebGL, Three.js
+
+\textbf{Core Subsystems}:
+\begin{itemize}
+    \item \textbf{Animation Controller}: Manages complex animation timelines, keyframe interpolation, easing functions
+    \item \textbf{Rendering Engine}: High-performance visualization rendering với GPU acceleration
+    \item \textbf{Interaction Handler}: Processes user interactions với visualizations (drag, zoom, selection)
+    \item \textbf{State Manager}: Tracks algorithm execution state, enables undo/redo functionality
+    \item \textbf{Performance Monitor}: Real-time performance tracking và optimization
+\end{itemize}
+
+\textbf{Visualization Capabilities}:
+\begin{itemize}
+    \item Dynamic array/list visualizations với color-coded elements
+    \item Interactive tree structures với expandable/collapsible nodes
+    \item Graph visualizations với animated edge traversal
+    \item Multi-algorithm comparison views với synchronized playback
+    \item 3D visualizations cho complex data structures
+\end{itemize}
+
+\subsubsection{Layer 3: Backend Services Layer}
+
+\textbf{Technologies}: Node.js, Express.js, TypeScript, Microservices Architecture
+
+\textbf{Microservices Portfolio}:
+\begin{itemize}
+    \item \textbf{Algorithm Service}: Algorithm execution engine, step generation, complexity analysis
+    \item \textbf{User Management Service}: Authentication, authorization, profile management, role-based access control
+    \item \textbf{Learning Service}: Progress tracking, session management, learning path optimization
+    \item \textbf{Assessment Service}: Quiz generation, automated scoring, performance analytics
+    \item \textbf{AI Integration Service}: Multi-model AI coordination, context management, response optimization
+    \item \textbf{Analytics Service}: User behavior tracking, learning analytics, predictive modeling
+    \item \textbf{Notification Service}: Real-time notifications, email alerts, achievement announcements
+\end{itemize}
+
+\textbf{API Design Principles}:
+\begin{itemize}
+    \item RESTful APIs với comprehensive OpenAPI documentation
+    \item GraphQL endpoints cho complex data relationships
+    \item WebSocket connections cho real-time features
+    \item Rate limiting, request throttling, security middleware
+    \item API versioning strategy cho backward compatibility
+\end{itemize}
+
+\subsubsection{Layer 4: Data Management Layer}
+
+\textbf{Technologies}: MongoDB, PostgreSQL, Redis, Elasticsearch
+
+\textbf{Database Strategy}:
+\begin{itemize}
+    \item \textbf{MongoDB}: User profiles, learning sessions, unstructured content, algorithm metadata
+    \item \textbf{PostgreSQL}: Structured data, relational analytics, reporting, audit logs
+    \item \textbf{Redis}: Session caching, real-time leaderboards, temporary data storage
+    \item \textbf{Elasticsearch}: Full-text search, content discovery, advanced analytics
+\end{itemize}
+
+\textbf{Data Models và Relationships}:
+\begin{itemize}
+    \item Normalized user entities với comprehensive profile management
+    \item Algorithm catalog với versioning và metadata management
+    \item Learning progress tracking với detailed analytics
+    \item Assessment results với statistical analysis capabilities
+    \item Content management với multilingual support
+\end{itemize}
+
+\subsubsection{Layer 5: Infrastructure Layer}
+
+\textbf{Deployment Strategy}: Container-based deployment với Kubernetes orchestration
+
+\textbf{Cloud Infrastructure}:
+\begin{itemize}
+    \item \textbf{Compute Resources}: Auto-scaling web servers, load balancers, container clusters
+    \item \textbf{Storage Solutions}: Distributed file storage, CDN integration, backup systems
+    \item \textbf{Security}: WAF protection, DDoS mitigation, SSL/TLS encryption
+    \item \textbf{Monitoring}: Application performance monitoring, log aggregation, alerting systems
+\end{itemize}
+
+\textbf{DevOps Pipeline}:
+\begin{itemize}
+    \item Continuous Integration/Continuous Deployment (CI/CD) với automated testing
+    \item Infrastructure as Code (IaC) sử dụng Terraform
+    \item Monitoring và logging với Prometheus, Grafana, ELK stack
+    \item Security scanning với SAST/DAST tools
+\end{itemize}
+
+\subsection{Integration Patterns và Communication}
+\label{subsec:integration-patterns}
+
+\subsubsection{Event-Driven Architecture}
+
+Hệ thống implements comprehensive event-driven patterns:
+
+\begin{itemize}
+    \item \textbf{User Interaction Events}: UI events trigger visualization updates, progress tracking
+    \item \textbf{Learning Progress Events}: Automatic progress updates, achievement unlocking
+    \item \textbf{System Health Events}: Performance monitoring, error detection, alerting
+    \item \textbf{AI Interaction Events}: Context updates, model optimization, feedback collection
+\end{itemize}
+
+\subsubsection{Caching Strategy}
+
+Multi-level caching approach cho optimal performance:
+
+\begin{itemize}
+    \item \textbf{Browser Caching}: Static assets, compiled code, user preferences
+    \item \textbf{CDN Caching}: Global content distribution, image optimization
+    \item \textbf{Application Caching}: Frequently accessed data, computed results
+    \item \textbf{Database Caching}: Query result caching, connection pooling
+\end{itemize}
+
+\subsubsection{Security Architecture}
+
+Comprehensive security measures implemented across all layers:
+
+\begin{itemize}
+    \item \textbf{Authentication}: JWT-based authentication với refresh token rotation
+    \item \textbf{Authorization}: Role-based access control (RBAC) với fine-grained permissions
+    \item \textbf{Data Protection}: Encryption at rest và in transit, PII anonymization
+    \item \textbf{Input Validation}: Comprehensive input sanitization, XSS/CSRF protection
+    \item \textbf{API Security}: Rate limiting, API key management, request validation
+\end{itemize}
+
+\section{Performance Optimization và Quality Assurance}
+\label{sec:performance-quality}
+
+\subsection{Performance Optimization Strategies}
+\label{subsec:performance-optimization}
+
+\subsubsection{Frontend Performance}
+
+\begin{itemize}
+    \item \textbf{Code Splitting}: Dynamic imports, route-based splitting, component-level lazy loading
+    \item \textbf{Bundle Optimization}: Tree shaking, dead code elimination, compression algorithms
+    \item \textbf{Rendering Optimization}: Virtual DOM optimization, memoization, efficient re-rendering
+    \item \textbf{Asset Optimization}: Image compression, WebP format, progressive loading
+    \item \textbf{Memory Management}: Efficient data structures, garbage collection optimization
+\end{itemize}
+
+\subsubsection{Backend Performance}
+
+\begin{itemize}
+    \item \textbf{Database Optimization}: Query optimization, proper indexing strategies, connection pooling
+    \item \textbf{Caching Implementation}: Multi-level caching, cache invalidation strategies
+    \item \textbf{Asynchronous Processing}: Non-blocking I/O, worker threads, background job processing
+    \item \textbf{Load Balancing}: Horizontal scaling, session affinity, health check monitoring
+    \item \textbf{Resource Management}: Memory optimization, CPU utilization monitoring
+\end{itemize}
+
+\subsection{Quality Assurance Framework}
+\label{subsec:quality-assurance}
+
+\subsubsection{Testing Strategy}
+
+\begin{itemize}
+    \item \textbf{Unit Testing}: Component testing, service testing, utility function testing
+    \item \textbf{Integration Testing}: API testing, database integration, service communication
+    \item \textbf{End-to-End Testing}: User journey testing, cross-browser compatibility
+    \item \textbf{Performance Testing}: Load testing, stress testing, scalability testing
+    \item \textbf{Security Testing}: Penetration testing, vulnerability scanning, security audits
+\end{itemize}
+
+\subsubsection{Code Quality Standards}
+
+\begin{itemize}
+    \item \textbf{Code Style}: ESLint, Prettier, TypeScript strict mode
+    \item \textbf{Code Review}: Pull request reviews, automated code analysis
+    \item \textbf{Documentation}: Comprehensive API documentation, inline code comments
+    \item \textbf{Version Control}: Git best practices, semantic versioning, branching strategy
+\end{itemize}
+
+\section{Kết luận Chapter 3}
+\label{sec:chapter3-conclusion}
+
+Chapter 3 đã cung cấp comprehensive analysis của hệ thống DSA Visualizer từ multiple perspectives, establishing solid foundation cho implementation phase. Các achievements chính bao gồm:
+
+\subsection{Use Case Analysis Completion}
+
+Đã định nghĩa và documented chi tiết 5 core use cases với full specification tables:
+\begin{itemize}
+    \item UC001: Algorithm Visualization Learning - Core learning functionality
+    \item UC002: Interactive Algorithm Practice - Hands-on practice environment
+    \item UC003: AI Assistant Consultation - Intelligent learning support
+    \item UC004: Algorithm Comparison Analysis - Comparative learning tools
+    \item UC005: Learning Progress Tracking - Progress monitoring và analytics
+\end{itemize}
+
+\subsection{UML Modeling Excellence}
+
+\begin{itemize}
+    \item \textbf{Class Diagram}: Comprehensive OOP design với design patterns implementation
+    \item \textbf{Activity Diagram}: Detailed workflow analysis với decision points và parallel activities
+    \item \textbf{Sequence Diagram}: In-depth interaction analysis với timing và message flows
+\end{itemize}
+
+\subsection{Architectural Design}
+
+Established robust 5-layer architecture ensuring:
+\begin{itemize}
+    \item \textbf{Scalability}: Microservices design cho independent scaling
+    \item \textbf{Maintainability}: Clean architecture với clear separation of concerns
+    \item \textbf{Performance}: Multi-level optimization strategies
+    \item \textbf{Security}: Comprehensive security measures across all layers
+\end{itemize}
+
+\subsection{Technical Excellence}
+
+Applied industry best practices:
+\begin{itemize}
+    \item SOLID principles implementation
+    \item Design patterns cho reusability và flexibility
+    \item Performance optimization strategies
+    \item Quality assurance frameworks
+\end{itemize}
+
+Với foundation được establish trong Chapter 3, Chapter 4 sẽ focus vào detailed implementation specifications, technical architecture details, và deployment strategies cho successful system realization.
