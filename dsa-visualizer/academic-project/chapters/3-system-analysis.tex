@@ -594,90 +594,141 @@ Biểu đồ lớp của hệ thống DSA Visualizer được thiết kế theo 
 
 \subsubsection{Các Lớp Quản lý Người dùng}
 
-\textbf{Lớp User:}
-\begin{itemize}
-    \item \textbf{Thuộc tính:} userID, email, username, password, role, createdAt, lastLogin
-    \item \textbf{Phương thức:} login(), logout(), updateProfile(), changePassword()
-    \item \textbf{Mối quan hệ:} User có nhiều LearningSession, có một UserProfile
-\end{itemize}
-
-\textbf{Lớp UserProfile:}
-\begin{itemize}
-    \item \textbf{Thuộc tính:} profileID, firstName, lastName, avatar, bio, preferences
-    \item \textbf{Phương thức:} updatePersonalInfo(), setPreferences(), uploadAvatar()
-    \item \textbf{Mối quan hệ:} Thuộc về một User, có nhiều Achievement
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Đặc tả Lớp User và UserProfile}
+\label{tab:user-classes}
+\begin{tabular}{|p{2cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Lớp} & \textbf{Thành phần} & \textbf{Chi tiết} \\
+\hline
+\multirow{3}{2cm}{\textbf{User}} 
+& Thuộc tính & userID, email, username, password, role, createdAt, lastLogin \\
+\cline{2-3}
+& Phương thức & login(), logout(), updateProfile(), changePassword() \\
+\cline{2-3}
+& Mối quan hệ & User có nhiều LearningSession, có một UserProfile \\
+\hline
+\multirow{3}{2cm}{\textbf{UserProfile}} 
+& Thuộc tính & profileID, firstName, lastName, avatar, bio, preferences \\
+\cline{2-3}
+& Phương thức & updatePersonalInfo(), setPreferences(), uploadAvatar() \\
+\cline{2-3}
+& Mối quan hệ & Thuộc về một User, có nhiều Achievement \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Các Lớp Trực quan hóa Thuật toán}
 
-\textbf{Lớp Algorithm:}
-\begin{itemize}
-    \item \textbf{Thuộc tính:} algorithmID, name, category, description, complexity, difficulty
-    \item \textbf{Phương thức:} execute(), visualize(), getComplexity(), generateSteps()
-    \item \textbf{Mối quan hệ:} Có nhiều AlgorithmStep, thuộc về một Category
-\end{itemize}
-
-\textbf{Lớp Visualizer:}
-\begin{itemize}
-    \item \textbf{Thuộc tính:} visualizerID, type, config, animationSpeed, currentStep
-    \item \textbf{Phương thức:} start(), pause(), resume(), reset(), setSpeed()
-    \item \textbf{Mối quan hệ:} Sử dụng Algorithm, tạo ra VisualizationSession
-\end{itemize}
-
-\textbf{Lớp AlgorithmStep:}
-\begin{itemize}
-    \item \textbf{Thuộc tính:} stepID, stepNumber, description, dataState, action
-    \item \textbf{Phương thức:} execute(), undo(), getDescription(), visualize()
-    \item \textbf{Mối quan hệ:} Thuộc về một Algorithm
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Đặc tả Lớp Trực quan hóa Thuật toán}
+\label{tab:visualization-classes}
+\begin{tabular}{|p{2.5cm}|p{4.5cm}|p{6cm}|}
+\hline
+\textbf{Lớp} & \textbf{Thành phần} & \textbf{Chi tiết} \\
+\hline
+\multirow{3}{2.5cm}{\textbf{Algorithm}} 
+& Thuộc tính & algorithmID, name, category, description, complexity, difficulty \\
+\cline{2-3}
+& Phương thức & execute(), visualize(), getComplexity(), generateSteps() \\
+\cline{2-3}
+& Mối quan hệ & Có nhiều AlgorithmStep, thuộc về một Category \\
+\hline
+\multirow{3}{2.5cm}{\textbf{Visualizer}} 
+& Thuộc tính & visualizerID, type, config, animationSpeed, currentStep \\
+\cline{2-3}
+& Phương thức & start(), pause(), resume(), reset(), setSpeed() \\
+\cline{2-3}
+& Mối quan hệ & Sử dụng Algorithm, tạo ra VisualizationSession \\
+\hline
+\multirow{3}{2.5cm}{\textbf{AlgorithmStep}} 
+& Thuộc tính & stepID, stepNumber, description, dataState, action \\
+\cline{2-3}
+& Phương thức & execute(), undo(), getDescription(), visualize() \\
+\cline{2-3}
+& Mối quan hệ & Thuộc về một Algorithm \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Các Lớp Quản lý Học tập}
 
-\textbf{Lớp LearningSession:}
-\begin{itemize}
-    \item \textbf{Thuộc tính:} sessionID, userID, algorithmID, startTime, endTime, score
-    \item \textbf{Phương thức:} start(), complete(), calculateScore(), saveProgress()
-    \item \textbf{Mối quan hệ:} Thuộc về User và Algorithm
-\end{itemize}
-
-\textbf{Lớp Progress:}
-\begin{itemize}
-    \item \textbf{Thuộc tính:} progressID, userID, totalSessions, completedAlgorithms, skillLevel
-    \item \textbf{Phương thức:} updateProgress(), calculateSkillLevel(), getStatistics()
-    \item \textbf{Mối quan hệ:} Thuộc về một User
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Đặc tả Lớp Quản lý Học tập}
+\label{tab:learning-classes}
+\begin{tabular}{|p{2.5cm}|p{4.5cm}|p{6cm}|}
+\hline
+\textbf{Lớp} & \textbf{Thành phần} & \textbf{Chi tiết} \\
+\hline
+\multirow{3}{2.5cm}{\textbf{LearningSession}} 
+& Thuộc tính & sessionID, userID, algorithmID, startTime, endTime, score \\
+\cline{2-3}
+& Phương thức & start(), complete(), calculateScore(), saveProgress() \\
+\cline{2-3}
+& Mối quan hệ & Thuộc về User và Algorithm \\
+\hline
+\multirow{3}{2.5cm}{\textbf{Progress}} 
+& Thuộc tính & progressID, userID, totalSessions, completedAlgorithms, skillLevel \\
+\cline{2-3}
+& Phương thức & updateProgress(), calculateSkillLevel(), getStatistics() \\
+\cline{2-3}
+& Mối quan hệ & Thuộc về một User \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Các Lớp Đánh giá}
 
-\textbf{Lớp Quiz:}
-\begin{itemize}
-    \item \textbf{Thuộc tính:} quizID, title, description, questions, timeLimit, difficulty
-    \item \textbf{Phương thức:} generateQuestions(), calculateScore(), validateAnswers()
-    \item \textbf{Mối quan hệ:} Có nhiều Question, có nhiều QuizResult
-\end{itemize}
-
-\textbf{Lớp Question:}
-\begin{itemize}
-    \item \textbf{Thuộc tính:} questionID, content, options, correctAnswer, explanation
-    \item \textbf{Phương thức:} validateAnswer(), getHint(), getExplanation()
-    \item \textbf{Mối quan hệ:} Thuộc về một Quiz
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Đặc tả Lớp Đánh giá}
+\label{tab:assessment-classes}
+\begin{tabular}{|p{2cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Lớp} & \textbf{Thành phần} & \textbf{Chi tiết} \\
+\hline
+\multirow{3}{2cm}{\textbf{Quiz}} 
+& Thuộc tính & quizID, title, description, questions, timeLimit, difficulty \\
+\cline{2-3}
+& Phương thức & generateQuestions(), calculateScore(), validateAnswers() \\
+\cline{2-3}
+& Mối quan hệ & Có nhiều Question, có nhiều QuizResult \\
+\hline
+\multirow{3}{2cm}{\textbf{Question}} 
+& Thuộc tính & questionID, content, options, correctAnswer, explanation \\
+\cline{2-3}
+& Phương thức & validateAnswer(), getHint(), getExplanation() \\
+\cline{2-3}
+& Mối quan hệ & Thuộc về một Quiz \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Các Mẫu Thiết kế được sử dụng}
 
-\subsubsection{Mẫu Factory Pattern}
-Sử dụng AlgorithmFactory để tạo ra các thể hiện của các loại thuật toán khác nhau:
-\begin{itemize}
-    \item SortingAlgorithmFactory
-    \item SearchAlgorithmFactory  
-    \item GraphAlgorithmFactory
-\end{itemize}
-
-\subsubsection{Mẫu Observer Pattern}
-VisualizationObserver được thực hiện để thông báo cho các thành phần UI khi trạng thái thuật toán thay đổi:
-\begin{itemize}
-    \item ProgressObserver: Cập nhật thanh tiến độ
-    \item AnimationObserver: Kích hoạt hiệu ứng hoạt hình
+\begin{table}[H]
+\centering
+\caption{Các Design Pattern được áp dụng}
+\label{tab:design-patterns}
+\begin{tabular}{|p{3cm}|p{4cm}|p{6cm}|}
+\hline
+\textbf{Design Pattern} & \textbf{Thành phần Thực hiện} & \textbf{Mục đích và Ứng dụng} \\
+\hline
+\multirow{2}{3cm}{\textbf{Factory Pattern}} 
+& AlgorithmFactory & Tạo ra các thể hiện của các loại thuật toán khác nhau một cách linh hoạt \\
+\cline{2-3}
+& SortingAlgorithmFactory, SearchAlgorithmFactory, GraphAlgorithmFactory & Quản lý việc khởi tạo các thuật toán theo danh mục \\
+\hline
+\multirow{2}{3cm}{\textbf{Observer Pattern}} 
+& VisualizationObserver & Thông báo cho các thành phần UI khi trạng thái thuật toán thay đổi \\
+\cline{2-3}
+& ProgressObserver, AnimationObserver & Cập nhật thanh tiến độ và kích hoạt hiệu ứng hoạt hình \\
+\hline
+\end{tabular}
+\end{table}
     \item ScoreObserver: Tính toán và hiển thị điểm số
 \end{itemize}
 
@@ -704,83 +755,57 @@ Biểu đồ hoạt động mô tả luồng hoạt động chính của hệ th
 
 \subsection{Quy trình hoạt động chính}
 
-\subsubsection{Luồng Xác thực}
-\begin{enumerate}
-    \item \textbf{Bắt đầu:} Người dùng truy cập ứng dụng
-    \item \textbf{Quyết định:} Kiểm tra người dùng đã đăng nhập chưa?
-    \item \textbf{Sai:} Chuyển hướng đến trang đăng nhập
-    \item \textbf{Quy trình Đăng nhập:} Người dùng nhập thông tin đăng nhập
-    \item \textbf{Xác nhận:} Hệ thống xác nhận thông tin người dùng
-    \item \textbf{Quyết định:} Thông tin đăng nhập có hợp lệ?
-    \item \textbf{Sai:} Hiển thị thông báo lỗi, quay lại đăng nhập
-    \item \textbf{Đúng:} Tạo JWT token, chuyển hướng đến bảng điều khiển
-\end{enumerate}
-
-\subsubsection{Luồng Học tập Thuật toán}
-\begin{enumerate}
-    \item \textbf{Truy cập Bảng điều khiển:} Người dùng vào bảng điều khiển chính
-    \item \textbf{Lựa chọn Danh mục:} Người dùng chọn danh mục thuật toán
-    \item \textbf{Lựa chọn Thuật toán:} Người dùng chọn thuật toán cụ thể
-    \item \textbf{Tải Trực quan hóa:} Hệ thống tải trình trực quan hóa thuật toán
-    \item \textbf{Cấu hình Đầu vào:} Người dùng cấu hình dữ liệu đầu vào
-    \item \textbf{Quyết định:} Người dùng muốn bắt đầu trực quan hóa?
-    \item \textbf{Đúng:} Bắt đầu thực thi thuật toán
-    \item \textbf{Thực thi Từng bước:} Hệ thống thực thi từng bước
-    \item \textbf{Hiển thị Hoạt hình:} Hiển thị hoạt hình trực quan
-    \item \textbf{Tương tác Người dùng:} Người dùng có thể tạm dừng/tiếp tục/điều chỉnh tốc độ
-    \item \textbf{Kiểm tra Hoàn thành:} Thực thi thuật toán hoàn thành?
-    \item \textbf{Sai:} Tiếp tục bước tiếp theo
-    \item \textbf{Đúng:} Hiển thị kết quả cuối cùng và phân tích độ phức tạp
-\end{enumerate}
-
-\subsubsection{Luồng Trợ lý AI}
-\begin{enumerate}
-    \item \textbf{Kích hoạt:} Người dùng nhấp nút Trợ lý AI
-    \item \textbf{Thu thập Bối cảnh:} Hệ thống thu thập bối cảnh học tập hiện tại
-    \item \textbf{Nhập Câu hỏi:} Người dùng nhập câu hỏi
-    \item \textbf{Xử lý NLP:} AI phân tích ý định câu hỏi
-    \item \textbf{Truy xuất Kiến thức:} AI tìm kiếm thông tin liên quan
-    \item \textbf{Tạo Phản hồi:} AI tạo phản hồi phù hợp
-    \item \textbf{Hiển thị Phản hồi:} Hệ thống hiển thị phản hồi AI
-    \item \textbf{Quyết định:} Người dùng có câu hỏi bổ sung?
-    \item \textbf{Đúng:} Quay lại nhập câu hỏi
-    \item \textbf{Sai:} Đóng Trợ lý AI
-\end{enumerate}
-
-\subsubsection{Luồng Đánh giá}
-\begin{enumerate}
-    \item \textbf{Lựa chọn Bài kiểm tra:} Người dùng chọn bài kiểm tra để làm
-    \item \textbf{Tải Bài kiểm tra:} Hệ thống tải câu hỏi bài kiểm tra
-    \item \textbf{Hiển thị Câu hỏi:} Hiển thị câu hỏi hiện tại
-    \item \textbf{Nhập Câu trả lời:} Người dùng chọn/nhập câu trả lời
-    \item \textbf{Xác nhận Câu trả lời:} Hệ thống xác nhận câu trả lời
-    \item \textbf{Hiển thị Phản hồi:} Hiển thị phản hồi ngay lập tức
-    \item \textbf{Cập nhật Tiến độ:} Cập nhật tiến độ bài kiểm tra
-    \item \textbf{Quyết định:} Còn câu hỏi nào không?
-    \item \textbf{Đúng:} Câu hỏi tiếp theo
-    \item \textbf{Sai:} Tính điểm cuối cùng
-    \item \textbf{Hiển thị Kết quả:} Hiển thị kết quả bài kiểm tra và khuyến nghị
-    \item \textbf{Lưu Tiến độ:} Lưu tiến độ người dùng và thành tích
-\end{enumerate}
+\begin{table}[H]
+\centering
+\caption{Ma trận Quy trình Hoạt động Chính}
+\label{tab:main-activity-flows}
+\begin{tabular}{|p{3cm}|p{1.5cm}|p{8.5cm}|}
+\hline
+\textbf{Luồng Hoạt động} & \textbf{Số bước} & \textbf{Mô tả Quy trình} \\
+\hline
+\textbf{Xác thực Người dùng} & 8 bước & 
+Bắt đầu → Kiểm tra đăng nhập → Trang đăng nhập (nếu cần) → Nhập thông tin → Xác nhận → Validation → Thông báo lỗi (nếu sai) → Tạo JWT token → Chuyển dashboard \\
+\hline
+\textbf{Học tập Thuật toán} & 13 bước & 
+Dashboard → Chọn danh mục → Chọn thuật toán → Tải visualizer → Cấu hình input → Quyết định bắt đầu → Thực thi từng bước → Hiển thị animation → Tương tác user → Kiểm tra hoàn thành → Tiếp tục (nếu chưa) → Kết quả cuối → Phân tích complexity \\
+\hline
+\textbf{Trợ lý AI} & 10 bước & 
+Kích hoạt AI → Thu thập context → Nhập câu hỏi → Xử lý NLP → Truy xuất knowledge → Tạo response → Hiển thị phản hồi → Quyết định tiếp tục → Quay lại (nếu có) → Đóng AI \\
+\hline
+\textbf{Đánh giá Kiến thức} & 12 bước & 
+Chọn quiz → Tải câu hỏi → Hiển thị → Nhập câu trả lời → Xác nhận → Phản hồi ngay → Cập nhật tiến độ → Kiểm tra còn câu hỏi → Câu tiếp theo (nếu có) → Tính điểm → Hiển thị kết quả → Lưu tiến độ \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Các Hoạt động Song song}
 
-Hệ thống hỗ trợ các hoạt động song song:
-
-\subsubsection{Dịch vụ Nền}
-\begin{itemize}
-    \item \textbf{Thu thập Phân tích:} Theo dõi liên tục hành vi người dùng
-    \item \textbf{Giám sát Hiệu suất:} Theo dõi hiệu suất hệ thống thời gian thực
-    \item \textbf{Quản lý Bộ nhớ đệm:} Vô hiệu hóa và làm mới bộ nhớ đệm nền
-    \item \textbf{Xử lý Thông báo:} Gửi thông báo không đồng bộ
-\end{itemize}
-
-\subsubsection{Tính năng Thời gian thực}
-\begin{itemize}
-    \item \textbf{Cập nhật Tiến độ Trực tiếp:} Đồng bộ hóa tiến độ thời gian thực
-    \item \textbf{Hoạt động Cộng đồng:} Cập nhật diễn đàn thảo luận trực tiếp
-    \item \textbf{Học tập Hợp tác:} Phiên học tập nhiều người dùng
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Phân loại Hoạt động Song song trong Hệ thống}
+\label{tab:parallel-activities}
+\begin{tabular}{|p{3.5cm}|p{4cm}|p{5.5cm}|}
+\hline
+\textbf{Loại Hoạt động} & \textbf{Dịch vụ/Tính năng} & \textbf{Chức năng} \\
+\hline
+\multirow{4}{3.5cm}{\textbf{Dịch vụ Nền}} 
+& Thu thập Phân tích & Theo dõi liên tục hành vi người dùng \\
+\cline{2-3}
+& Giám sát Hiệu suất & Theo dõi hiệu suất hệ thống thời gian thực \\
+\cline{2-3}
+& Quản lý Bộ nhớ đệm & Vô hiệu hóa và làm mới bộ nhớ đệm nền \\
+\cline{2-3}
+& Xử lý Thông báo & Gửi thông báo không đồng bộ \\
+\hline
+\multirow{3}{3.5cm}{\textbf{Tính năng Thời gian thực}} 
+& Cập nhật Tiến độ Trực tiếp & Đồng bộ hóa tiến độ thời gian thực \\
+\cline{2-3}
+& Hoạt động Cộng đồng & Cập nhật diễn đàn thảo luận trực tiếp \\
+\cline{2-3}
+& Học tập Hợp tác & Phiên học tập nhiều người dùng \\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Biểu đồ Tuần tự}
 \label{sec:sequence-diagram}
@@ -912,184 +937,303 @@ Hệ thống DSA Visualizer được thiết kế theo mô hình kiến trúc 5 
 \subsection{Chi tiết các Tầng}
 
 \subsubsection{Tầng UI (Tầng Trình bày)}
-\textbf{Công nghệ sử dụng:} Next.js 14, React 18, TypeScript, TailwindCSS
 
-\textbf{Thành phần chính:}
-\begin{itemize}
-    \item \textbf{Trình trực quan hóa Tương tác:} Hoạt hình thuật toán dựa trên Canvas
-    \item \textbf{Bảng điều khiển:} Điều khiển tốc độ, điều hướng từng bước
-    \item \textbf{Giao diện Bảng điều khiển:} Theo dõi tiến độ và thống kê người dùng
-    \item \textbf{Giao diện Trò chuyện AI:} Trò chuyện thời gian thực với Trợ lý AI
-    \item \textbf{Giao diện Đánh giá:} Bài kiểm tra và bài tập thực hành
-\end{itemize}
-
-\textbf{Mẫu Thiết kế:}
-\begin{itemize}
-    \item Kiến trúc dựa trên thành phần
-    \item Quản lý trạng thái với Context API
-    \item Hook tùy chỉnh cho logic có thể tái sử dụng
-    \item Mẫu thiết kế đáp ứng
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Đặc tả Tầng UI (Presentation Layer)}
+\label{tab:ui-layer-specs}
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Khía cạnh} & \textbf{Chi tiết} \\
+\hline
+\textbf{Công nghệ} & Next.js 14, React 18, TypeScript, TailwindCSS \\
+\hline
+\multirow{5}{3cm}{\textbf{Thành phần chính}} 
+& Trình trực quan hóa Tương tác: Hoạt hình thuật toán dựa trên Canvas \\
+\cline{2-2}
+& Bảng điều khiển: Điều khiển tốc độ, điều hướng từng bước \\
+\cline{2-2}
+& Giao diện Bảng điều khiển: Theo dõi tiến độ và thống kê người dùng \\
+\cline{2-2}
+& Giao diện Trò chuyện AI: Trò chuyện thời gian thực với Trợ lý AI \\
+\cline{2-2}
+& Giao diện Đánh giá: Bài kiểm tra và bài tập thực hành \\
+\hline
+\multirow{4}{3cm}{\textbf{Mẫu Thiết kế}} 
+& Kiến trúc dựa trên thành phần \\
+\cline{2-2}
+& Quản lý trạng thái với Context API \\
+\cline{2-2}
+& Hook tùy chỉnh cho logic có thể tái sử dụng \\
+\cline{2-2}
+& Mẫu thiết kế đáp ứng \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Tầng Bộ máy Trực quan hóa}
-\textbf{Công nghệ sử dụng:} D3.js, Canvas API, WebGL
 
-\textbf{Thành phần Cốt lõi:}
-\begin{itemize}
-    \item \textbf{Bộ điều khiển Hoạt hình:} Quản lý dòng thời gian và trạng thái hoạt hình
-    \item \textbf{Bộ máy Hiển thị:} Hiển thị trực quan hóa hiệu suất cao
-    \item \textbf{Bộ xử lý Tương tác:} Xử lý đầu vào người dùng cho trực quan hóa
-    \item \textbf{Quản lý Trạng thái:} Theo dõi trạng thái thuật toán và lịch sử
-\end{itemize}
-
-\textbf{Các loại Trực quan hóa:}
-\begin{itemize}
-    \item Trực quan hóa Mảng/Danh sách với mã hóa màu
-    \item Cấu trúc Cây với các nút tương tác
-    \item Trực quan hóa Đồ thị với hoạt hình cạnh
-    \item Khung nhìn So sánh cho nhiều thuật toán
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Đặc tả Tầng Visualization Engine}
+\label{tab:visualization-engine-specs}
+\begin{tabular}{|p{3.5cm}|p{9.5cm}|}
+\hline
+\textbf{Khía cạnh} & \textbf{Chi tiết} \\
+\hline
+\textbf{Công nghệ} & D3.js, Canvas API, WebGL \\
+\hline
+\multirow{4}{3.5cm}{\textbf{Thành phần Cốt lõi}} 
+& Bộ điều khiển Hoạt hình: Quản lý dòng thời gian và trạng thái hoạt hình \\
+\cline{2-2}
+& Bộ máy Hiển thị: Hiển thị trực quan hóa hiệu suất cao \\
+\cline{2-2}
+& Bộ xử lý Tương tác: Xử lý đầu vào người dùng cho trực quan hóa \\
+\cline{2-2}
+& Quản lý Trạng thái: Theo dõi trạng thái thuật toán và lịch sử \\
+\hline
+\multirow{4}{3.5cm}{\textbf{Loại Trực quan hóa}} 
+& Trực quan hóa Mảng/Danh sách với mã hóa màu \\
+\cline{2-2}
+& Cấu trúc Cây với các nút tương tác \\
+\cline{2-2}
+& Trực quan hóa Đồ thị với hoạt hình cạnh \\
+\cline{2-2}
+& Khung nhìn So sánh cho nhiều thuật toán \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Tầng Dịch vụ Backend}
-\textbf{Công nghệ sử dụng:} Node.js, Express.js, TypeScript
 
-\textbf{Kiến trúc Microservices:}
-\begin{itemize}
-    \item \textbf{Dịch vụ Thuật toán:} Thực thi thuật toán và tạo bước
-    \item \textbf{Dịch vụ Người dùng:} Xác thực, quản lý hồ sơ
-    \item \textbf{Dịch vụ Học tập:} Theo dõi tiến độ, quản lý phiên
-    \item \textbf{Dịch vụ Đánh giá:} Tạo bài kiểm tra, hệ thống chấm điểm
-    \item \textbf{Dịch vụ AI:} Xử lý ngôn ngữ tự nhiên, truy xuất kiến thức
-    \item \textbf{Dịch vụ Phân tích:} Theo dõi hành vi người dùng, chỉ số hiệu suất
-\end{itemize}
-
-\textbf{Thiết kế API:}
-\begin{itemize}
-    \item API RESTful với tài liệu OpenAPI
-    \item Điểm cuối GraphQL cho truy vấn dữ liệu phức tạp
-    \item Kết nối WebSocket cho tính năng thời gian thực
-    \item Giới hạn tốc độ và middleware bảo mật
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Đặc tả Tầng Backend Services}
+\label{tab:backend-services-specs}
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Khía cạnh} & \textbf{Chi tiết} \\
+\hline
+\textbf{Công nghệ} & Node.js, Express.js, TypeScript \\
+\hline
+\multirow{6}{3cm}{\textbf{Kiến trúc Microservices}} 
+& Dịch vụ Thuật toán: Thực thi thuật toán và tạo bước \\
+\cline{2-2}
+& Dịch vụ Người dùng: Xác thực, quản lý hồ sơ \\
+\cline{2-2}
+& Dịch vụ Học tập: Theo dõi tiến độ, quản lý phiên \\
+\cline{2-2}
+& Dịch vụ Đánh giá: Tạo bài kiểm tra, hệ thống chấm điểm \\
+\cline{2-2}
+& Dịch vụ AI: Xử lý ngôn ngữ tự nhiên, truy xuất kiến thức \\
+\cline{2-2}
+& Dịch vụ Phân tích: Theo dõi hành vi người dùng, chỉ số hiệu suất \\
+\hline
+\multirow{4}{3cm}{\textbf{Thiết kế API}} 
+& API RESTful với tài liệu OpenAPI \\
+\cline{2-2}
+& Điểm cuối GraphQL cho truy vấn dữ liệu phức tạp \\
+\cline{2-2}
+& Kết nối WebSocket cho tính năng thời gian thực \\
+\cline{2-2}
+& Giới hạn tốc độ và middleware bảo mật \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Tầng Quản lý Dữ liệu}
-\textbf{Công nghệ sử dụng:} MongoDB, Redis, PostgreSQL
 
-\textbf{Chiến lược Cơ sở dữ liệu:}
-\begin{itemize}
-    \item \textbf{MongoDB:} Hồ sơ người dùng, phiên học tập, siêu dữ liệu thuật toán
-    \item \textbf{PostgreSQL:} Dữ liệu có cấu trúc, phân tích, báo cáo
-    \item \textbf{Redis:} Lưu trữ phiên, dữ liệu thời gian thực, bảng xếp hạng
-\end{itemize}
-
-\textbf{Mô hình Dữ liệu:}
-\begin{itemize}
-    \item Thực thể Người dùng và Hồ sơ với ánh xạ mối quan hệ
-    \item Siêu dữ liệu thuật toán với phân tích độ phức tạp
-    \item Tiến độ học tập với theo dõi chi tiết
-    \item Kết quả đánh giá với phân tích thống kê
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Đặc tả Tầng Data Management}
+\label{tab:data-management-specs}
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Khía cạnh} & \textbf{Chi tiết} \\
+\hline
+\textbf{Công nghệ} & MongoDB, Redis, PostgreSQL \\
+\hline
+\multirow{3}{3cm}{\textbf{Chiến lược Database}} 
+& MongoDB: Hồ sơ người dùng, phiên học tập, siêu dữ liệu thuật toán \\
+\cline{2-2}
+& PostgreSQL: Dữ liệu có cấu trúc, phân tích, báo cáo \\
+\cline{2-2}
+& Redis: Lưu trữ phiên, dữ liệu thời gian thực, bảng xếp hạng \\
+\hline
+\multirow{4}{3cm}{\textbf{Mô hình Dữ liệu}} 
+& Thực thể Người dùng và Hồ sơ với ánh xạ mối quan hệ \\
+\cline{2-2}
+& Siêu dữ liệu thuật toán với phân tích độ phức tạp \\
+\cline{2-2}
+& Tiến độ học tập với theo dõi chi tiết \\
+\cline{2-2}
+& Kết quả đánh giá với phân tích thống kê \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Tầng Hạ tầng}
-\textbf{Chiến lược Triển khai:} Container Docker, điều phối Kubernetes
 
-\textbf{Dịch vụ Đám mây:}
-\begin{itemize}
-    \item \textbf{Tính toán:} Máy chủ web tự động mở rộng
-    \item \textbf{Lưu trữ:} Lưu trữ tệp phân tán cho tài sản
-    \item \textbf{CDN:} Mạng phân phối nội dung toàn cầu
-    \item \textbf{Giám sát:} Giám sát hiệu suất ứng dụng
-\end{itemize}
-
-\textbf{Biện pháp Bảo mật:}
-\begin{itemize}
-    \item Xác thực dựa trên JWT với token làm mới
-    \item Thực thi HTTPS với chứng chỉ SSL
-    \item Xác thực đầu vào và ngăn chặn SQL injection
-    \item Cấu hình Chia sẻ Tài nguyên Có nguồn gốc (CORS)
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Đặc tả Tầng Infrastructure}
+\label{tab:infrastructure-specs}
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Khía cạnh} & \textbf{Chi tiết} \\
+\hline
+\textbf{Triển khai} & Container Docker, điều phối Kubernetes \\
+\hline
+\multirow{4}{3cm}{\textbf{Dịch vụ Cloud}} 
+& Tính toán: Máy chủ web tự động mở rộng \\
+\cline{2-2}
+& Lưu trữ: Lưu trữ tệp phân tán cho tài sản \\
+\cline{2-2}
+& CDN: Mạng phân phối nội dung toàn cầu \\
+\cline{2-2}
+& Giám sát: Giám sát hiệu suất ứng dụng \\
+\hline
+\multirow{4}{3cm}{\textbf{Bảo mật}} 
+& Xác thực dựa trên JWT với token làm mới \\
+\cline{2-2}
+& Thực thi HTTPS với chứng chỉ SSL \\
+\cline{2-2}
+& Xác thực đầu vào và ngăn chặn SQL injection \\
+\cline{2-2}
+& Cấu hình Chia sẻ Tài nguyên Có nguồn gốc (CORS) \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Mẫu Tích hợp}
 
-\subsubsection{Kiến trúc Hướng sự kiện}
-\begin{itemize}
-    \item Sự kiện hành động người dùng kích hoạt cập nhật trực quan hóa
-    \item Sự kiện tiến độ cập nhật phân tích học tập
-    \item Sự kiện thành tích kích hoạt hệ thống thông báo
-    \item Sự kiện lỗi kích hoạt giám sát và cảnh báo
-\end{itemize}
-
-\subsubsection{Chiến lược Bộ nhớ đệm}
-\begin{itemize}
-    \item Bộ nhớ đệm trình duyệt cho tài sản tĩnh
-    \item Bộ nhớ đệm Redis cho dữ liệu được truy cập thường xuyên
-    \item Bộ nhớ đệm CDN cho hiệu suất toàn cầu
-    \item Bộ nhớ đệm cấp ứng dụng cho kết quả tính toán
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Integration Patterns trong Hệ thống}
+\label{tab:integration-patterns}
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Pattern Type} & \textbf{Ứng dụng} \\
+\hline
+\multirow{4}{4cm}{\textbf{Kiến trúc Hướng sự kiện}} 
+& Sự kiện hành động người dùng kích hoạt cập nhật trực quan hóa \\
+\cline{2-2}
+& Sự kiện tiến độ cập nhật phân tích học tập \\
+\cline{2-2}
+& Sự kiện thành tích kích hoạt hệ thống thông báo \\
+\cline{2-2}
+& Sự kiện lỗi kích hoạt giám sát và cảnh báo \\
+\hline
+\multirow{4}{4cm}{\textbf{Chiến lược Caching}} 
+& Bộ nhớ đệm trình duyệt cho tài sản tĩnh \\
+\cline{2-2}
+& Bộ nhớ đệm Redis cho dữ liệu được truy cập thường xuyên \\
+\cline{2-2}
+& Bộ nhớ đệm CDN cho hiệu suất toàn cầu \\
+\cline{2-2}
+& Bộ nhớ đệm cấp ứng dụng cho kết quả tính toán \\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Nguyên tắc Thiết kế và Thực hành Tốt nhất}
 \label{sec:design-principles}
 
 \subsection{Triển khai Nguyên tắc SOLID}
 
-\subsubsection{Nguyên tắc Trách nhiệm Duy nhất}
-Mỗi lớp và thành phần có một trách nhiệm duy nhất:
-\begin{itemize}
-    \item VisualizationRenderer chỉ xử lý logic hiển thị
-    \item AlgorithmExecutor chỉ xử lý thực thi thuật toán
-    \item UserManager chỉ xử lý các hoạt động liên quan đến người dùng
-\end{itemize}
-
-\subsubsection{Nguyên tắc Mở/Đóng}
-Hệ thống được thiết kế để mở rộng chức năng mà không cần sửa đổi:
-\begin{itemize}
-    \item Kiến trúc plugin cho các loại thuật toán mới
-    \item Hệ thống mở rộng cho trực quan hóa tùy chỉnh
-    \item Khung đánh giá có thể cấu hình
-\end{itemize}
-
-\subsubsection{Nguyên tắc Thay thế Liskov}
-Các lớp trừu tượng và giao diện đảm bảo khả năng thay thế:
-\begin{itemize}
-    \item Giao diện Algorithm có thể được triển khai bởi bất kỳ loại thuật toán nào
-    \item Giao diện Visualizer hỗ trợ nhiều chiến lược hiển thị
-    \item Giao diện Assessment phù hợp với các loại bài kiểm tra khác nhau
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Triển khai SOLID Principles}
+\label{tab:solid-principles}
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Nguyên tắc} & \textbf{Triển khai trong Hệ thống} \\
+\hline
+\multirow{3}{4cm}{\textbf{Single Responsibility}} 
+& VisualizationRenderer chỉ xử lý logic hiển thị \\
+\cline{2-2}
+& AlgorithmExecutor chỉ xử lý thực thi thuật toán \\
+\cline{2-2}
+& UserManager chỉ xử lý các hoạt động liên quan đến người dùng \\
+\hline
+\multirow{3}{4cm}{\textbf{Open/Closed}} 
+& Kiến trúc plugin cho các loại thuật toán mới \\
+\cline{2-2}
+& Hệ thống mở rộng cho trực quan hóa tùy chỉnh \\
+\cline{2-2}
+& Khung đánh giá có thể cấu hình \\
+\hline
+\multirow{3}{4cm}{\textbf{Liskov Substitution}} 
+& Giao diện Algorithm có thể được triển khai bởi bất kỳ loại thuật toán nào \\
+\cline{2-2}
+& Giao diện Visualizer hỗ trợ nhiều chiến lược hiển thị \\
+\cline{2-2}
+& Giao diện Assessment phù hợp với các loại bài kiểm tra khác nhau \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Tối ưu hóa Hiệu suất}
 
-\subsubsection{Tối ưu hóa Frontend}
-\begin{itemize}
-    \item Chia tách mã và tải lười cho các thành phần
-    \item Ghi nhớ cho các phép tính tốn kém
-    \item Cuộn ảo cho tập dữ liệu lớn
-    \item Debouncing cho xử lý đầu vào người dùng
-\end{itemize}
-
-\subsubsection{Tối ưu hóa Backend}
-\begin{itemize}
-    \item Tối ưu hóa truy vấn cơ sở dữ liệu với chỉ mục phù hợp
-    \item Gộp kết nối cho kết nối cơ sở dữ liệu
-    \item Xử lý bất đồng bộ cho các tác vụ tốn thời gian
-    \item Cân bằng tải cho tính khả dụng cao
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Chiến lược Tối ưu hóa Hiệu suất}
+\label{tab:performance-optimization}
+\begin{tabular}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Tầng} & \textbf{Kỹ thuật Tối ưu hóa} \\
+\hline
+\multirow{4}{3cm}{\textbf{Frontend}} 
+& Chia tách mã và tải lười cho các thành phần \\
+\cline{2-2}
+& Ghi nhớ cho các phép tính tốn kém \\
+\cline{2-2}
+& Cuộn ảo cho tập dữ liệu lớn \\
+\cline{2-2}
+& Debouncing cho xử lý đầu vào người dùng \\
+\hline
+\multirow{4}{3cm}{\textbf{Backend}} 
+& Tối ưu hóa truy vấn cơ sở dữ liệu với chỉ mục phù hợp \\
+\cline{2-2}
+& Gộp kết nối cho kết nối cơ sở dữ liệu \\
+\cline{2-2}
+& Xử lý bất đồng bộ cho các tác vụ tốn thời gian \\
+\cline{2-2}
+& Cân bằng tải cho tính khả dụng cao \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Khả năng Tiếp cận và Khả năng Sử dụng}
 
-\subsubsection{Tính năng Khả năng Tiếp cận}
-\begin{itemize}
-    \item Tuân thủ WCAG 2.1 cho tiêu chuẩn khả năng tiếp cận
-    \item Hỗ trợ điều hướng bằng bàn phím
-    \item Tương thích với trình đọc màn hình
-    \item Chế độ tương phản cao cho khiếm thị
-\end{itemize}
-
-\subsubsection{Tính năng Khả năng Sử dụng}
-\begin{itemize}
-    \item Thiết kế giao diện người dùng trực quan
-    \item Tiết lộ dần dần các tính năng phức tạp
-    \item Trợ giúp ngữ cảnh và chú giải công cụ
-    \item Thiết kế đáp ứng cho nhiều thiết bị
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Tiêu chuẩn Accessibility và Usability}
+\label{tab:accessibility-usability}
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Khía cạnh} & \textbf{Tính năng} \\
+\hline
+\multirow{4}{4cm}{\textbf{Accessibility}} 
+& Tuân thủ WCAG 2.1 cho tiêu chuẩn khả năng tiếp cận \\
+\cline{2-2}
+& Hỗ trợ điều hướng bằng bàn phím \\
+\cline{2-2}
+& Tương thích với trình đọc màn hình \\
+\cline{2-2}
+& Chế độ tương phản cao cho khiếm thị \\
+\hline
+\multirow{4}{4cm}{\textbf{Usability}} 
+& Thiết kế giao diện người dùng trực quan \\
+\cline{2-2}
+& Tiết lộ dần dần các tính năng phức tạp \\
+\cline{2-2}
+& Trợ giúp ngữ cảnh và chú giải công cụ \\
+\cline{2-2}
+& Thiết kế đáp ứng cho nhiều thiết bị \\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Kết luận Chương 3}
 \label{sec:chapter3-conclusion}
