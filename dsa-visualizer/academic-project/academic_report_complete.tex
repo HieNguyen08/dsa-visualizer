@@ -156,6 +156,21 @@
 
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries}{\chaptertitlename{} \thechapter}{15pt}{\Huge}
+
+% Use Case Environment Definitions
+\newcommand\addrow[2]{#1 & #2 \\ \hline}
+\newcommand\addheading[2]{#1 & #2 \\ \hline}
+\newcommand\tabularhead{\begin{longtable}{| p{3.5cm} | p{11.5cm} |}
+\hline
+}
+\newcommand\addmulrow[2]{ \begin{minipage}[t][][t]{3.5cm}#1\end{minipage}% 
+   &\begin{minipage}[t][][t]{11.5cm}
+    #2
+    \end{minipage}\\ \hline }
+
+\newenvironment{usecase}{\tabularhead}
+{\hline\end{longtable}}
+
 \begin{document}
 
 \begin{titlepage}
